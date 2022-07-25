@@ -6,9 +6,11 @@ public class ThreeSort {
         
        int first = Math.min(Math.min(x, y), Math.min(y, z));
 
+       int second = Math.min(Math.min(Math.max(x, y), Math.max(y, z)), Math.max(x, z));
+
        int third = Math.max(Math.max(x, y), Math.max(y, z));
 
-       int second = Math.min(Math.min(Math.max(x, y), Math.max(y, z)), Math.max(x, z));
+
     
 
         System.out.print(first + " " + second + " " + third);
