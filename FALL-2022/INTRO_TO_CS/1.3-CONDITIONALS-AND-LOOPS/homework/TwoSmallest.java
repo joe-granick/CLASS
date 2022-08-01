@@ -16,5 +16,5 @@ public class TwoSmallest {
         System.out.println(min_val);
         System.out.println(next_min);
     }
-    
+        `
 }
