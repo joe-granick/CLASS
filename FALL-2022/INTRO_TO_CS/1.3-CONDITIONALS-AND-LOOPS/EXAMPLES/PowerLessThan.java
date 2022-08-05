@@ -1,4 +1,4 @@
-public class PowerTwoLessThan {\
+public class PowerLessThan {
     public static void main(String[] args){
         int n = Integer.parseInt(args[0]);
         int result = 1;
