@@ -18,5 +18,4 @@ public class Gambler {
         System.out.println(100*wins/trials+ "% wins");
         System.out.println("Avg # bets: " + (double)bets/(double)trials);
     }
-    
 }
