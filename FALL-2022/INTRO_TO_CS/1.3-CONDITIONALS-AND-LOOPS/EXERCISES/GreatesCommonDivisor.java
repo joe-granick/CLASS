@@ -3,7 +3,7 @@ public class GreatesCommonDivisor {
         int x = Integer.parseInt(args[0]);
         int y = Integer.parseInt(args[1]);
         int n, d;
-        int factor = 0;
+        int factor = 1;
 
         if (x > y) {
             n = x;
@@ -14,8 +14,10 @@ public class GreatesCommonDivisor {
             d = x;
         }
 
-        for(int i = 2; i <= d; i++ ){
-            if (d%i==0 && n%i==0) factor = i;
+        for(int i = d; i > 0; i-- ){
+            if (d%i==0 && n%i==0){ 
+                factor = i;
+                break;}
         }
             System.out.print(factor);
     }
