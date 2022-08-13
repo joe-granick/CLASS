@@ -11,11 +11,11 @@ public class MedianFiveRandom {
     for(int i = 0; i < n; i++ ){
     
     int t;
-    int a = (int)(Math.random()*4.0 +1.0);
-    int b = (int)(Math.random()*4.0 +1.0);
-    int c = (int)(Math.random()*4.0 +1.0);
-    int d = (int)(Math.random()*4.0 +1.0);
-    int e = (int)(Math.random()*4.0 +1.0);
+    int a = (int)(Math.random()*100.0);
+    int b = (int)(Math.random()*100.0);
+    int c = (int)(Math.random()*100.0);
+    int d = (int)(Math.random()*100.0);
+    int e = (int)(Math.random()*100.0);
 
     System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
     if (a > b) {
@@ -39,7 +39,7 @@ public class MedianFiveRandom {
     if (e < d) {
         t = e;
         e = d;
-        d = e;
+        d = t;
     }
     System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
     if (e < c) {
