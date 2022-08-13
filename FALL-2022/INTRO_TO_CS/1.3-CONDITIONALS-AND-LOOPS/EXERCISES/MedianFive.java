@@ -7,29 +7,49 @@ public class MedianFive {
     int e = Integer.parseInt(args[4]);
     int t;
 
-    if (a > c) {
-        t = c;
-        c = a;
-        a = t;
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    if (a > b) {
+        t = a;
+        a = b;
+        b = t;
     }
-    
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    if (a > c) {
+        t = a;
+        a = c;
+        c = t;
+    }
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
     if (b > c) {
         t = c;
         c = b;
         b = t;
     }
-
-    if (d < c) {
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    if (c > d) {
         t = c;
         c = d;
         d = t;
     }
-
-    if (e < c) {
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    if (c > e) {
         t = c;
         c = e;
         e = t;
     }
-    System.out.print("Median: " + c + " order: " + a + "," + b + "," + c +"," + d + "," + e );
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    if (d > e) {
+        t = d;
+        d = e;
+        e = t;
+    }
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    if (b > c) {
+        t = c;
+        c = b;
+        b = t;
+    }
+    System.out.println("order: " + a + "," + b + "," + c +"," + d + "," + e );
+    System.out.println("Median: " + c + " order: " + a + "," + b + "," + c +"," + d + "," + e );
    } 
 }
