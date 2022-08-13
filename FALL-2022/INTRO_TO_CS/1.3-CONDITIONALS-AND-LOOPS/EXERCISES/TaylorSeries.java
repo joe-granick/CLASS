@@ -12,3 +12,4 @@ public class TaylorSeries {
         System.out.println("e raised to the " + x + " is: " + sum); 
     }
 }
+
