@@ -15,11 +15,11 @@ public class ShuffleDeck {
                 deck[suits.length*i + j] = ranks[i] + " of " + suits[j];
             }   
         }
-        for (int k = 0; n-k > 0; k++){
-            int shuffleCard = (int)(Math.random()*((double)n-(double)k));
-            String card = deck[shuffleCard];
-            deck[shuffleCard] = deck[n-k-1]; 
-            deck[n-k-1] = card;
+        for (int k = 0; k < n; k++){
+            int shuffleCard = k + (int)(Math.random()*(n-k));
+            String card = deck[k];
+            deck[k] = deck[shuffleCard]; 
+            deck[shuffleCard] = card;
         }
         for (int l = 0; l < n; l++) System.out.println("Card " + l + ": " + deck[l]);
     
