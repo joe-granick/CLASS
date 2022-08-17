@@ -1,3 +1,4 @@
+package EXAMPLES;
 public class RandomSample {
    public static void main(String[] args){
     int m = Integer.parseInt(args[0]);
