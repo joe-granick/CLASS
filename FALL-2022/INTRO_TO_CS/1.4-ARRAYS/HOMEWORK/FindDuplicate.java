@@ -20,23 +20,30 @@ public class FindDuplicate {
     public static void main(String[] args) {
 		int n = args.length;
 		int[] dupVal = new int[n];
+		int max = 0;
+		int num;
+
 		for (int i = 0; i < n; i++)
 		{
-			dupVal[i] = Integer.parseInt(args[i]);
+			num = Integer.parseInt(args[i]);
+			dupVal[i] = num;
+			if(num > max) max = num;
 		}
+
+		int[] hasDup = new int[max+1];
 		boolean duplicate = false;
 		for(int i = 0; i < n; i++)
 		{
-			for(int j = i+1; j < n; j++)
+			if(hasDup[dupVal[i]] == 1)
 			{
-				if(dupVal[j] == i) 
-				{
-					duplicate = true;
-					break;
-				}
+				duplicate = true;
+				break;
 			}
+			else hasDup[dupVal[i]] = 1;
 		}
-		System.out.print(duplicate);
+		System.out.println(duplicate);
+		System.out.println(max);
+		System.out.println(hasDup.length);
 		//WRITE YOUR CODE HERE
 	}
 }
