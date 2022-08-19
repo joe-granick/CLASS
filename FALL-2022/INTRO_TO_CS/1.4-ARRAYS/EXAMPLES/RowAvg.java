@@ -1,10 +1,10 @@
 /*For spreadsheeet implemented with 2D
- * Sums each column of numbers
- * Counts all rows
- * Calculates average for each column
- * Processing done in row-major order
+ * Sums each row of numbers
+ * Counts all columns
+ * Calculates average for each row
+ * Processing done in column-major order
  */
-public class ColAvg {
+public class RowAvg {
     public static void main(String[] args){
         double[][] a =
         {
@@ -23,14 +23,14 @@ public class ColAvg {
         int m = a.length;
         int n = a[0].length;
         
-        for (int j = 0; j < n-1; j++){
-            double colSum = 0.0;
-            int colCount = 0;
-            for(int i = 0; i < m-1; i++){
-                colSum += a[i][j];
-                colCount++;
+        for (int i = 0; i < m-1; i++){
+            double rowSum = 0.0;
+            int rowCount = 0;
+            for(int j = 0; j < n-1; j++){
+                rowSum += a[i][j];
+                rowCount++;
             }
-            a[m-1][j] = colSum/colCount;
+            a[i][n-1] = rowSum/rowCount;
         }
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++){
