@@ -1,17 +1,17 @@
-public class SquareMatrix {
+public class CopyRaggedArray {
     public static void main(String[] args)
     {
         int[][] a = 
         {
-            {1, 2, 3},
-            {4, 5, 6},
+            {1, 2},
+            {3, 4, 5, 6},
             {7, 8, 9}
         };
-        int n = a.length;
-        int b[][] = new int[n][n];
-        for (int i = 0; i < n; i++)
+        int b[][] = new int[a.length][];
+        for (int i = 0; i < a.length; i++)
         {
-            for (int j = 0; j < n; j++)
+            b[i] = new int[a[i].length];
+            for (int j = 0; j < a[i].length; j++)
             {
                 b[i][j] = a[i][j];
             }

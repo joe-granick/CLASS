@@ -1,4 +1,4 @@
-public class SquareMatrix {
+public class CopySquareMatrix {
     public static void main(String[] args)
     {
         int[][] a = 
