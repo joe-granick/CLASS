@@ -17,9 +17,9 @@ public class CopySquareMatrix {
             }
         }
 
-        for (int i = 0; i < b.length; i++)
+        for (int i = 0; i < n; i++)
         {
-            for (int j=0; j < b[i].length; j++)
+            for (int j=0; j < n; j++)
             {
                 System.out.print(b[i][j] + " ");
             }
