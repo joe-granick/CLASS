@@ -13,7 +13,7 @@ public class DiscreteDistribution {
     int r = (int)(Math.random()*total);
     int event;
     int sumTotal = 0;
-    for(int i = 0; sumTotal < r; i ++)
+    for(int i = 0; i < n && sumTotal < r; i ++)
     {   
         sumTotal += freq[i];
         event = i;
