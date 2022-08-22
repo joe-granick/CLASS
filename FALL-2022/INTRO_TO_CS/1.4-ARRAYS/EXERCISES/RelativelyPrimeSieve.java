@@ -20,7 +20,7 @@ public class RelativelyPrimeSieve {
         }
         for (int i = 2; i < n; i++){
             for (int j = i; j < n; j++){
-                 if (isRelativelyPrime[i][j])
+                if (isRelativelyPrime[i][j])
                 {
                     for (int f = 2; i*f <=n && j*f <= n; f++)
                     {
