@@ -20,7 +20,7 @@ public class RelativelyPrimeSieve {
         }
         for (int i = 2; i < n; i++){
             for (int j = i; j < n; j++){
-                if (isRelativelyPrime[i][j])
+                 if (isRelativelyPrime[i][j])
                 {
                     for (int f = 2; i*f <=n && j*f <= n; f++)
                     {
@@ -43,7 +43,7 @@ public class RelativelyPrimeSieve {
         System.out.println();   
         for (int i = 1; i < n+1; i++){
             System.out.print(i + " "); //Row labels
-            for(int j = 1; j < n+1; j++){
+            for(int j = 1; j < i; j++){
                 if(isRelativelyPrime[i][j]) {
                     prime = 'T';
                     relativePrimeCount++;
