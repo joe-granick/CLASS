@@ -22,23 +22,18 @@ public class RelativelyPrimeSieve {
             offset--;
         }
         for (int i = 2; i <= n; i++){
-            isRelativelyPrime[i][i] = false;
-            for(int j = 2; j <= n; j++){
-                isRelativelyPrime[j][j] = false;
-                if (j*i <= n) isRelativelyPrime[i*j][j] = false;
-                    System.out.println("i: " + i + " j: " + j + " coords: (" + (i*j)+","+ (j)+")");
+            for (int j = 2; j <= n; j++){
                 if(isRelativelyPrime[i][j]){
-                for(int factor = 2; factor <= n/factor; factor++)
-                {
-                    if(i*factor <= n && j*factor <= n) isRelativelyPrime[i*factor][j*factor] = false;
-                    if(i* factor <= n) isRelativelyPrime[i][i*factor] = false;
-                    if (j*factor <= n) isRelativelyPrime[j][j*factor] = false;
-                    steps++;
-                    System.out.println("i: " + i + " j: " + j + " factor; " + factor + " coords: (" + (i*factor)+","+ (j*factor)+")"+ " coords: (" + (i)+","+ (i*factor)+")" + " coords: (" + (j)+","+ (j*factor)+")");
+                    for (int factor = 2; factor*i <= n; factor++)
+                    {
+                        if (factor*i <= n && factor*j <= n) isRelativelyPrime[factor*i][j*factor] = false;
+                        if(factor*j <= n) isRelativelyPrime[factor][j*factor] = false;
+                        if (factor*i <= n) isRelativelyPrime[factor*i][factor] = false;
+                        System.out.println("i: " + i + " j: " + j + " factor: " + factor);
+                        steps++;
+                    }
                 }
             }
-                
-        }
         }
         // set multiples to false
         /*for(int i = 2; i < n+1; i++){
