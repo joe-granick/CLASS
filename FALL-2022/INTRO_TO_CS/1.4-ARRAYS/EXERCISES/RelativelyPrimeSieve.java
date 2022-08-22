@@ -1,40 +1,79 @@
+/* use a matrix prime sieve to find number combos (i && j < n) that are relatively prime
+ * a matrix entry prime(i&&J) if i && j if !GCD
+ * !GCD if no number x i%x and j%x == 0
+ */
+
 public class RelativelyPrimeSieve {
     public static void main(String[] args)
     {
         int n = Integer.parseInt(args[0]);
         boolean[][] isRelativelyPrime = new boolean[n+1][n+1];
-        int offset = n;
+        int offset = n-1; //variable to prevent diagonal duplicates from being initialized to true
+        char prime; //track T if relative prime and F otherwios for printing
+        int steps = 0;
         
-        char prime;
-
-        for(int i = 1; i <= n; i++){
-            for(int j = 1; j <= n-offset; j++)
+        //initialize unique matrix combos of numbers to true to check for GCD
+        //offset value is used to prevent diagonal mirrors of [i][j] so they can be skipped in evaluation
+        for(int i = 2; i < n+1; i++){
+            for(int j = 2; j < n-offset+2; j++)
             {
-                isRelativelyPrime[i][j] = true;
-                
+                isRelativelyPrime[i][j] = true;            
             }
             offset--;
         }
-            for (int i = 0; i < n; i++){
-                for(int j = 0; j < n; j++){
-                    if(isRelativelyPrime[i][j]) prime = 'T';
-                    else                  prime = 'F';
-                    System.out.print(prime + " ");
+        for (int i = 2; i <= n; i++){
+            isRelativelyPrime[i][i] = false;
+            for(int j = 2; j <= n; j++){
+                isRelativelyPrime[j][j] = false;
+                if (j*i <= n) isRelativelyPrime[i*j][j] = false;
+                    System.out.println("i: " + i + " j: " + j + " coords: (" + (i*j)+","+ (j)+")");
+                if(isRelativelyPrime[i][j]){
+                for(int factor = 2; factor <= n/factor; factor++)
+                {
+                    if(i*factor <= n && j*factor <= n) isRelativelyPrime[i*factor][j*factor] = false;
+                    if(i* factor <= n) isRelativelyPrime[i][i*factor] = false;
+                    if (j*factor <= n) isRelativelyPrime[j][j*factor] = false;
+                    steps++;
+                    System.out.println("i: " + i + " j: " + j + " factor; " + factor + " coords: (" + (i*factor)+","+ (j*factor)+")"+ " coords: (" + (i)+","+ (i*factor)+")" + " coords: (" + (j)+","+ (j*factor)+")");
                 }
-                System.out.println();
             }
-        /*for (int i = 2; i*i < n; i++)
-        {
-            for (int j = 2; j < n; j++)
-            {
-                if (isRelativelyPrime[i][j])
-                    {
-                    isRelativelyPrime[i][j] = false;
-                    }
+                
+        }
+        }
+        // set multiples to false
+        /*for(int i = 2; i < n+1; i++){
+            for(int j = 2; j < n+1; j++){
+                if (isRelativelyPrime[i][j]){ 
+                for (int k = 2; (k*i < n+1) && (k*j < n+1); k++){
+                    isRelativelyPrime[i*k][j*k] = false;
+                    isRelativelyPrime[i*k][k] = false;
+                    isRelativelyPrime[k][j*k] = false;
+                    steps++;
                 }
-        }*/
-        
-
+                isRelativelyPrime[j][j] = false;
+                }
+                isRelativelyPrime[i][i] = false;         
+            }
+        }
+*/
+        int relativePrimeCount = 0;
+        for (int j = 0; j < n+1; j++) System.out.print(j + " "); // Column labels
+        System.out.println();   
+        for (int i = 1; i < n+1; i++){
+            System.out.print(i + " "); //Row labels
+            for(int j = 1; j < n+1; j++){
+                if(isRelativelyPrime[i][j]) {
+                    prime = 'T';
+                    relativePrimeCount++;
+                }
+                else                  prime = 'F';
+                if(i >= j) System.out.print(prime + " ");
+            }
+            System.out.println();
+            
+        }
+        System.out.println("Relative Primes: " + relativePrimeCount);
+        System.out.println("steps: " + steps);
     }
     
 }
