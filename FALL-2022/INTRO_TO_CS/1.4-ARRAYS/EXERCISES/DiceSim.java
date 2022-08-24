@@ -23,6 +23,9 @@ public class DiceSim {
         simFreq[diceOne+diceTwo]++;
 
     }
-    for(int i = 0; i < simFreq.length; i++) System.out.println("roll: " + i + " est(p): " + simFreq[i]/n); 
+    for(int i = 0; i < simFreq.length; i++) System.out.println("roll: " + i + " est(p): " + simFreq[i]/n + " match 3 sig fig: " + (((int)(1000*probs[i])) ==  ((int)(1000*simFreq[i]/n)))); 
     }
 }
+/* about  n = 110,00,000 achieves sig figs to 3 digits
+ * FORMALIZE test later
+ */
