@@ -16,12 +16,11 @@ public class BadShuffle {
             for(int j = 0; j < m; j++)
             {   
                 int r = (int)(Math.random()*(m));
-                count[a[r]][a[j]]++;
                 int temp = a[j];
                 a[j] = a[r];
-                a[r] = temp;
-                
+                a[r] = temp; 
             }
+            for (int j = 0; j < m; j++) count[a[j]][j]++;
             
         }
         for(int i = 0; i < m; i++){

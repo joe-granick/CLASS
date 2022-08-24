@@ -16,13 +16,11 @@ public class ShuffleTest {
             for(int j = 0; j < m; j++)
             {   
                 int r = j + (int)(Math.random()*(m-j));
-                count[a[r]][j]++;
                 int temp = a[j];
                 a[j] = a[r];
                 a[r] = temp;
-                
             }
-            
+            for (int j = 0; j < m; j++) count[a[j]][j]++;
         }
         for(int i = 0; i < m; i++){
             System.out.print(i + " ");
