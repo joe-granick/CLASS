@@ -11,18 +11,23 @@ public class LongestPlateau {
             int b = Integer.parseInt(args[i]);
             int c = Integer.parseInt(args[i+1]);
             
-            while(a < b &&  c < b && count < args.length-2){
+            while(c == b && count < args.length-1){
                 count++;
                 a = Integer.parseInt(args[i-1 + count]);
                 b = Integer.parseInt(args[i + count]);
                 c = Integer.parseInt(args[i+1 + count]);
+                System.out.print(i+count + " ");
             }
             if(count > longestPlateau) {
-                longestPlateau = count;
-                maxEnd = c-count;
+                longestPlateau += count;
+                maxEnd = c;
                 maxStart = i;
+                System.out.println(count);
             }
+            System.out.println(longestPlateau);
         }
+
+        
         System.out.println("longest sequence: " + longestPlateau + " starting at : " + maxStart + " " + args[maxStart] + " ending at " + maxEnd + " " + args[maxEnd]);
     }
     
