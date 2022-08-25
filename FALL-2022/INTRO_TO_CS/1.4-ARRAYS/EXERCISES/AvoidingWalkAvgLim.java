@@ -1,6 +1,6 @@
 public class AvoidingWalkAvgLim {
     /*Hypothesis, reaches limit around 116 avg steps, as grid becomes almost unescapabale at certain size
-     * and converges toward the avergae number of steps to be surrouned
+     * and converges toward the avergae number of steps to be surrouned as the grid size approaches inifinity
      */
     public static void main(String[] args){
         int trials = Integer.parseInt(args[0]);
