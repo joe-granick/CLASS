@@ -24,19 +24,19 @@ public class MineSweeper {
             System.out.println();
         }
 
-        for(int i = 1; i < m; i++){
-            for(int j = 1; j < n; j++)
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++)
             {
             if(!grid[i][j])
             {
-                if(grid[i-1][j]) neighborBombs[i][j]++; // bomb above i
-                if(grid[i+1][j]) neighborBombs[i][j]++; // bomb below i
-                if(grid[i][j-1]) neighborBombs[i][j]++; // bomb left j
-                if(grid[i][j+1]) neighborBombs[i][j]++; // bomb right j
-                if(grid[i-1][j-1]) neighborBombs[i][j]++; // bomb above/left i,j
-                if(grid[i-1][j+1]) neighborBombs[i][j]++; // bomb above/right i,j
-                if(grid[i+1][j-1]) neighborBombs[i][j]++; // bomb below/left i,j
-                if(grid[i+1][j+1]) neighborBombs[i][j]++; // bomb below/right i,j
+                if(i > 0) if(grid[i-1][j]) neighborBombs[i][j]++; // bomb above i
+                if(i+1 < m) if(grid[i+1][j]) neighborBombs[i][j]++; // bomb below i
+                if(j > 0) if(grid[i][j-1]) neighborBombs[i][j]++; // bomb left j
+                if(j+1< n) if(grid[i][j+1]) neighborBombs[i][j]++; // bomb right j
+                if(i>0 && j > 0) if(grid[i-1][j-1]) neighborBombs[i][j]++; // bomb above/left i,j
+                if(i>0 && j+1 < n) if(grid[i-1][j+1]) neighborBombs[i][j]++; // bomb above/right i,j
+                if(i+1< m && j > 0) if(grid[i+1][j-1]) neighborBombs[i][j]++; // bomb below/left i,j
+                if(i+1<m && j+1 <n) if(grid[i+1][j+1]) neighborBombs[i][j]++; // bomb below/right i,j
                 System.out.print(neighborBombs[i][j] + " ");
                 
             }
