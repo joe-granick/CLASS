@@ -27,9 +27,23 @@
  *************************************************************************/
 
 public class RandomWalker {
-
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
 	// WRITE YOUR CODE HERE
+    int n = Integer.parseInt(args[0]); //number of steps in random walk
+    int x = 0;
+    int y = 0;
+    for(int i = 0; i < n; i++)
+        {
+        double r = Math.random();
+        //System.out.print("r: " + r + " coords: ");
+        if     (r < 0.25) x++;
+        else if(r < 0.50) y++;
+        else if(r < 0.75) x--;
+        else              y--;
+        System.out.println("(" + x + "," + y + ")");
+        }
+        double squaredDistance = Math.pow(x, 2) + Math.pow(y, 2);
+        System.out.println("Squared distance=" + squaredDistance);
     }
 }
