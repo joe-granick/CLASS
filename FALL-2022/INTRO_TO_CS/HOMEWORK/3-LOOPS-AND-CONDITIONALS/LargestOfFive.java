@@ -21,5 +21,11 @@ public class LargestOfFive {
     public static void main (String[] args) {
 
         // WRITE YOUR CODE HERE
+        int maxVal = Integer.MIN_VALUE;
+        for(int i = 0; i < 5; i++){
+            int checkVal = Integer.parseInt(args[i]);
+            if(checkVal > maxVal) maxVal = checkVal;
+        }
+        System.out.print(maxVal);
     }
 }
