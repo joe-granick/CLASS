@@ -2,7 +2,7 @@
  *  Compilation:  javac WindChill.java
  *  Execution:    java WindChill 35.0 10.0
  *
- *  @author: Joseph Granick
+ *  @author:
  *
  *  That takes two double command-line arguments temperature and velocity 
  *  and prints the wind chill (a double) according to the following:
@@ -25,13 +25,10 @@ public class WindChill {
     public static void main(String[] args) {
 
 	// WRITE YOUR CODE HERE
-    double t = Double.parseDouble(args[0]); //temperature
-    double v = Double.parseDouble(args[1]); //win d velocity
-    //formula for windchill with user input as varibales
-    double w = 35.74 +0.6215*t + (0.4275*t-35.75)*Math.pow(v, 0.16);
-    System.out.print(w);
-
-
+    double temp = Double.parseDouble(args[0]);
+    double velocity = Double.parseDouble(args[1]);
+    double windChill = 35.74 + 0.6215*temp + ((0.4275*temp-35.75)*Math.pow(velocity,0.16));
+    System.out.print(windChill);
 	
     }
 }

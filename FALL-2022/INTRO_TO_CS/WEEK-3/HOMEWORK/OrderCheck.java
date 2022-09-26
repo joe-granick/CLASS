@@ -2,7 +2,7 @@
  *  Compilation:  javac OrderCheck.java
  *  Execution:    java OrderCheck 5 10 15 2
  *
- *  @author: Joseph Granick
+ *  @author:
  *
  *  Prints true if the four integer inputs are in strictly ascending
  *  or descending order, false otherwise
@@ -24,11 +24,11 @@ public class OrderCheck {
     int x = Integer.parseInt(args[1]);
     int y = Integer.parseInt(args[2]);
     int z = Integer.parseInt(args[3]);
-    
 
-    boolean ordered = (w < x && x < y && y < z) ||(w > x && x > y && y > z);
-    System.out.print(ordered);
+    boolean order = ((w<=x) && (x<=y) && (y<=z))||((w>=x) && (x>=y) && (y>=z));
+    System.out.print(order);
 
 
+	
     }
 }
