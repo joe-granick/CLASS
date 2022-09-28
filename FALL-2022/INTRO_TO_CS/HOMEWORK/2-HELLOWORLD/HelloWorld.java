@@ -2,7 +2,7 @@
  *  Compilation:  javac HelloWorld.java
  *  Execution:    java HelloWorld
  *
- *  @author: Joseph Granick
+ *  @author: NET ID: jgranick EMAIL: jgranick@scarletmail.rutgers.eduJoseph Granick
  *
  *  Prints "Hello, World". By tradition, this is everyone's first program.
  *

@@ -2,7 +2,7 @@
  *  Compilation:  javac WindChill.java
  *  Execution:    java WindChill 35.0 10.0
  *
- *  @author: Joseph Granick
+ *  @author: NET ID: jgranick EMAIL: jgranick@scarletmail.rutgers.edu
  *
  *  That takes two double command-line arguments temperature and velocity 
  *  and prints the wind chill (a double) according to the following:
