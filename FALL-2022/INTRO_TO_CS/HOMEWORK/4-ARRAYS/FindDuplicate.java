@@ -2,7 +2,7 @@
  *  Compilation:  javac FindDuplicate.java
  *  Execution:    java FindDuplicate
  *
- *  @author:
+ *  @author: Joseph Granick NET ID: jgranick EMAIL: jgranick@scarletmail.rutgers.edu
  *
  * FindDuplicate that reads n integer arguments from the command line 
  * into an integer array of length n, where each value is between is 1 and n, 
@@ -42,8 +42,8 @@ public class FindDuplicate {
 			else hasDup[dupVal[i]] = 1;
 		}
 		System.out.println(duplicate);
-		System.out.println(max);
-		System.out.println(hasDup.length);
+		//System.out.println(max);
+		//System.out.println(hasDup.length);
 		//WRITE YOUR CODE HERE
 	}
 }
