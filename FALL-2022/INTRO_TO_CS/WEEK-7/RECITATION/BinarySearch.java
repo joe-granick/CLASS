@@ -3,7 +3,7 @@ public class BinarySearch{
     {
         int n = Integer.parseInt(args[0]);
         int r = (int)(Math.random()*n)+1 ;
-        int guessCount = 1;
+        //int guessCount = 1;
         //StdOut.println("Guess a number between 1 and " + n);
         int guess = n/2;
         int maxGuess = n;
@@ -50,7 +50,7 @@ public class BinarySearch{
                 guess = (minGuess - maxGuess)/2 + guess;
             }
             StdDraw.show();
-            guessCount++;
+            //guessCount++;
         }
             StdDraw.setPenColor(StdDraw.GREEN);
             StdDraw.line(r, 0, r, r);
