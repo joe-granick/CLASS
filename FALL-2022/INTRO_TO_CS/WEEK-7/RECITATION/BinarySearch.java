@@ -16,7 +16,7 @@ public class BinarySearch{
         {
             if(i == r) StdDraw.setPenColor(StdDraw.BLACK);
             else       StdDraw.setPenColor(StdDraw.LIGHT_GRAY);
-            StdDraw.line(i, 0.0, i, i);
+            StdDraw.line(i, 0.0, i, i/5);
         }
         while(guess != r)
         {
@@ -29,7 +29,7 @@ public class BinarySearch{
                 for(int i = guess-1; i > 0; i--)
                 {
                     StdDraw.enableDoubleBuffering();
-                    StdDraw.setPenColor(StdDraw.DARK_GRAY);
+                    StdDraw.setPenColor(StdDraw.WHITE);
                     StdDraw.line(i, 0, i, i);
                 }
                 minGuess = guess;
@@ -43,7 +43,7 @@ public class BinarySearch{
                 for(int i = guess+1; i < n; i++)
                 {
                     StdDraw.enableDoubleBuffering();
-                    StdDraw.setPenColor(StdDraw.DARK_GRAY);
+                    StdDraw.setPenColor(StdDraw.WHITE);
                     StdDraw.line(i, 0, i, i);
                 }
                 maxGuess = guess;
