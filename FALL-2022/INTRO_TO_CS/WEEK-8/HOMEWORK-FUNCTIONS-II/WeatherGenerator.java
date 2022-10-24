@@ -60,18 +60,20 @@ public class WeatherGenerator {
      }
 
      // Returns the longest number of consecutive mode (WET or DRY) days in forecast.
-     int numberOfWetDryDays (int[] forecast, int mode)
+     public int numberOfWetDryDays (int[] forecast, int mode)
      {
-
+        int maxWetStreak = 0;
+        return maxWetStreak;
      }
 
     /*
      * Analyzes the forecast array and returns the longest number of 
      * consecutive mode (which can be WET or DRY) days in forecast.
      */
-     int lengthOfLongestWetDrySpell (int[] forecast, int mode)
+     public int lengthOfLongestWetDrySpell (int[] forecast, int mode)
      {
-
+        int maxDrystreak = 0;
+        return maxDrystreak;
      }
     public static void main (String[] args) 
     {

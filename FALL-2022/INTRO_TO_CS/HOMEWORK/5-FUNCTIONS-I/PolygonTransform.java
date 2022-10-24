@@ -55,6 +55,8 @@ public class PolygonTransform {
 
     for(int i = 0; i < x.length; i++)
     {
+        //x[i] = x[i]*Math.cos(theta) - y[i]*Math.sin(theta);
+        //y[i] = y[i]*Math.cos(theta) + x[i]*Math.sin(theta);
         x[i] = copiedX[i]*Math.cos(theta) - copiedY[i]*Math.sin(theta);
         y[i] = copiedY[i]*Math.cos(theta) + copiedX[i]*Math.sin(theta);
     }
@@ -62,7 +64,15 @@ public class PolygonTransform {
 
     // Tests each of the API methods by directly calling them. 
     public static void main(String[] args) {
-
+        StdDraw.setScale(-5.0, +5.0); 
+        double[] x = { 0, 1, 1, 0 }; 
+        double[] y = { 0, 0, 2, 1 }; 
+        double theta = 45.0; 
+        StdDraw.setPenColor(StdDraw.RED); 
+        StdDraw.polygon(x, y); 
+        rotate(x, y, theta); 
+        StdDraw.setPenColor(StdDraw.BLUE);
+        StdDraw.polygon(x, y);
 
     }
 }
