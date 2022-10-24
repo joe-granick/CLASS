@@ -1,5 +1,4 @@
 public class WeatherGenerator { 
-
     /* Given a location (longitude, latitude) in the USA and a month of the year, the method
      * returns the forecast for the month based on the drywet and wetwet transition 
      * probabilities tables.
@@ -75,6 +74,11 @@ public class WeatherGenerator {
         int maxDrystreak = 0;
         return maxDrystreak;
      }
+
+     public static void populateTransitionProbabilitiesArrays(double[][] dry, double[][] wet, int rows)
+     {
+
+     }
     public static void main (String[] args) 
     {
         int numberOfRows    = 4001; // Total number of locations
@@ -101,7 +105,6 @@ public class WeatherGenerator {
         StdOut.println(drySpell + " days of dry spell.");
 
         for ( int i = 0; i < forecast.length; i++ ) {
-
             // This is the ternary operator. (conditional) ? executed if true : executed if false
             String weather = (forecast[i] == WET) ? "Wet" : "Dry";  
             StdOut.println("Day " + (i+1) + " is forecasted to be " + weather);
