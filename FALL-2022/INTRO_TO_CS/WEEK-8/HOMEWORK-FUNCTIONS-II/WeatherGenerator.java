@@ -10,11 +10,12 @@ public class WeatherGenerator {
      *
      * Use StdRandom.uniform() to generate a real number uniformly in [0,1)
      */
+    static final int[] numbersOfDaysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
      public static int[] oneMonthGenerator(double longitude, double latitude, int month, double[][] drywet, double[][] wetwet)
      {
-        double dryProbability = 0.0;
-        double wetProbability = 0.0;
-        int[] monthSim = new int[31]; //double check length of day
+        double dryProbability = 0.50;
+        double wetProbability = 0.50;
+        int[] monthSim = new int[numbersOfDaysInMonth[month +2]]; //double check length of day
         /*loop through probabilities 
         *find proability of rain for lat and long
         * conditioned on today being dry
@@ -62,6 +63,7 @@ public class WeatherGenerator {
      public int numberOfWetDryDays (int[] forecast, int mode)
      {
         int maxWetStreak = 0;
+
         return maxWetStreak;
      }
 
@@ -95,8 +97,11 @@ public class WeatherGenerator {
         // Read command line inputs 
         double longitute = Double.parseDouble(args[0]);
         double latitude  = Double.parseDouble(args[1]);
-        int    month     = Integer.parseInt(args[2]);
+        int       month  =   Integer.parseInt(args[2]);
+        while(!StdIn.isEmpty())
+        {
 
+        }
         int[] forecast = oneMonthGenerator(longitute, latitude, month, drywet, wetwet);
         int drySpell = lengthOfLongestSpell(forecast, DRY);
         int wetSpell = lengthOfLongestSpell(forecast, WET);
