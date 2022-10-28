@@ -2,8 +2,15 @@ public class Powers
 {
     public static boolean isPower3(int n)
     {
-        for(int i = 1; (i*i*i) <= n; i++) if((i*i*i) == n) return true;
-        return false;
+
+        if (n <=0) return false;
+        while(n >1){
+            if(n%3 != 0) return false;
+            n = n/3;
+        }
+        return true;
+        /*for(int i = 1; (i*i*i) <= n; i++) if((i*i*i) == n) return true;
+        return false;*/
     }
 
     public static void main(String[] args)
