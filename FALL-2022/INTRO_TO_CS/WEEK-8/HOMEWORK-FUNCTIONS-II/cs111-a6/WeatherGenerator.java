@@ -92,8 +92,21 @@ public class WeatherGenerator {
                                      double[][] drywet, double[][] wetwet){
 
         // COMPLETE THIS METHOD
-    }
 
+        for(int i = 0; i < drywet.length; i++)
+        {
+            if(drywet[i][0] == longitude && drywet[i][1] == latitude)
+            {
+                for(int j = 0; j < 12; j++)
+                {
+                    drywetProbability[j] = drywet[i][j+2];
+                    wetwetProbability[j] = wetwet[i][j+2];
+                }
+            }
+        }
+        
+
+    }
     /* 
      * Description:
      *      Given the number of days in a month, and probabilities of weather changing at a certain location, 
