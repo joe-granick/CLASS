@@ -1,6 +1,8 @@
+import javax.swing.plaf.basic.BasicComboBoxUI.FocusHandler;
+
 /*
  *
- * @author: Haolin Jin
+ * @author: jgranick email: jagranick@scarletmail.rutgers.edu
  * 
  * To generate weather for location at longitude -98.76 and latitude 26.70 for
  * the month of February do:
@@ -128,9 +130,39 @@ public class WeatherGenerator {
      *      Here, forecast shoule be a size 31 array of 1s and 2s, although the probability is determined, the
      *      return result will still be different for each run since it is randomly generated. 
      */
-    public static int[] forecastGenerator( double drywetProbability, double wetwetProbability, int numberOfDays) {
+    public static int[] forecastGenerator(double drywetProbability, double wetwetProbability, int numberOfDays) {
         
         // COMPLETE THIS METHOD
+        int[] forecast = new int[numberOfDays];
+        double r = StdRandom.uniform();
+        if(r < 0.5) forecast[0] = WET; //if rannom number is less than .5 RAIN
+        else                          forecast[0] = DRY; //if random num greater or equal .5 DRY
+        //System.out.println("Day: " + 0 + " Transition Probability " + "INIT" + " p: " + 0.5 + " r: " + r + "forecast " + forecast[0]);
+        for(int i = 1; i < numberOfDays; i++)
+        {
+            double prob;
+            String transitionState;
+
+            if (forecast[i-1] == WET) 
+            {
+                prob = wetwetProbability; //probability of rain if previous day was wet 
+                transitionState = "WET";
+            }
+            else                      
+            {
+                prob = drywetProbability; //probability of rain if previous day was wet
+                transitionState = "DRY";
+            }
+            
+            r = StdRandom.uniform();
+            //System.out.println("r: " + r);
+            //System.out.println("p: " + prob);
+            if (r < prob) forecast[i] = WET; 
+            else          forecast[i] = DRY;
+            //System.out.println("Day: " + i + " Transition Probability " + transitionState + " p: " + prob + " r: " + r + "forecast " + forecast[i]);
+        }
+
+        return forecast; 
     }
 
     /* 
@@ -165,6 +197,18 @@ public class WeatherGenerator {
     public static int[] oneMonthForecast(int numberOfLocations, int month, double longitude, double latitude ){
         
         // COMPLETE THIS METHOD
+        double[][] drywet = new double[numberOfLocations][14];
+        double[][] wetwet = new double[numberOfLocations][14];
+        populateArrays(drywet, wetwet);
+
+        double[] drywetProbability = new double[12];
+        double[] wetwetProbability = new double[12];
+        populateLocationProbabilities(drywetProbability, wetwetProbability, longitude, latitude, drywet, wetwet);
+
+        double dryToWet = drywetProbability[month];
+        double wetToWet = wetwetProbability[month];
+        int[] forecast =  forecastGenerator(dryToWet, wetToWet, numberOfDaysInMonth[month]);
+        return forecast;
     }
 
     /********
@@ -195,6 +239,13 @@ public class WeatherGenerator {
     public static int numberOfWetDryDays (int[] forecast, int mode) {
         
         // COMPLETE THIS METHOD
+        int days = 0;
+        for (int i = 0; i < forecast.length; i++)
+        {
+            if (forecast[i] == mode)
+                days++;
+        }
+        return days; 
     }
 
     /* 
@@ -218,6 +269,19 @@ public class WeatherGenerator {
     public static int lengthOfLongestSpell (int[] forecast, int mode) {
         
         // COMPLETE THIS METHOD
+        int longestSpell = Integer.MIN_VALUE;
+        int currentSpell = 0;
+        if (forecast[0] == mode) currentSpell = 1;
+        for(int i = 1; i < forecast.length; i++){
+            if (forecast[i] == forecast[i-1] && forecast[i] == mode) currentSpell++;
+            else
+            {
+                if (currentSpell > longestSpell) longestSpell = currentSpell;
+                currentSpell = 1;
+            } 
+        }
+        if (currentSpell > longestSpell) longestSpell = currentSpell;
+        return longestSpell;
     }
 
     /* 
@@ -241,6 +305,34 @@ public class WeatherGenerator {
     public static int bestWeekToTravel(int[] forecast){
         
         // COMPLETE THIS METHOD
+        int indexDay = 0;
+        
+        int maxIndex = 0;
+        int maxStreak = Integer.MIN_VALUE;
+        int daysInMonth = forecast.length;
+        
+        while(indexDay < daysInMonth)
+        {
+            int dryStreak = 0;
+            while ((indexDay + dryStreak) < daysInMonth && forecast[indexDay + dryStreak] == DRY)
+            {
+                //System.out.println(forecast[indexDay+ dryStreak]);
+                dryStreak++;
+                //System.out.println("while indexDay: " +indexDay + " dry streak " + dryStreak + " index + dry " + (indexDay +dryStreak) );
+            }
+            int addDays = dryStreak;
+            
+            if (dryStreak > maxStreak)
+            {
+                maxStreak = dryStreak;
+                maxIndex = indexDay;
+            }
+            if (addDays == 0) addDays++;
+            indexDay += addDays;
+            //System.out.println("new index " +indexDay);
+        }
+        return maxIndex;
+
     }
 
     /*
@@ -249,7 +341,7 @@ public class WeatherGenerator {
      *   java WeatherGenerator -97.58 26.02 3
      */
     public static void main (String[] args) {
-
+        StdRandom.setSeed(1617155768130L);
         int numberOfRows    = 4100; // Total number of locations
         int numberOfColumns = 14;   // Total number of 14 columns in file 
         
@@ -259,14 +351,14 @@ public class WeatherGenerator {
         int    month     = Integer.parseInt(args[2]);
         
         int[] forecast = oneMonthForecast( numberOfRows,  month,  longitude,  latitude );
-        
-
+    
         int drySpell = lengthOfLongestSpell(forecast, DRY);
         int wetSpell = lengthOfLongestSpell(forecast, WET);
         int bestWeek = bestWeekToTravel(forecast);
 
         StdOut.println("There are " + forecast.length + " days in the forecast for month " + month);
         StdOut.println(drySpell + " days of dry spell.");
+        StdOut.println(wetSpell + " days of wet spell.");
         StdOut.println("The bestWeekToTravel starts on:" + bestWeek );
 
         for ( int i = 0; i < forecast.length; i++ ) {
