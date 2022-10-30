@@ -1,7 +1,7 @@
 
 /*
  *
- * @author: jgranick email: jagranick@scarletmail.rutgers.edu
+ * @author: jgranick email: jgranick@scarletmail.rutgers.edu
  * 
  * To generate weather for location at longitude -98.76 and latitude 26.70 for
  * the month of February do:
@@ -139,19 +139,19 @@ public class WeatherGenerator {
         //System.out.println("Day: " + 0 + " Transition Probability " + "INIT" + " p: " + prob + " r: " + r + "forecast " + forecast[0]);
         for(int i = 1; i < numberOfDays; i++)
         {
-            /*String transitionState;
+            //String transitionState;
 
             if (forecast[i-1] == WET) 
             {
                 prob = wetwetProbability; //probability of rain if previous day was wet 
-                transitionState = "WET";
+                //transitionState = "WET";
             }
             else                      
             {
                 prob = drywetProbability; //probability of rain if previous day was wet
-                transitionState = "DRY";
+                //transitionState = "DRY";
             }
-            */
+            
             r = StdRandom.uniform();
             //System.out.println("r: " + r);
             //System.out.println("p: " + prob);
@@ -332,10 +332,30 @@ public class WeatherGenerator {
      *   java WeatherGenerator -97.58 26.02 3
      */
     public static void main (String[] args) {
+        //StdRandom.setSeed(1667235513585L);
+        int[] test16 = forecastGenerator(0.14530338573740473, 0.7586459705038652, 31);
+        for(int i = 0; i < test16.length; i++)
+            System.out.print(test16[i] + " ");
+        System.out.println();
+
+        //StdRandom.setSeed(1667235513638L);
+        int[] test17 = forecastGenerator(0.366293010257578, 0.27297111179052025, 30);
+        for(int i = 0; i < test17.length; i++)
+            System.out.print(test17[i] + " ");
+        System.out.println();
         //StdRandom.setSeed(1617155768130L); //example
         
         
         // File format: longitude, latitude, 12 months of transition probabilities
+         // TEST CASE 76
+        /*
+        StdRandom.setSeed(1667230004659L); 
+        int numberOfRows    = 4100; // Total number of locations
+        double longitude = -98.01;
+        double latitude  = 28.12;
+        int    month     = 5;
+        */
+
         // TEST CASE 69
         /* 
         StdRandom.setSeed(1667230002748L); //test 69
@@ -365,13 +385,15 @@ public class WeatherGenerator {
 
         // TEST CASE 76
         
-        StdRandom.setSeed(1667230004659L); 
-        int numberOfRows    = 4100; // Total number of locations
+        //StdRandom.setSeed(1667230004659L); 
+        /*int numberOfRows    = 4100; // Total number of locations
         double longitude = -98.01;
         double latitude  = 28.12;
         int    month     = 5;
         
+        
         int[] forecast = oneMonthForecast( numberOfRows,  month,  longitude,  latitude );
+
 
     
         int drySpell = lengthOfLongestSpell(forecast, DRY);
@@ -387,6 +409,6 @@ public class WeatherGenerator {
             // This is the ternary operator. (conditional) ? executed if true : executed if false
             String weather = (forecast[i] == WET) ? "Wet" : "Dry";  
             StdOut.println("Day " + (i) + " is forecasted to be " + weather);
-        }
+        }*/
     }
 }
