@@ -1,4 +1,3 @@
-import javax.swing.plaf.basic.BasicComboBoxUI.FocusHandler;
 
 /*
  *
@@ -104,10 +103,9 @@ public class WeatherGenerator {
                     drywetProbability[j] = drywet[i][j+2];
                     wetwetProbability[j] = wetwet[i][j+2];
                 }
+                //System.out.println("populateLocationProbabilities month: " + i + " drywet " + drywetProbability[i] + " wetwt " + wetwetProbability[i]);
             }
         }
-        
-
     }
     /* 
      * Description:
@@ -135,13 +133,13 @@ public class WeatherGenerator {
         // COMPLETE THIS METHOD
         int[] forecast = new int[numberOfDays];
         double r = StdRandom.uniform();
-        if(r < 0.5) forecast[0] = WET; //if rannom number is less than .5 RAIN
+        double prob = 0.5;
+        if(r < prob) forecast[0] = WET; //if rannom number is less than .5 RAIN
         else                          forecast[0] = DRY; //if random num greater or equal .5 DRY
-        //System.out.println("Day: " + 0 + " Transition Probability " + "INIT" + " p: " + 0.5 + " r: " + r + "forecast " + forecast[0]);
+        //System.out.println("Day: " + 0 + " Transition Probability " + "INIT" + " p: " + prob + " r: " + r + "forecast " + forecast[0]);
         for(int i = 1; i < numberOfDays; i++)
         {
-            double prob;
-            String transitionState;
+            /*String transitionState;
 
             if (forecast[i-1] == WET) 
             {
@@ -153,7 +151,7 @@ public class WeatherGenerator {
                 prob = drywetProbability; //probability of rain if previous day was wet
                 transitionState = "DRY";
             }
-            
+            */
             r = StdRandom.uniform();
             //System.out.println("r: " + r);
             //System.out.println("p: " + prob);
@@ -207,7 +205,9 @@ public class WeatherGenerator {
 
         double dryToWet = drywetProbability[month];
         double wetToWet = wetwetProbability[month];
+        //System.out.println("Dry to wet p: " + dryToWet + " wet to wet p" + wetToWet);
         int[] forecast =  forecastGenerator(dryToWet, wetToWet, numberOfDaysInMonth[month]);
+       
         return forecast;
     }
 
@@ -305,31 +305,22 @@ public class WeatherGenerator {
     public static int bestWeekToTravel(int[] forecast){
         
         // COMPLETE THIS METHOD
-        int indexDay = 0;
-        
         int maxIndex = 0;
-        int maxStreak = Integer.MIN_VALUE;
+        int maxDry = Integer.MIN_VALUE;
         int daysInMonth = forecast.length;
-        
-        while(indexDay < daysInMonth)
+        for (int i = 0; i < daysInMonth; i++)
         {
-            int dryStreak = 0;
-            while ((indexDay + dryStreak) < daysInMonth && forecast[indexDay + dryStreak] == DRY)
+            int dryDays = 0;
+            for (int j = 0; (j < 7) && ((j+i) < daysInMonth); j++)
             {
-                //System.out.println(forecast[indexDay+ dryStreak]);
-                dryStreak++;
-                //System.out.println("while indexDay: " +indexDay + " dry streak " + dryStreak + " index + dry " + (indexDay +dryStreak) );
+                if(forecast[i+j] == DRY) dryDays++;
             }
-            int addDays = dryStreak;
             
-            if (dryStreak > maxStreak)
+            if(dryDays > maxDry)
             {
-                maxStreak = dryStreak;
-                maxIndex = indexDay;
+                maxIndex = i;
+                maxDry = dryDays;
             }
-            if (addDays == 0) addDays++;
-            indexDay += addDays;
-            //System.out.println("new index " +indexDay);
         }
         return maxIndex;
 
@@ -341,16 +332,47 @@ public class WeatherGenerator {
      *   java WeatherGenerator -97.58 26.02 3
      */
     public static void main (String[] args) {
-        StdRandom.setSeed(1617155768130L);
-        int numberOfRows    = 4100; // Total number of locations
-        int numberOfColumns = 14;   // Total number of 14 columns in file 
+        //StdRandom.setSeed(1617155768130L); //example
+        
         
         // File format: longitude, latitude, 12 months of transition probabilities
-        double longitude = Double.parseDouble(args[0]);
-        double latitude  = Double.parseDouble(args[1]);
-        int    month     = Integer.parseInt(args[2]);
+        // TEST CASE 69
+        /* 
+        StdRandom.setSeed(1667230002748L); //test 69
+        int numberOfRows    = 4100; // Total number of locations
+        double longitude = -112.99;
+        double latitude  = 48.98;
+        int    month     = 10;
+        */
+
+        // TEST CASE 70
+        /* 
+        StdRandom.setSeed(1667230003018L); 
+        int numberOfRows    = 4100; // Total number of locations
+        double longitude = -77.20;
+        double latitude  = 36.61;
+        int    month     = 11;
+        */        
+
+        // TEST CASE 75
+        /* 
+        StdRandom.setSeed(1667230004392L); 
+        int numberOfRows    = 4100; // Total number of locations
+        double longitude = -89.46;
+        double latitude  = 40.17;
+        int    month     = 1;
+        */
+
+        // TEST CASE 76
+        
+        StdRandom.setSeed(1667230004659L); 
+        int numberOfRows    = 4100; // Total number of locations
+        double longitude = -98.01;
+        double latitude  = 28.12;
+        int    month     = 5;
         
         int[] forecast = oneMonthForecast( numberOfRows,  month,  longitude,  latitude );
+
     
         int drySpell = lengthOfLongestSpell(forecast, DRY);
         int wetSpell = lengthOfLongestSpell(forecast, WET);
