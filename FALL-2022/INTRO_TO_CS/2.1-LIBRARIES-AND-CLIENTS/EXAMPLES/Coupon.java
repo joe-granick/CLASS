@@ -18,10 +18,9 @@ public class Coupon {
             int r = generateCoupon(n);
             count++;
             if(!isCollected[r])
-            {
                distinct++;
-               isCollected[r] = true;
-            }
+            isCollected[r] = true;
+            
          }
       }
       return count;
@@ -30,6 +29,6 @@ public class Coupon {
    public static void main(String[] args)
    {
     int n = Integer.parseInt(args[0]);
-    System.out.println(count + " coupons collected to reach " + n + "unique observations");
+    System.out.println(collectCoupons(n) + " coupons collected to reach " + n + " unique observations");
    }
 }

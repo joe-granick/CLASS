@@ -333,16 +333,16 @@ public class WeatherGenerator {
      */
     public static void main (String[] args) {
         //StdRandom.setSeed(1667235513585L);
-        int[] test16 = forecastGenerator(0.14530338573740473, 0.7586459705038652, 31);
+        /*int[] test16 = forecastGenerator(0.14530338573740473, 0.7586459705038652, 31);
         for(int i = 0; i < test16.length; i++)
             System.out.print(test16[i] + " ");
-        System.out.println();
+        System.out.println();*/
 
         //StdRandom.setSeed(1667235513638L);
-        int[] test17 = forecastGenerator(0.366293010257578, 0.27297111179052025, 30);
+        /*int[] test17 = forecastGenerator(0.366293010257578, 0.27297111179052025, 30);
         for(int i = 0; i < test17.length; i++)
             System.out.print(test17[i] + " ");
-        System.out.println();
+        System.out.println();*/
         //StdRandom.setSeed(1617155768130L); //example
         
         
@@ -410,5 +410,30 @@ public class WeatherGenerator {
             String weather = (forecast[i] == WET) ? "Wet" : "Dry";  
             StdOut.println("Day " + (i) + " is forecasted to be " + weather);
         }*/
+
+        int numberOfRows    = 4100; // Total number of locations
+        int numberOfColumns = 14;   // Total number of 14 columns in file 
+        
+        // File format: longitude, latitude, 12 months of transition probabilities
+        double longitude = Double.parseDouble(args[0]);
+        double latitude  = Double.parseDouble(args[1]);
+        int    month     = Integer.parseInt(args[2]);
+        
+        int[] forecast = oneMonthForecast( numberOfRows,  month,  longitude,  latitude );
+        
+
+        int drySpell = lengthOfLongestSpell(forecast, DRY);
+        int wetSpell = lengthOfLongestSpell(forecast, WET);
+        int bestWeek = bestWeekToTravel(forecast);
+
+        StdOut.println("There are " + forecast.length + " days in the forecast for month " + month);
+        StdOut.println(drySpell + " days of dry spell.");
+        StdOut.println("The bestWeekToTravel starts on:" + bestWeek );
+
+        for ( int i = 0; i < forecast.length; i++ ) {
+            // This is the ternary operator. (conditional) ? executed if true : executed if false
+            String weather = (forecast[i] == WET) ? "Wet" : "Dry";  
+            StdOut.println("Day " + (i) + " is forecasted to be " + weather);
+        }
     }
 }
