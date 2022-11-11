@@ -30,6 +30,6 @@ public class Sierpinski {
     // draws a Sierpinski triangle of order n that fits snugly inside the outline. 
     public static void main(String[] args)
     {
-
+        StdDraw.filledPolygon();
     } 
  }
