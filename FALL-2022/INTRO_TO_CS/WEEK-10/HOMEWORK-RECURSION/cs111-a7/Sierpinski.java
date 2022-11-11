@@ -25,9 +25,11 @@ public class Sierpinski {
     public static void filledTriangle(double x, double y, double length) {
 
     double h = height(length);
-	xCoord[0] = x;
-    xCoord[1] = x + length/2;
-    xCoord[2] = x + length;
+	
+    
+    xCoord[0] = x - length/2;
+    xCoord[1] = x           ;
+    xCoord[2] = x + length/2;
 
     yCoord[0] = y +      h;
     yCoord[1] =          y;
@@ -43,8 +45,8 @@ public class Sierpinski {
 	// WRITE YOUR CODE HERE
     if (n == 0) return;
 
-    sierpinski(n-1, x-length/4, y, length/2);
-    sierpinski(n-1, x+length/2, y+height(length), length/2);
+    sierpinski(n-1, x-length/2, y, length/2);
+    sierpinski(n-1, x, y+height(length), length/2);
     sierpinski(n-1, x+length/4, y, length/2);
 
     }
@@ -68,42 +70,15 @@ public class Sierpinski {
     double xTest = .25;
     double l= 0.5;
 
-    filledTriangle(xTest, 0, l);
-    filledTriangle(xTest-l/4, 0, l/2);
-    
-    /* 
-    StdDraw.filledPolygon(x, y);
-     
-    double[] x1 = new double[3];
-    double[] y1 = new double[3];
-    y1[0] = y[0]/2;
-    y1[1] =   y[1];
-    y1[2] = y[2]/2;
-    x1[0] = x[0]/2;
-    x1[1] = x[1]/2;
-    x1[2] = x[2]/2;
-    StdDraw.filledPolygon(x1, y1);
+    filledTriangle(0.5, 0.0, 0.5);
+    filledTriangle(0.25, 0.0, 0.25);
+    filledTriangle(0.75, 0.0, 0.25);
+    filledTriangle(0.5,     h/2, 0.25);
 
-    double[] x2 = new double[3];
-    double[] y2 = new double[3];
-    y2[0] = y[0]+y[0]/2;
-    y2[1] = h/2;
-    y2[2] = y[2]+y[2]/2;
-    x2[0] = x[0]+x[0]/2;
-    x2[1] = x[1];
-    x2[2] = x[2]-x[0]/2;
-    StdDraw.filledPolygon(x2, y2);
+    //filledTriangle(xTest, 0, l);
+    //filledTriangle(xTest-l/4, 0, l/2);
 
-    double[] x3 = new double[3];
-    double[] y3 = new double[3];
-    y3[0] = y[0]/2;
-    y3[1] =   y[1];
-    y3[2] = y[2]/2;
-    
-    x3[0] = x[0]*2.5;
-    x3[1] = x[1]+x[1]/2;
-    x3[2] = x[2]+ x[2]/6;
-    StdDraw.filledPolygon(x3, y3);*/
+    //filledTriangle(xTest+l/4, 0, l/2);
     
     
 
