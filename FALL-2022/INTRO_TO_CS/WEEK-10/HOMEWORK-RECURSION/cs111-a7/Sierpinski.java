@@ -43,11 +43,12 @@ public class Sierpinski {
     public static void sierpinski(int n, double x, double y, double length) {
 
 	// WRITE YOUR CODE HERE
-    if (n == 0) return;
-
+    if (n == 0)  return;
+    
+    filledTriangle(x, y, length);
     sierpinski(n-1, x-length/2, y, length/2);
     sierpinski(n-1, x, y+height(length), length/2);
-    sierpinski(n-1, x+length/4, y, length/2);
+    sierpinski(n-1, x+length/2, y, length/2);
 
     }
 
@@ -57,28 +58,22 @@ public class Sierpinski {
     // draws a Sierpinski triangle of order n that fits snugly inside the outline. 
     public static void main(String[] args) {
 
-	// WRITE YOUR CODE HERE 
-    //int n = Integer.parseInt(args[0]);
+	
+    int n = Integer.parseInt(args[0]);
 
-
+    double x = 0.5;
+    double y = 0.0;
+    double l = 0.5;
+    
     double h = height(1.0);
-    
-    
     StdDraw.line(0, 0, 1, 0);
     StdDraw.line(0, 0, 0.5, h);
     StdDraw.line(1, 0, 0.5, h);
-    double xTest = .25;
-    double l= 0.5;
-
-    filledTriangle(0.5, 0.0, 0.5);
-    filledTriangle(0.25, 0.0, 0.25);
-    filledTriangle(0.75, 0.0, 0.25);
-    filledTriangle(0.5,     h/2, 0.25);
-
-    //filledTriangle(xTest, 0, l);
-    //filledTriangle(xTest-l/4, 0, l/2);
-
-    //filledTriangle(xTest+l/4, 0, l/2);
+    sierpinski(n, x, y, l);
+    // filledTriangle(0.5, 0.0, 0.5);
+    // filledTriangle(0.25, 0.0, 0.25);
+    // filledTriangle(0.75, 0.0, 0.25);
+    // filledTriangle(0.5,     h/2, 0.25);
     
     
 
