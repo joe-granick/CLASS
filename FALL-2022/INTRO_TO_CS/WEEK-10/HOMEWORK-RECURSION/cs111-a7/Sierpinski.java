@@ -11,7 +11,6 @@ public class Sierpinski {
     private static double[] xCoord = new double[3]; 
     private static double[] yCoord = new double[3]; 
 
-
     // Height of an equilateral triangle whose sides are of the specified length. 
     public static double height(double length) {
 
@@ -30,7 +29,11 @@ public class Sierpinski {
         yCoord[0] = y +      h;
         yCoord[1] =          y;
         yCoord[2] = y +      h;
+<<<<<<< HEAD
         StdDraw.filledPolygon(xCoord, yCoord);
+=======
+        StdDraw.filledPolygon(xCoord, yCoord)
+>>>>>>> 3105392e045c23c435327c9bb525ad3aec73e2af
     }
 
     // Draws a Sierpinski triangle of order n, such that the largest filled 
@@ -49,9 +52,15 @@ public class Sierpinski {
     // draws the outline of an equilateral triangle (pointed upwards) of length 1; 
     // whose bottom-left vertex is (0, 0) and bottom-right vertex is (1, 0); and 
     // draws a Sierpinski triangle of order n that fits snugly inside the outline. 
+<<<<<<< HEAD
         public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
         double x= 0.5;
+=======
+    public static void main(String[] args) {
+        int n = Integer.parseInt(args[0]);
+        double x = 0.5;
+>>>>>>> 3105392e045c23c435327c9bb525ad3aec73e2af
         double y = 0.0;
         double l = 0.5;
         double h = height(1.0);
