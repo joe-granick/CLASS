@@ -7,10 +7,6 @@
  *************************************************************************/
 
 public class Sierpinski {
-
-    private static double[] xCoord = new double[3]; 
-    private static double[] yCoord = new double[3]; 
-
     // Height of an equilateral triangle whose sides are of the specified length. 
     public static double height(double length) {
 
@@ -23,13 +19,9 @@ public class Sierpinski {
     // of the specified side length. 
     public static void filledTriangle(double x, double y, double length) {
         double h = height(length);
-        xCoord[0] = x - length/2;
-        xCoord[1] = x           ;
-        xCoord[2] = x + length/2;
-        yCoord[0] = y +      h;
-        yCoord[1] =          y;
-        yCoord[2] = y +      h;
-        StdDraw.filledPolygon(xCoord, yCoord)
+        double[] xCoord = {(x-length/2), x, (x+length/2)};
+        double[] yCoord = {(       y+h), y, (       y+h)};
+        StdDraw.filledPolygon(xCoord, yCoord);
     }
 
     // Draws a Sierpinski triangle of order n, such that the largest filled 
