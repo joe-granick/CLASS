@@ -2,7 +2,7 @@
  *  Compilation:  javac Sierpinski.java
  *  Execution:    java Sierpinski
  *
- *  @author:
+ *  @author: jgranick email: jgranick@scarletmail.reutgers.edu
  *
  *************************************************************************/
 
