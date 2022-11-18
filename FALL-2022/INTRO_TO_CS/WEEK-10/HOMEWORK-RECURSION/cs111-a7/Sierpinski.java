@@ -42,10 +42,7 @@ public class Sierpinski {
     // draws a Sierpinski triangle of order n that fits snugly inside the outline. 
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
-        double x = 0.5;
-        double y = 0.0;
-        double l = 0.5;
-        double h = height(1.0);
+        double x = 0.5, y = 0.0, l = 0.5, h = height(1.0);
         StdDraw.line(0, 0, 1, 0);
         StdDraw.line(0, 0, 0.5, h);
         StdDraw.line(1, 0, 0.5, h);
