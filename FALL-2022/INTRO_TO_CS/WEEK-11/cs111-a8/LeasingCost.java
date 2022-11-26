@@ -165,7 +165,27 @@ public class LeasingCost {
 	public static Vehicle createVehicle(String description){
         
         // COMPLETE THIS METHOD
-	    return null;
+        String name =  description.substring( (description.indexOf("name:")+5), description.indexOf(";" , (description.indexOf("name:")+5) ));
+
+        double due = Double.parseDouble(description.substring( (description.indexOf("due:")+4), description.indexOf(";" , (description.indexOf("due:")+4) )));    
+        int length = Integer.parseInt(description.substring( (description.indexOf("length:")+7), description.indexOf(";" , (description.indexOf("length:")+7) )) );  
+        double monthly = Double.parseDouble(description.substring( (description.indexOf("monthly:")+8), description.indexOf(";" , (description.indexOf("monthly:")+8) )));
+        
+        int allowance = Integer.parseInt(description.substring( (description.indexOf("allowance:")+10), description.indexOf(";" , (description.indexOf("allowance:")+10) )) );
+        Lease lease = new Lease(due, length, monthly, allowance);
+
+        double usage = Double.parseDouble(description.substring( (description.indexOf("mile/unit:")+10), description.indexOf(";" , (description.indexOf("mile/unit:")+10) )));
+        String fuel =  description.substring( (description.indexOf("type:")+5), description.indexOf(";" , (description.indexOf("type:")+5) ));
+        //System.out.println(fuel + " e? " + (fuel == "electric"));
+        if (fuel.equals("electric")) 
+        {
+            double charger = Double.parseDouble(description.substring( (description.indexOf("charger:")+8), description.indexOf(";" , (description.indexOf("charger:")+8) )));
+            Fuel fuelCost = new Fuel(usage, charger);
+            return new Vehicle(name, fuelCost, lease);
+        }
+
+        Fuel fuelCost = new Fuel(usage);
+	    return new Vehicle(name, fuelCost, lease);
 	}
 
     /* 
@@ -199,12 +219,13 @@ public class LeasingCost {
      *     java LeasingCost vehicles.txt 3.85 11.0
      **/
 	public static void main (String[] args) {
+        
         String filename         = args[0];
-        double gasPrice 		= Double.parseDouble( args[1] );
-		double electricityPrice = Double.parseDouble( args[2] );
+        //double gasPrice 		= Double.parseDouble( args[1] );
+		// double electricityPrice = Double.parseDouble( args[2] );
 
 		Vehicle[] vehicles = createAllVehicles(filename); 
-		computeCO2EmissionsAndCost(vehicles, gasPrice, electricityPrice);
+		// computeCO2EmissionsAndCost(vehicles, gasPrice, electricityPrice);
 
 		for ( Vehicle v : vehicles ) 
             System.out.println(v.toString());

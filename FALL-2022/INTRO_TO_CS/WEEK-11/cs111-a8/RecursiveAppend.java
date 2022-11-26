@@ -12,7 +12,7 @@ public class RecursiveAppend {
     public static String appendNTimes (String original, int n) {
 
 	// WRITE YOUR CODE HERE
-    if(n==0) return "";
+    if(n==0) return original;
     return original+appendNTimes(original, n-1);
 
     }
@@ -21,7 +21,9 @@ public class RecursiveAppend {
         
 
 	// WRITE TEST CASES HERE to test your method
-        StdOut.println(appendNTimes("b", 2));
+        StdOut.println(appendNTimes("cat", 0));
+        StdOut.println(appendNTimes("cat", 1));
+        StdOut.println(appendNTimes("cat", 2));
 
     }
 }
