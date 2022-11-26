@@ -209,6 +209,29 @@ public class LeasingCost {
 	public static void computeCO2EmissionsAndCost( Vehicle[] vehicles, double gasPrice, double electricityPrice ){
 	   
         // COMPLETE THIS METHOD
+        for(Vehicle v : vehicles)
+        {
+            int months = v.getLease().getLeaseLength();
+            double usage = v.getFuel().getUsage();
+            double mileageAllowance = v.getLease().getMileageAllowance();
+            double co2PerUnit = 8.887;
+            double fuelPrice = gasPrice;
+            double charger = 0.0;
+            if (v.getFuel().getType() == 2){
+                co2PerUnit = 0.453;
+                fuelPrice = electricityPrice;
+                charger = v.getFuel().getCharger();
+           }
+           v.setCO2Emission(computeCO2(months, usage, mileageAllowance, co2PerUnit ));
+           v.setFuelCost(computeFuelCost(months, usage, mileageAllowance, fuelPrice));
+
+            double due = v.getLease().getDueAtSigning();
+            double monthlyCost = v.getLease().getMonthlyCost();
+            double leaseCost = computeLeaseCost(due, months, monthlyCost);
+            
+            v.setTotalCost(monthlyCost + leaseCost + v.getFuelCost() + charger);
+            
+        }
     	}
 
 
@@ -221,11 +244,11 @@ public class LeasingCost {
 	public static void main (String[] args) {
         
         String filename         = args[0];
-        //double gasPrice 		= Double.parseDouble( args[1] );
-		// double electricityPrice = Double.parseDouble( args[2] );
+        double gasPrice 		= Double.parseDouble( args[1] );
+		double electricityPrice = Double.parseDouble( args[2] );
 
 		Vehicle[] vehicles = createAllVehicles(filename); 
-		// computeCO2EmissionsAndCost(vehicles, gasPrice, electricityPrice);
+		computeCO2EmissionsAndCost(vehicles, gasPrice, electricityPrice);
 
 		for ( Vehicle v : vehicles ) 
             System.out.println(v.toString());
