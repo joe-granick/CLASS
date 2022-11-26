@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://ds.cs.rutgers.edu/assignment-conway-game-of-life/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Data Structures</title>
+        <link rel="stylesheet" href="./Data Structures_files/style.css">
+   <link rel="dns-prefetch" href="https://maps.googleapis.com/">
+<link rel="dns-prefetch" href="https://wordpress.cs.rutgers.edu/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ds.cs.rutgers.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.12"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Data Structures_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="theme-style-css" href="./Data Structures_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-style-override-css" href="./Data Structures_files/override.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Data Structures_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Data Structures_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-fontawesome-css" href="./Data Structures_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-genericons-css" href="./Data Structures_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Data Structures_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Data Structures_files/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Data Structures_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./Data Structures_files/frontend.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-5-all-css" href="./Data Structures_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="./Data Structures_files/v4-shims.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="./Data Structures_files/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-2804-css" href="./Data Structures_files/post-2804.css" type="text/css" media="all">
+<link rel="stylesheet" id="authorizer-public-css-css" href="./Data Structures_files/authorizer-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Data Structures_files/css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var OnePress_Plus = {"ajax_url":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","browser_warning":" Your browser does not support the video tag. I suggest you upgrade your browser."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/v4-shims.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var auth = {"wpLoginUrl":"https:\/\/ds.cs.rutgers.edu\/wp-login.php?redirect_to=%2Fassignment-conway-game-of-life%2F","publicWarning":"","anonymousNotice":"Notice: You are browsing this site anonymously, and only have access to a portion of its content.","logIn":"Log In"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/authorizer-public.js.download"></script>
+<link rel="https://api.w.org/" href="https://ds.cs.rutgers.edu/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ds.cs.rutgers.edu/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ds.cs.rutgers.edu/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.4.12">
+<link rel="canonical" href="https://ds.cs.rutgers.edu/assignment-conway-game-of-life/">
+<link rel="shortlink" href="https://ds.cs.rutgers.edu/?p=2804">
+<link rel="alternate" type="application/json+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-conway-game-of-life%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-conway-game-of-life%2F&amp;format=xml">
+<script src="./Data Structures_files/saved_resource" type="text/javascript"></script>
+<!-- teachPress -->
+<script type="text/javascript" src="./Data Structures_files/frontend.js.download"></script>
+<link type="text/css" href="./Data Structures_files/teachpress_front.css" rel="stylesheet">
+<!-- END teachPress -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="32x32">
+<link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="192x192">
+<link rel="apple-touch-icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<meta name="msapplication-TileImage" content="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<style type="text/css">/** Mega Menu CSS: fs **/</style>
+
+    <script type="text/javascript" charset="UTF-8" src="./Data Structures_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Data Structures_files/util.js.download"></script></head>
+    <body data-elementor-device-mode="desktop">
+                <a class="sas-skip-to-content sas-link" href="https://ds.cs.rutgers.edu/assignment-conway-game-of-life/#sas-content">Skip to Main Content</a>
+        <input type="checkbox" class="sas-sidenav-toggle" id="sas-sidenav-toggle">
+        <label for="sas-sidenav-toggle" class="sas-sidenav-label" role="button" aria-label="Toggle Navigation Sidebar">
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+        </label>
+        <nav class="sas-sidenav" aria-label="Primary Navigation">
+                
+            <ul class="sas-ul sas-links-tree">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li id="menu-item-291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="sas-page">
+                        <div class="sas-top-links">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://www.rutgers.edu/">Rutgers Home</a>
+                </li>
+                
+    <li id="menu-item-1267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1267 sas-item"><a href="http://sas.rutgers.edu/" class="sas-link">SAS</a></li>
+<li id="menu-item-1268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1268 sas-item"><a href="http://cs.rutgers.edu/" class="sas-link">CS</a></li>
+
+            </ul>
+        
+                    <div class="sas-search">
+                            
+    <form role="search" method="get" action="https://ds.cs.rutgers.edu/">
+        <input class="sas-search-text" type="text" value="" name="s" placeholder="Search ..." aria-label="Search Query">
+    </form>
+
+                    </div>
+                </div>
+            </div>
+
+                        <header>
+                <div class="sas-banner">
+                    <div class="sas-container">
+                        <div role="img" aria-label="School of Arts and Sciences Logo">
+                            <a href="https://sas.rutgers.edu/" aria-label="School of Arts and Sciences">
+                            <img class="sas-logo sas-logo-big" src="./Data Structures_files/red_banner.png" alt="School of Arts and Sciences Logo">
+                            <img class="sas-logo sas-logo-small" src="./Data Structures_files/sas_red_header_MOBILE.png" alt="School of Arts and Sciences Logo">
+                            </a>
+                        </div>
+                        <h1 class="sas-title">
+                            <a class="sas-link" href="https://ds.cs.rutgers.edu/" aria-label="">Data Structures</a>
+                        </h1>
+                        <h2 class="sas-tagline">
+                           Computer Science Department                        </h2>
+                    </div>
+                </div>
+            </header>
+
+                        <nav class="sas-nav" aria-label="Primary Navigation">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+                </div>
+            </nav>
+
+            <main class="sas-content" id="sas-content">
+                <div class="sas-container">
+                        
+    <article class="sas-post">		<div data-elementor-type="wp-post" data-elementor-id="2804" class="elementor elementor-2804" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-80a7e1b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="80a7e1b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-9d7b61e elementor-column elementor-col-100 elementor-top-column" data-id="9d7b61e" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8fa4efd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8fa4efd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-8029377 elementor-column elementor-col-100 elementor-top-column" data-id="8029377" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-dfa1af3 elementor-widget elementor-widget-text-editor" data-id="dfa1af3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Conway Game of Life – 100 course points</h3><p><span style="font-weight: 400">The purpose of this assignment is to practice your understanding of &nbsp;2D arrays and union-find.</span></p><p><span style="color: #800000"><strong><span style="color: #000000">Start your assignment early!</span> </strong></span>You need time to understand the assignment and to answer the many questions that will arise as you read the description and the code provided.</p><p>Refer to our Programming <a href="https://ds.cs.rutgers.edu/assignment-faq/">Assignments FAQ</a> for instructions on how to install VSCode, how to use the command line and how to submit your assignments.</p><p><a href="https://youtu.be/LiwzTpcfq4E">See this video on how to submit into Autolab.</a></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2be9c76 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2be9c76" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-80f825d elementor-column elementor-col-100 elementor-top-column" data-id="80f825d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1a1aa37 elementor-widget elementor-widget-text-editor" data-id="1a1aa37" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Overview</h3><p><span style="font-weight: 400"><a href="https://en.wikipedia.org/wiki/Conway&#39;s_Game_of_Life">Conway Game of Life</a> is a cellular discrete model of computation devised by John Horton Conway.&nbsp;</span><span style="font-weight: 400">The game consists of a game board (grid) of <em><strong>n</strong> x <strong>m&nbsp;</strong></em>cells, each in one of two states, <em>alive</em> or <em>dead</em>.</span></p><p><span style="font-weight: 400">The game starts with an initial pattern, then it will change what cells are alive or dead from one generation to the next depending on a set of rules. As the Game of Life continues, the game will keep making a new generation (based on the preceding one) until it reaches one of three states.</span></p><h3>Cells</h3><p>Each cell can be in one of two states, alive or dead, and it has 8 neighboring cells which are the cells that are horizontally, vertically, or diagonally adjacent.&nbsp;The figure below exemplifies neighboring cells on a game board of 4 x 4 cells.</p></div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-4f076bf elementor-widget elementor-widget-image" data-id="4f076bf" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="768" height="228" src="./Data Structures_files/Screen-Shot-2022-09-16-at-3.52.21-PM-768x228.png" class="attachment-medium_large size-medium_large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-16-at-3.52.21-PM-768x228.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-16-at-3.52.21-PM-300x89.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-16-at-3.52.21-PM-1024x304.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-16-at-3.52.21-PM.png 1027w" sizes="(max-width: 768px) 100vw, 768px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3fc791c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3fc791c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-05e1bd5 elementor-column elementor-col-100 elementor-top-column" data-id="05e1bd5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-dc14b42 elementor-widget elementor-widget-text-editor" data-id="dc14b42" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Rules of the Game</h3><p>The game starts with a initial set of alive cells (this is the first generation). The next generation evolves from applying the following rules simultaneously to <span style="text-decoration: underline">every</span> cell on the game board, i.e. births and deaths happen simultaneously. Afterwards, the rules are iteratively applied to create future generations. Each generation depends exclusively on the preceding one.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ae8e2f1 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ae8e2f1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2752f3f elementor-column elementor-col-50 elementor-top-column" data-id="2752f3f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-349d7d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="349d7d4" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2231f9e elementor-column elementor-col-50 elementor-inner-column" data-id="2231f9e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-31b8ab1 elementor-widget elementor-widget-text-editor" data-id="31b8ab1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4>Rule 1</h4><p><span style="font-weight: 400">Alive cells with no neighbors or one neighbor die of loneliness.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-e7782cc elementor-column elementor-col-50 elementor-inner-column" data-id="e7782cc" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-516a6b5 elementor-widget elementor-widget-image" data-id="516a6b5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="321" height="338" src="./Data Structures_files/gol-1.gif" class="attachment-full size-full" alt="">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-a0e9d51 elementor-widget elementor-widget-spacer" data-id="a0e9d51" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-2f32a28 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="2f32a28" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2ab60a6 elementor-column elementor-col-50 elementor-inner-column" data-id="2ab60a6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1e4ac01 elementor-widget elementor-widget-text-editor" data-id="1e4ac01" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4>Rule 3</h4><p><span style="font-weight: 400">Alive cells with two or three neighbors survive.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-21c4fc4 elementor-column elementor-col-50 elementor-inner-column" data-id="21c4fc4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e831979 elementor-widget elementor-widget-image" data-id="e831979" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="314" height="338" src="./Data Structures_files/gol-3.gif" class="attachment-large size-large" alt="">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-b6c6247 elementor-column elementor-col-50 elementor-top-column" data-id="b6c6247" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-959f1ca elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="959f1ca" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-d848185 elementor-column elementor-col-50 elementor-inner-column" data-id="d848185" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b1242cb elementor-widget elementor-widget-text-editor" data-id="b1242cb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4>Rule 2</h4><p><span style="font-weight: 400">Dead cells with exactly three neighbors become alive by reproduction.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-64769ba elementor-column elementor-col-50 elementor-inner-column" data-id="64769ba" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5698092 elementor-widget elementor-widget-image" data-id="5698092" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="317" height="338" src="./Data Structures_files/gol-2.gif" class="attachment-large size-large" alt="">											<figcaption class="widget-image-caption wp-caption-text">Notice the center cell comes to life but the other three die from Rule 1.</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<div class="elementor-element elementor-element-d392274 elementor-widget elementor-widget-spacer" data-id="d392274" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="elementor-element elementor-element-0542701 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="0542701" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-0371004 elementor-column elementor-col-50 elementor-inner-column" data-id="0371004" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3d81046 elementor-widget elementor-widget-text-editor" data-id="3d81046" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h4>Rule 4</h4><p><span style="font-weight: 400">Alive cells with four or more neighbors die of overpopulation.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-15c75c2 elementor-column elementor-col-50 elementor-inner-column" data-id="15c75c2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-904d885 elementor-widget elementor-widget-image" data-id="904d885" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="316" height="338" src="./Data Structures_files/gol-4.gif" class="attachment-large size-large" alt="">											<figcaption class="widget-image-caption wp-caption-text">Notice the top right cell has four neighbors and dies from over population, the topmost dies from Rule 1, the other three from the square survive from Rule 3, and two cells come to life from Rule 2.</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-81a7de7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="81a7de7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-35f1833 elementor-column elementor-col-100 elementor-top-column" data-id="35f1833" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-74df142 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="74df142" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-9380ce7 elementor-column elementor-col-50 elementor-inner-column" data-id="9380ce7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-a77cfb9 elementor-widget elementor-widget-text-editor" data-id="a77cfb9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #000000">States for the Game</span></h3><p><span style="font-weight: 400">There are three states that the game can reach in regards to the rules provided.</span></p><ol><li style="font-weight: 400"><span style="font-weight: 400">There are no more living cells for the next generation.</span></li><li style="font-weight: 400"><span style="font-weight: 400">There are living cells, but the next generation is the same as the last (stable game).</span></li><li style="font-weight: 400"><span style="font-weight: 400">The next generation infinitely cycles throughout the game.</span></li></ol><p><span style="font-weight: 400">Note that there are more scenarios for states 2 and 3, these are just one example for each.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-6c9d3cb elementor-column elementor-col-50 elementor-inner-column" data-id="6c9d3cb" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-81c2e8c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="81c2e8c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fbf714f elementor-column elementor-col-33 elementor-inner-column" data-id="fbf714f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-2589b92 elementor-widget elementor-widget-image" data-id="2589b92" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="482" height="531" src="./Data Structures_files/GOL1.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/08/GOL1.png 482w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/08/GOL1-272x300.png 272w" sizes="(max-width: 482px) 100vw, 482px">											<figcaption class="widget-image-caption wp-caption-text">State 1: No Living Cells</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-610fa42 elementor-column elementor-col-33 elementor-inner-column" data-id="610fa42" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-8173c4c elementor-widget elementor-widget-image" data-id="8173c4c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="475" height="530" src="./Data Structures_files/GOL2.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/08/GOL2.png 475w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/08/GOL2-269x300.png 269w" sizes="(max-width: 475px) 100vw, 475px">											<figcaption class="widget-image-caption wp-caption-text">State 2: Stable Generation</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-d6d2cfe elementor-column elementor-col-33 elementor-inner-column" data-id="d6d2cfe" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-11eee23 elementor-widget elementor-widget-image" data-id="11eee23" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="315" height="336" src="./Data Structures_files/gol-5.gif" class="attachment-large size-large" alt="">											<figcaption class="widget-image-caption wp-caption-text">State 3: Infinite Generations</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ef4a092 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ef4a092" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5421d1e elementor-column elementor-col-100 elementor-top-column" data-id="5421d1e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6128703 elementor-widget elementor-widget-text-editor" data-id="6128703" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Implementation</h3><h3><b>Overview of files provided</b></h3><ul><li><b>GameOfLife class&nbsp;</b><span style="font-weight: 400">&nbsp;holds all of the methods to be written that will then be tested when running the game. Edit the empty methods with you solution, but<strong> DO NOT edit the provided ones or the methods signatures of any method</strong>. This is the file you submit.&nbsp;</span><b><br></b></li><li style="font-weight: 400"><span style="font-weight: 600">WeightedQuickUnionUF&nbsp;</span><span style="font-weight: 400">class, which houses the union-find data type. <b>Do not edit this class</b>. This newly learned algorithm holds two useful methods to operate on a given data structure. The <code>find</code> method will return a parent index of an array given the element you are looking for. The <code>union</code> method finds the parent of two elements given and will determine how to join the two elements together. You will need to utilize an instance of this class in the GameOfLife class to compute the number of communities of cells. </span></li><li><strong>Driver</strong> class, which is used to launch the Game Of Life and test the various methods. You can run the driver by simply hitting the run button above the main method or clicking the run button in the top right of the IDE (recommended). Alternatively you can type in java Driver in the IDE terminal (just make sure you are in the correct directory with the ls command and make sure everything is compiled, look at “Executing And Debugging” section below for more info). <span style="font-weight: 400">Feel free to edit this class, as it is provided only to help you test. It is not submitted and it is not used to grade your code.</span></li><li><strong>Board, Button, Page, Rectangle, Text, and StdDraw</strong>&nbsp;classes hold various methods to support the interactive driver.</li><li style="font-weight: 400"><span style="font-weight: 600">StdIn </span><span style="font-weight: 400">and </span><span style="font-weight: 600">StdOut</span><span style="font-weight: 400">, which are used by the driver. </span><b>Do not edit these classes.</b><span style="font-weight: 400">.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Multiple text files (grid0.txt, grid1.txt,&nbsp;grid2.txt, grid3.txt, grid4.txt, grid5.txt, grid6.txt, grid7.txt) which contain the initial pattern, and are read by the driver as test cases. Feel free to edit them or even make new ones to help test your code. They are not submitted.</span></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-5365e11 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5365e11" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-619725f elementor-column elementor-col-100 elementor-top-column" data-id="619725f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-10d1bca elementor-widget elementor-widget-text-editor" data-id="10d1bca" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>GameOfLife.java</h3><ul><li>DO NOT add new import statements.</li><li>DO NOT change any of the method’s signatures.</li></ul><p><b>Methods to be implemented by you:</b></p><h3><b><span style="color: #993300">1. GameOfLife – One argument constructor</span></b></h3><ul><li class="c3 li-bullet-0"><span class="c4 c6">This method builds your game board (grid) from the input file (initial game pattern).</span></li><li class="c3 li-bullet-0">You have been provided some input files to test this method (input1.txt, input2.txt, input3.txt). The format is as follows:<ul><li style="font-weight: 400"><span style="font-weight: 400">One line containing the number of rows in the board game</span></li><li style="font-weight: 400"><span style="font-weight: 400">One line containing the number of columns in the board game </span></li><li style="font-weight: 400"><span style="font-weight: 400">Several lines (one for each row) containing the cell state (false for dead, true for alive) for each column in the board, space separated</span></li></ul></li></ul><p>Use the <strong>StdIn</strong> library to read from a file:<code><br>
+</code></p><ul><li><strong><code>StdIn.setFile(filename)</code></strong> opens a file to be read</li><li><strong><code>StdIn.readInt()</code></strong> reads the next integer value from the opened file (weather the value is in the current line or in the next line)</li><li><code><strong>StdIn.readBoolean()</strong></code> read the next boolean value from the opened file (weather the value is in the current line or in the next line)</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7ea2ee4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7ea2ee4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f210da6 elementor-column elementor-col-50 elementor-top-column" data-id="f210da6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bd2f18a elementor-widget elementor-widget-text-editor" data-id="bd2f18a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #800000"><b>2. getCellState</b></span></h3><p>Given two integers&nbsp;representing the cell row and column this method returns true if the cell is alive and false if the cell is dead.</p><p>Test this method using the driver:</p><ul><li>upon clicking the button <strong>Cell State</strong>&nbsp;you will be prompted to select a cell</li><li>select a cell by clicking in one square</li><li>the selected cell will light up red and the driver will state whether the cell is living or dead.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f4ea793 elementor-column elementor-col-50 elementor-top-column" data-id="f4ea793" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f370fdc elementor-widget elementor-widget-image" data-id="f370fdc" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="512" height="562" src="./Data Structures_files/g2.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g2.png 512w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g2-273x300.png 273w" sizes="(max-width: 512px) 100vw, 512px">											<figcaption class="widget-image-caption wp-caption-text">Example with default constructor</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6165afe elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6165afe" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a93793f elementor-column elementor-col-50 elementor-top-column" data-id="a93793f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3627070 elementor-widget elementor-widget-text-editor" data-id="3627070" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>3. isAlive</b></span></h3><p>Returns true or false based on whether or not there are living cells within the board (grid)</p><p>Test this method using the driver.&nbsp;Click on the <strong>Is Alive</strong>&nbsp;button and the driver will display whether or not there are living cells on the board game.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-87bb2b1 elementor-column elementor-col-50 elementor-top-column" data-id="87bb2b1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-cf8fb18 elementor-widget elementor-widget-image" data-id="cf8fb18" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="520" height="571" src="./Data Structures_files/g3.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g3.png 520w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g3-273x300.png 273w" sizes="(max-width: 520px) 100vw, 520px">											<figcaption class="widget-image-caption wp-caption-text">Example with default constructor</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-9e52fde elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9e52fde" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-849f495 elementor-column elementor-col-50 elementor-top-column" data-id="849f495" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4f7f329 elementor-widget elementor-widget-text-editor" data-id="4f7f329" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>4. numOfAliveNeighbors</b></span></h3><p>Given two integers&nbsp;representing the cell row and column this method returns the cell’s number of alive neighbors of a maximum of 8 neighbors.</p><p>Test this method using the driver:</p><ul><li>upon clicking the button <strong>Alive Neighbors</strong>&nbsp;you will be prompted to select a cell</li><li>select a cell by clicking in one square</li><li>the selected cell will light up red and the driver will state the total number of alive cells around the selected cell</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-de77270 elementor-column elementor-col-50 elementor-top-column" data-id="de77270" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-48c2d16 elementor-widget elementor-widget-image" data-id="48c2d16" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="692" height="737" src="./Data Structures_files/g4.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g4.png 692w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g4-282x300.png 282w" sizes="(max-width: 692px) 100vw, 692px">											<figcaption class="widget-image-caption wp-caption-text">Example with default constructor</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-be20249 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="be20249" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-7f0c099 elementor-column elementor-col-100 elementor-top-column" data-id="7f0c099" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3ec0d3e elementor-widget elementor-widget-text-editor" data-id="3ec0d3e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>5. computeNewGrid</b></span></h3><p>This is where you will be using the rules of the game (stated above) to compute the next generation of cells.</p><ul><li>create a new board (grid) to be returned, representing the new generation</li><li>for each cell, use the numOfAliveNeighbors method to determine how many cells are alive around a cell</li><li>then using the number of alive neighbors with the rules of the game determine if the cell will be set to be alive or dead in the new grid</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-02afeda elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="02afeda" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-49be7ec elementor-column elementor-col-50 elementor-top-column" data-id="49be7ec" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0594200 elementor-widget elementor-widget-text-editor" data-id="0594200" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>6. nextGeneration</b></span></h3><p>Update the board (grid) with the board returned by the computeNewGrid method.</p><p>Test this and the computeNewGrid methods using the driver by&nbsp;clicking the <strong>Next Generation</strong>&nbsp;button.</p><p>The driver will state <strong>Next generation calculated</strong>.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-8e4f4ac elementor-column elementor-col-50 elementor-top-column" data-id="8e4f4ac" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-8b4e80c elementor-widget elementor-widget-image" data-id="8b4e80c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="532" height="587" src="./Data Structures_files/g6.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g6.png 532w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/g6-272x300.png 272w" sizes="(max-width: 532px) 100vw, 532px">											<figcaption class="widget-image-caption wp-caption-text">Example with default constructor</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-fce6336 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="fce6336" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f9e4010 elementor-column elementor-col-50 elementor-top-column" data-id="f9e4010" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-626d58a elementor-widget elementor-widget-text-editor" data-id="626d58a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>7. nextGeneration – One argument</b></span></h3><p>The input integer parameter represents the number of generations to compute (fast forward).</p><p>Test this methods using the driver:&nbsp;</p><ul><li>upon clicking the <strong>Next N Generations</strong>&nbsp;button you will be prompted to enter a number</li><li>enter a number and click the <strong>Submit</strong> button</li><li>the driver will state that the board has evolved the number of generations requested</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-6079901 elementor-column elementor-col-50 elementor-top-column" data-id="6079901" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-d396947 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="d396947" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4ad8493 elementor-column elementor-col-50 elementor-inner-column" data-id="4ad8493" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-809034c elementor-widget elementor-widget-image" data-id="809034c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+							<figure class="wp-caption">
+										<img width="511" height="561" src="./Data Structures_files/Screen-Shot-2022-09-17-at-3.33.42-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-17-at-3.33.42-PM.png 511w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-17-at-3.33.42-PM-273x300.png 273w" sizes="(max-width: 511px) 100vw, 511px">											<figcaption class="widget-image-caption wp-caption-text">Example with default constructor</figcaption>
+										</figure>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-5cc9770 elementor-column elementor-col-50 elementor-inner-column" data-id="5cc9770" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-94c5916 elementor-widget elementor-widget-image" data-id="94c5916" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="508" height="557" src="./Data Structures_files/Screen-Shot-2022-09-17-at-3.33.56-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-17-at-3.33.56-PM.png 508w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-17-at-3.33.56-PM-274x300.png 274w" sizes="(max-width: 508px) 100vw, 508px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-58773c1 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="58773c1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-bbac05c elementor-column elementor-col-50 elementor-top-column" data-id="bbac05c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-d140f17 elementor-widget elementor-widget-text-editor" data-id="d140f17" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>8. numberOfCommunities</b></span></h3><p>This method computes and returns the number of separate communities of cells in the board. A community is made of connected cells.</p><div><div>Recall that Union-Find keeps track of connected components.&nbsp;In this assignment each connected component is a community of cells (all&nbsp;the cells in the community are connected).</div><ul><li>Cells from separate communities are not connected.</li></ul><p>In algorithm Weighted Quick Union UF each community (connected component) is a tree. The community’s representative is the root of the tree.</p><ul><li>To connect two cells use the <em>union</em> method</li><li>To find the root of the tree a cell belongs to use the <em>find</em> method</li><li>To find the number of communities count the number of unique roots of trees</li></ul></div><p>Test this methods using the driver by clicking the <strong>Communities</strong>&nbsp;button.</p><p>The driver will state the number of communities currently on the board.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-c6aa5f8 elementor-column elementor-col-50 elementor-top-column" data-id="c6aa5f8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-5965214 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="5965214" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-099fd0b elementor-column elementor-col-100 elementor-inner-column" data-id="099fd0b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e30d5e0 elementor-widget elementor-widget-image" data-id="e30d5e0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="623" height="700" src="./Data Structures_files/GOL7.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/GOL7.png 623w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/GOL7-267x300.png 267w" sizes="(max-width: 623px) 100vw, 623px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-f5a4d85 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f5a4d85" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-798f7eb elementor-column elementor-col-100 elementor-top-column" data-id="798f7eb" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-65bce9c elementor-widget elementor-widget-text-editor" data-id="65bce9c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Find below the expected outputs after going through one generation of grids 1-6</h3></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-9c4c996 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9c4c996" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fd3f329 elementor-column elementor-col-100 elementor-top-column" data-id="fd3f329" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-d525523 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="d525523" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-70ab20e elementor-column elementor-col-50 elementor-inner-column" data-id="70ab20e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b0ec976 elementor-widget elementor-widget-image" data-id="b0ec976" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="590" height="688" src="./Data Structures_files/grid-1.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid-1.png 590w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid-1-257x300.png 257w" sizes="(max-width: 590px) 100vw, 590px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-7e2e3ac elementor-column elementor-col-50 elementor-inner-column" data-id="7e2e3ac" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-23c77fe elementor-widget elementor-widget-image" data-id="23c77fe" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="558" height="687" src="./Data Structures_files/grid-2.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid-2.png 558w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid-2-244x300.png 244w" sizes="(max-width: 558px) 100vw, 558px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-00f0dd9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="00f0dd9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-093b913 elementor-column elementor-col-50 elementor-inner-column" data-id="093b913" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7185779 elementor-widget elementor-widget-image" data-id="7185779" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="559" height="684" src="./Data Structures_files/grid3.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid3.png 559w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid3-245x300.png 245w" sizes="(max-width: 559px) 100vw, 559px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-be9e037 elementor-column elementor-col-50 elementor-inner-column" data-id="be9e037" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-87fd92f elementor-widget elementor-widget-image" data-id="87fd92f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="540" height="690" src="./Data Structures_files/grid4.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid4.png 540w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid4-235x300.png 235w" sizes="(max-width: 540px) 100vw, 540px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d5d3b33 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="d5d3b33" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3f5afb7 elementor-column elementor-col-50 elementor-inner-column" data-id="3f5afb7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5313aa9 elementor-widget elementor-widget-image" data-id="5313aa9" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="567" height="687" src="./Data Structures_files/grid5.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid5.png 567w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid5-248x300.png 248w" sizes="(max-width: 567px) 100vw, 567px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-7e7f208 elementor-column elementor-col-50 elementor-inner-column" data-id="7e7f208" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ef03865 elementor-widget elementor-widget-image" data-id="ef03865" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="539" height="672" src="./Data Structures_files/grid6.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid6.png 539w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/grid6-241x300.png 241w" sizes="(max-width: 539px) 100vw, 539px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0954a99 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0954a99" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-55b8a0b elementor-column elementor-col-100 elementor-top-column" data-id="55b8a0b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7c04421 elementor-widget elementor-widget-text-editor" data-id="7c04421" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Implementation Notes</h3><ul><li>YOU MAY only update the methods GameOfLive(String), getCellState(), isAlive(), numOfAliveNeighbors(), computeNewGrid(), nextGeneration(), nextGeneration(int), and numOfCommunities().&nbsp;</li><li>DO NOT add any instance variables to the&nbsp;GameOfLive&nbsp;class.</li><li>DO NOT add any public methods to the&nbsp;GameOfLive&nbsp;class.</li><li>YOU MAY add private methods to the&nbsp;GameOfLive&nbsp;class.&nbsp;</li><li><span style="color: #ff0000"><strong>DO NOT</strong></span> use System.exit()</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c75ad14 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c75ad14" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-385f422 elementor-column elementor-col-100 elementor-top-column" data-id="385f422" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-134ac0f elementor-widget elementor-widget-text-editor" data-id="134ac0f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>VSCode Extensions</h3><p>You can install VSCode extension packs for Java. Take a look at <a href="https://code.visualstudio.com/docs/java/java-tutorial">this tutorial</a>. We suggest:</p><ul><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Extension Pack for Java</a></li><li><a href="https://code.visualstudio.com/docs/java/java-project">Project Manager for Java</a></li><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug">Debugger for Java</a></li></ul><h3>Importing VSCode Project</h3><ol><li>Download GameOfLife.zip from <a href="https://autolab.cs.rutgers.edu/">Autolab Attachments</a>.</li><li>Unzip the file by double clicking.</li><li>Open VSCode<ul><li>Import the folder to a workspace through&nbsp;<strong>File</strong> &gt; <b>Open</b></li></ul></li></ol><h3>Executing and Debugging</h3><ul><li>You can run your program through VSCode or you can use the Terminal to compile and execute. We suggest running through VSCode because it will give you the option to debug.</li><li><a href="https://code.visualstudio.com/docs/java/java-debugging">How to debug your code</a></li><li>If you choose the Terminal:<ul><li>first navigate to <strong>GameOfLife</strong> directory/folder<ul><li>to compile: &nbsp;<strong>javac -d bin src/conwaygame/*.java</strong></li><li>to execute: <strong>java -cp bin conwaygame.Driver</strong></li></ul></li></ul></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d1b173c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d1b173c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-0cc9ebf elementor-column elementor-col-100 elementor-top-column" data-id="0cc9ebf" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bf2241f elementor-widget elementor-widget-text-editor" data-id="bf2241f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Before submission</h3><p><strong>Collaboration policy.</strong> Read our collaboration policy <a href="https://ds.cs.rutgers.edu/#academic-integrity">here</a>.</p><p><strong>Submitting the assignment.&nbsp;</strong>Submit <em>GameOfLife.java</em>&nbsp;separately via the web submission system called Autolab. To do this, click the <em>Assignments</em> link from the course website; click the <em>Submit</em> link for that assignment.</p><h3>Getting help</h3><p>If anything is unclear, don’t hesitate to drop by office hours or post a question on Piazza.</p><ul><li>Find instructors office hours&nbsp;<a href="https://ds.cs.rutgers.edu/staff/"><em>here</em></a>&nbsp;&nbsp;</li><li>Find tutors office hours on Canvas -&gt; Tutoring</li><li>Find head TAs office hours&nbsp;<a href="https://ds.cs.rutgers.edu/staff/"><em>here</em></a>&nbsp;</li><li>In addition to office hours we have the <a href="https://resources.cs.rutgers.edu/docs/rooms-equipment/cave/">CAVE</a> (Collaborative Academic Versatile Environment), a community space staffed with lab assistants which are undergraduate students further along the CS major to answer questions.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c7da9b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c7da9b3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e01ccb9 elementor-column elementor-col-100 elementor-top-column" data-id="e01ccb9" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e758aa7 elementor-widget elementor-widget-text-editor" data-id="e758aa7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Problem by Seth Kelly and Maxwell Goldberg</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</article>
+
+                </div>
+            </main>
+            <footer>
+                                <div class="sas-info">
+                    <div class="sas-container">
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Connect with Rutgers</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/">Rutgers Home</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/news-center/rutgers-today">Rutgers Today</a></li>
+                                <li class="sas-item"><a class="sas-link" href="https://my.rutgers.edu/portal">myRutgers</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://scheduling.rutgers.edu/calendar.shtml">Academic Calendar</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://ruevents.rutgers.edu/events/">Calendar of Events</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/news-a-events">SAS Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Explore SAS</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/departments-a-degree-granting-programs">Departments &amp; Degree-Granting Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/other-instructional-programs">Other Instructional Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasundergrad.rutgers.edu/index.php/academics/requirements/list-of-majors-and-minors">Majors &amp; Minors</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/for-faculty/795-research-programs-centers-and-institutes">Research Programs, Centers, &amp; Institutes</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasip.rutgers.edu/">International Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://lifesci.rutgers.edu/">Division of Life Sciences</a></li>
+                            </ul>
+                        </div>
+                            
+                            <div class="sas-links-section">                    <h2 class="sas-links-title">Explore CS</h2>                    <ul class="sas-ul sas-links-list">                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/about/employment">We are Hiring!</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/research/computer-and-network-systems-list">Research</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/news">News</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">Events</a></li><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">                        </a><li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events"></a><a class="sas-link" href="https://resources.cs.rutgers.edu/">Resources</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/search">Search CS</a></li>                    </ul>                </div>            
+            
+            
+                    
+                    </div>
+                </div>
+
+                                <nav class="sas-bot-links" aria-label="Secondary Navigation">
+                    <div class="sas-container">
+                            
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    
+            </ul>
+        
+                    </div>
+                </nav>
+
+                                <div role="contentinfo" class="sas-copyright">
+                    <div class="sas-container">
+                        <a class="sas-link sas-to-top" href="https://ds.cs.rutgers.edu/assignment-conway-game-of-life/#">Back to Top</a>
+                        <p class="sas-copyright-p">
+                          Copyright 2020, Rutgers, The State University of New Jersey. All rights reserved.<br>
+                          Rutgers is an equal access/equal opportunity
+                          institution. Individuals with disabilities are
+                          encouraged to direct suggestions, comments, or
+                          complaints concerning any accessibility issues
+                          with Rutgers web sites to: <a class="sas-link" href="mailto:accessibility@rutgers.edu">accessibility@rutgers.edu</a> or complete the <a class="sas-link" href="https://oit.rutgers.edu/accessibility/barrierform">Report Accessibility Barrier or Provide Feedback Form</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+        <div aria-hidden="true">
+                <link rel="stylesheet" id="academicons-css" href="./Data Structures_files/academicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Data Structures_files/font-awesome.min(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./Data Structures_files/js"></script>
+<script type="text/javascript" src="./Data Structures_files/override.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/owl.carousel.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/slider.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/hoverIntent.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/maxmegamenu.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/public.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/frontend-modules.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery.sticky.min.js.download"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","nonce":"dd8272ac9e","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/dialog.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/waypoints.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/swiper.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/share-link.min.js.download"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","downloadImage":"Download image"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.8","urls":{"assets":"https:\/\/wordpress.cs.rutgers.edu\/ds-cs-rutgers-edu\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":2804,"title":"Assignment%20Conway%27s%20Game%20of%20Life%20%E2%80%93%20Data%20Structures","excerpt":"","featuredImage":false}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js(1).download"></script>
+
+        </div><span id="elementor-device-mode" class="elementor-screen-only"></span>
+    
+
+</body></html>

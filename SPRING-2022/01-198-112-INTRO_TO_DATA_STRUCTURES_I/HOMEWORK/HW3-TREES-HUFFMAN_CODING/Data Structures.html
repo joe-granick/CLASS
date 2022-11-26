@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://ds.cs.rutgers.edu/assignment-huffman-coding/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Data Structures</title>
+        <link rel="stylesheet" href="./Data Structures_files/style.css">
+   <link rel="dns-prefetch" href="https://maps.googleapis.com/">
+<link rel="dns-prefetch" href="https://wordpress.cs.rutgers.edu/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ds.cs.rutgers.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.12"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Data Structures_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="theme-style-css" href="./Data Structures_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-style-override-css" href="./Data Structures_files/override.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Data Structures_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Data Structures_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-fontawesome-css" href="./Data Structures_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-genericons-css" href="./Data Structures_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Data Structures_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Data Structures_files/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Data Structures_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./Data Structures_files/frontend.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-5-all-css" href="./Data Structures_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="./Data Structures_files/v4-shims.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="./Data Structures_files/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-2202-css" href="./Data Structures_files/post-2202.css" type="text/css" media="all">
+<link rel="stylesheet" id="authorizer-public-css-css" href="./Data Structures_files/authorizer-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Data Structures_files/css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var OnePress_Plus = {"ajax_url":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","browser_warning":" Your browser does not support the video tag. I suggest you upgrade your browser."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/v4-shims.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var auth = {"wpLoginUrl":"https:\/\/ds.cs.rutgers.edu\/wp-login.php?redirect_to=%2Fassignment-huffman-coding%2F","publicWarning":"","anonymousNotice":"Notice: You are browsing this site anonymously, and only have access to a portion of its content.","logIn":"Log In"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/authorizer-public.js.download"></script>
+<link rel="https://api.w.org/" href="https://ds.cs.rutgers.edu/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ds.cs.rutgers.edu/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ds.cs.rutgers.edu/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.4.12">
+<link rel="canonical" href="https://ds.cs.rutgers.edu/assignment-huffman-coding/">
+<link rel="shortlink" href="https://ds.cs.rutgers.edu/?p=2202">
+<link rel="alternate" type="application/json+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-huffman-coding%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-huffman-coding%2F&amp;format=xml">
+<script src="./Data Structures_files/saved_resource" type="text/javascript"></script>
+<!-- teachPress -->
+<script type="text/javascript" src="./Data Structures_files/frontend.js.download"></script>
+<link type="text/css" href="./Data Structures_files/teachpress_front.css" rel="stylesheet">
+<!-- END teachPress -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="32x32">
+<link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="192x192">
+<link rel="apple-touch-icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<meta name="msapplication-TileImage" content="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<style type="text/css">/** Mega Menu CSS: fs **/</style>
+
+    <script type="text/javascript" charset="UTF-8" src="./Data Structures_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Data Structures_files/util.js.download"></script></head>
+    <body data-elementor-device-mode="desktop">
+                <a class="sas-skip-to-content sas-link" href="https://ds.cs.rutgers.edu/assignment-huffman-coding/#sas-content">Skip to Main Content</a>
+        <input type="checkbox" class="sas-sidenav-toggle" id="sas-sidenav-toggle">
+        <label for="sas-sidenav-toggle" class="sas-sidenav-label" role="button" aria-label="Toggle Navigation Sidebar">
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+        </label>
+        <nav class="sas-sidenav" aria-label="Primary Navigation">
+                
+            <ul class="sas-ul sas-links-tree">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li id="menu-item-291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="sas-page">
+                        <div class="sas-top-links">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://www.rutgers.edu/">Rutgers Home</a>
+                </li>
+                
+    <li id="menu-item-1267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1267 sas-item"><a href="http://sas.rutgers.edu/" class="sas-link">SAS</a></li>
+<li id="menu-item-1268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1268 sas-item"><a href="http://cs.rutgers.edu/" class="sas-link">CS</a></li>
+
+            </ul>
+        
+                    <div class="sas-search">
+                            
+    <form role="search" method="get" action="https://ds.cs.rutgers.edu/">
+        <input class="sas-search-text" type="text" value="" name="s" placeholder="Search ..." aria-label="Search Query">
+    </form>
+
+                    </div>
+                </div>
+            </div>
+
+                        <header>
+                <div class="sas-banner">
+                    <div class="sas-container">
+                        <div role="img" aria-label="School of Arts and Sciences Logo">
+                            <a href="https://sas.rutgers.edu/" aria-label="School of Arts and Sciences">
+                            <img class="sas-logo sas-logo-big" src="./Data Structures_files/red_banner.png" alt="School of Arts and Sciences Logo">
+                            <img class="sas-logo sas-logo-small" src="./Data Structures_files/sas_red_header_MOBILE.png" alt="School of Arts and Sciences Logo">
+                            </a>
+                        </div>
+                        <h1 class="sas-title">
+                            <a class="sas-link" href="https://ds.cs.rutgers.edu/" aria-label="">Data Structures</a>
+                        </h1>
+                        <h2 class="sas-tagline">
+                           Computer Science Department                        </h2>
+                    </div>
+                </div>
+            </header>
+
+                        <nav class="sas-nav" aria-label="Primary Navigation">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+                </div>
+            </nav>
+
+            <main class="sas-content" id="sas-content">
+                <div class="sas-container">
+                        
+    <article class="sas-post">		<div data-elementor-type="wp-post" data-elementor-id="2202" class="elementor elementor-2202" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-80a7e1b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="80a7e1b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-cc85108 elementor-column elementor-col-100 elementor-top-column" data-id="cc85108" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-45d9c17 elementor-widget elementor-widget-text-editor" data-id="45d9c17" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>Huffman Coding – 100 course points</h2><p><span style="font-weight: 400">The purpose of this assignment is to practice your understanding of the tree data structure.</span></p><p><span><strong><span style="color: #800000">READ the assignment as&nbsp;<span>soon as it comes out</span>!</span></strong></span>&nbsp;<strong>You need time to understand the assignment</strong> and to answer the many questions that will arise as you read the description and the code provided.</p><p>Refer to our Programming <a href="https://ds.cs.rutgers.edu/assignment-faq/">Assignments FAQ</a> for instructions on how to install VSCode, how to use the command line and how to submit your assignments.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-b09e7cf elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="b09e7cf" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2b33c42 elementor-column elementor-col-100 elementor-top-column" data-id="2b33c42" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1a1aa37 elementor-widget elementor-widget-text-editor" data-id="1a1aa37" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>Overview</h2><p><span style="font-weight: 400">The goal of this assignment is to implement a form of </span><b>data compression</b><span style="font-weight: 400">. That is, given some data, we want to express the same information using less space. For this project, we will specifically focus on compressing text files, so we must first understand how computers represent text internally.</span></p><p><span style="font-weight: 400">Recall that computers store data as a sequence of bytes. A byte consists of eight bits, and it represents a value between 0 and 255 inclusive. To represent English text, we need a way of assigning each English letter, punctuation symbol, special character, etc. to a sequence of eight bits (a value from 0 to 255). This mapping is provided by the </span><b>ASCII encoding</b><span style="font-weight: 400">, which is shown in the table below. Notice that ASCII only uses 128 out of the 256 possible values that a byte can store.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2be9c76 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2be9c76" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-80f825d elementor-column elementor-col-100 elementor-top-column" data-id="80f825d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4f076bf elementor-widget elementor-widget-image" data-id="4f076bf" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="710" src="./Data Structures_files/asciiTable1-1024x710.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/asciiTable1-1024x710.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/asciiTable1-300x208.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/asciiTable1-768x532.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/asciiTable1.png 1336w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-897026d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="897026d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-883acb1 elementor-column elementor-col-100 elementor-top-column" data-id="883acb1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e206a0e elementor-widget elementor-widget-text-editor" data-id="e206a0e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="font-weight: 400">For instance, consider the text </span><span style="font-weight: 400">“A b ????”</span><span style="font-weight: 400">. Using the table above, we can see that this is represented as the following sequence of bytes: </span><span style="font-weight: 400">“65 32 98 32 63 63 63 63”</span><span style="font-weight: 400">. Note that the space counts as a character, and its value in the ASCII encoding is 32.</span></p><p><span style="font-weight: 400">If we write out the binary string for each character according to the table above and concatenate them together, we get </span><span style="font-weight: 400">“0100000100100000011000100010000000111111001111110011111100111111”</span><span style="font-weight: 400">. Storing our original string with the ASCII encoding requires 8*8 = 64 bits. There are 8 characters in the text “A b ????” and each character is represented by a byte that is 8 bits long.</span></p><p><span style="font-weight: 400">Now, imagine if we weren’t forced to use eight bits for every character, and we could instead use the binary encoding </span><span style="font-weight: 400">“? = 0, [space] = 10, A = 110, b = 111”</span><span style="font-weight: 400">. Then our string </span><span style="font-weight: 400">“A b ????”</span><span style="font-weight: 400"> would become </span><span style="font-weight: 400">“11010111100000”</span><span style="font-weight: 400">. This is only 14 bits, significantly smaller than the 64 bits that ASCII requires. Also notice that none of these codes are a prefix of any others, so there is no ambiguity when decoding. Here, we compressed our string by finding a different encoding for the characters that minimized the number of bits we needed to use. This is the essence of the </span><b>Huffman coding</b><span style="font-weight: 400"> algorithm, which is described in detail in the next section.</span></p><p><span style="font-weight: 400">Intuitively, not only do we want to avoid wasting space encoding characters that don’t appear very often, but we want to make sure that the characters which appear the most often receive the shortest codes. As you will see, </span><b>Huffman coding</b><span style="font-weight: 400"> is a way to do just that. </span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-825bfdc elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="825bfdc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-d0e0b4c elementor-column elementor-col-100 elementor-top-column" data-id="d0e0b4c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b61a9b7 elementor-widget elementor-widget-text-editor" data-id="b61a9b7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2><b>Huffman Coding</b></h2><p><span style="font-weight: 400"><a href="https://www.computer.org/profiles/david-huffman">Huffman</a> invented an algorithm that constructs the code called the Huffman code. <a href="https://youtu.be/mmKi13MLVq0">Click here for the intuition video.</a></span></p><h4>Algorithm to build the Huffman Tree. <span style="color: #808080">Use this algorithm in your code. <a href="https://youtu.be/qAi31QOS2Tk">Click here for video explaining how to build a tree, encode and decode</a>.</span></h4><ol><li>Start two empty queues: <em>Source</em> and <em>Target</em></li><li>Create a node for each character present in the input file, each node contains the character and its occurrence probability.&nbsp;</li><li>Enqueue the nodes in the&nbsp;<em>Source</em> queue in increasing order of occurrence probability.</li><li>Repeat until the&nbsp;<em>Source</em>&nbsp;queue is empty and the&nbsp;<em>Target</em>&nbsp;queue has only one node.<ol><li>Dequeue from either queue or both the two nodes with the smallest occurrence probability. If the front node of <em>Source</em> and <em>Target</em> have the same occurrence probability, dequeue from <em>Source</em> first.</li><li>Create a <span style="text-decoration: underline">new node</span> whose character is <em>null</em> and occurrence probability is the sum of the occurrence probabilities of the two dequeued nodes. Add the two dequeued nodes as children: the first dequeued node as the left child and the second dequeued node as the right child.</li><li>Enqueue the <span style="text-decoration: underline">new node</span> into <em>Target</em>.</li></ol></li></ol><p>&nbsp;</p><p><strong>Clarification notes:</strong></p><ul><li><strong>Step 4.1 </strong>– do the following procedure twice: compare the probability occurrences of the front nodes of <em>Source</em> and <em>Target</em>. If they are equal or if <em>Source</em> is less, dequeue <em>Source</em>. If the <em>Target</em> is less, dequeue <em>Target</em>.</li><li><strong>Step 4.2</strong> – the&nbsp;first dequeued node and second dequeued node should be left and right children respectively.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2960c63 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2960c63" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-20d8717 elementor-column elementor-col-100 elementor-top-column" data-id="20d8717" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-201758a elementor-widget elementor-widget-image" data-id="201758a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="575" src="./Data Structures_files/Screen-Shot-2021-10-15-at-7.29.13-PM-1024x575.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/Screen-Shot-2021-10-15-at-7.29.13-PM-1024x575.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/Screen-Shot-2021-10-15-at-7.29.13-PM-300x169.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/Screen-Shot-2021-10-15-at-7.29.13-PM-768x432.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2021/10/Screen-Shot-2021-10-15-at-7.29.13-PM.png 1228w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ef4a092 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ef4a092" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5421d1e elementor-column elementor-col-100 elementor-top-column" data-id="5421d1e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6128703 elementor-widget elementor-widget-text-editor" data-id="6128703" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>Implementation</h2><h3><b>Overview of Files</b></h3><ul><li><b>CharFreq <span style="font-weight: 400">class, which houses a </span>Character<span style="font-weight: 400"> object “character” representing a certain ASCII character, and a </span>double<span style="font-weight: 400"> “probOcc” representing its probability of occurrence (value between 0 and 1 showing its frequency). These objects are implemented to compare primarily by </span>probOcc<span style="font-weight: 400">, then by </span>character <span style="font-weight: 400">if those are equal. Note that “character” can be null. Getters and setters are provided. </span>Do not edit this class<span style="font-weight: 400">.</span></b></li><li><strong>Queue</strong><span style="font-weight: 400"> class, which functions as a simple generic queue. It implements </span>isEmpty()<span style="font-weight: 400">, </span>size()<span style="font-weight: 400">, </span>enqueue()<span style="font-weight: 400">, </span>dequeue()<span style="font-weight: 400">, and </span>peek()<span style="font-weight: 400">. </span><strong>Do not edit this class.</strong></li><li><strong>TreeNode</strong><span style="font-weight: 400"> class, which houses a </span>CharFreq <span style="font-weight: 400">object “data” representing a certain character and its frequency, and </span>TreeNode<span style="font-weight: 400">s “left” and “right” representing the left and right subtrees of the binary tree. Getters and setters are provided.&nbsp;</span><strong>Do not edit this class.</strong></li><li><strong>Driver</strong><span style="font-weight: 400"> class, which you can run to test any of your methods interactively. Feel free to edit this class, as it is provided only to help you test. It is not submitted and it is not used to grade your code.</span></li><li><strong>StdIn</strong> and <strong>StdOut</strong><span style="font-weight: 400">, which are used by the driver, provided methods, and some of your implemented methods as well. </span><strong>Do not edit these classes.</strong></li><li><strong>HuffmanCoding</strong> <span style="font-weight: 400">class, which contains some provided methods in addition to annotated method signatures for all the methods you are expected to fill in. You will write your solutions in this file, and it is the file which will be submitted for grading. It contains instance variables <em>fileName</em>,&nbsp;<em>sortedCharFreqList</em>, <em>huffmanRoot</em> and <em>encodings</em>, which must be set by your methods.</span></li><li><span style="font-weight: 400">Multiple text files which contain input data, and can be read by the driver as test cases. These files, as well as the files used for grading are guaranteed to be </span>ASCII only<span style="font-weight: 400">. Feel free to edit them or even make new ones to help test your code. They are not submitted.</span></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-e7b7645 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e7b7645" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-bc8b689 elementor-column elementor-col-100 elementor-top-column" data-id="bc8b689" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b0297e5 elementor-widget elementor-widget-text-editor" data-id="b0297e5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><b>HuffmanCoding.java</b></h3><p><b>NOTE: </b><span style="font-weight: 400">You are allowed (encouraged, even) to make helper methods in your HuffmanCoding.java file to be used in your graded methods. Just make sure that they are created with the private keyword. Do not add new imports.&nbsp;</span></p><p><b>Methods provided to you:</b></p><ol><li><b>writeBitString</b><ul><li style="font-weight: 400"><span style="font-weight: 400">This method takes in a file name and a string consisting of the characters ‘1’ and ‘0’, and writes the string to the file.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">You </span><b>must</b><span style="font-weight: 400"> use this provided method to write your encoding to your output file, and </span><b>must not</b><span style="font-weight: 400"> try to write your string to a file.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">Note that it does not actually write the characters ‘1’ and ‘0’, and actually writes in bits.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">The file name given does not need to exist yet, and if it doesn’t the method will create a new file. If the file exists, the method will overwrite it.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">Do not edit this method.&nbsp;</span></li></ul></li></ol><ol start="2"><li><b>readBitString</b><ul><li style="font-weight: 400"><span style="font-weight: 400">This method takes in a file name containing an encoded message, and returns a string consisting of the characters ‘1’ and ‘0’.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">You </span><b>must</b><span style="font-weight: 400"> use this provided method to recover your encoded string from your input file, and </span><b>must not</b><span style="font-weight: 400"> try to read the encoded file yourself.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">Note that it reads the file byte by byte and converts the bits back into characters.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">The given file name must exist, and it must have been written to by writeBitString already.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">Do not edit this method.</span></li></ul></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0954a99 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0954a99" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-55b8a0b elementor-column elementor-col-100 elementor-top-column" data-id="55b8a0b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7c04421 elementor-widget elementor-widget-text-editor" data-id="7c04421" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #ff0000">Implementation Notes</span></h3><ul><li>YOU MAY only update the methods <span style="font-weight: 400">makeSortedList(), makeTree(), makeEncodings(), encode() and decode().</span></li><li><strong>DO NOT</strong> add any instance variables to the <span style="font-weight: 400">HuffmanCoding</span> class.</li><li><strong>DO NOT</strong> add any public methods to the <span style="font-weight: 400">HuffmanCoding</span> class.</li><li><strong>DO NOT</strong> use System.exit() in your code.</li><li><strong>DO NOT</strong> remove the package statement from&nbsp;<span style="font-weight: 400">HuffmanCoding.java</span></li><li>YOU MAY add private methods to the <span style="font-weight: 400">HuffmanCoding</span> class.&nbsp;</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7125017 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7125017" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-06e2025 elementor-column elementor-col-100 elementor-top-column" data-id="06e2025" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-57f54b5 elementor-widget elementor-widget-text-editor" data-id="57f54b5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><b>Methods to be implemented by you:</b></p><ol><li><span style="color: #0000ff"><b>makeSortedList</b></span><ul><li data-stringify-indent="0" data-stringify-border="0">Implement this method to read the file&nbsp;referenced by filename character by&nbsp;character, and store a <strong><span class="c0">sorted</span>&nbsp;<span class="c0">ArrayList</span></strong>&nbsp;of <strong><span class="c0">CharFreq</span></strong>&nbsp;objects, sorted by frequency, in <strong>sortedCharFreqList</strong>. Characters that do not appear in the input file will not appear in your <span class="c0">ArrayList</span><span class="c2">.</span></li><li data-stringify-indent="0" data-stringify-border="0">Notice that your provided code begins by setting the file with&nbsp;<b data-stringify-type="bold">StdIn.&nbsp;</b>You can now use methods like&nbsp;<b data-stringify-type="bold">StdIn.hasNextChar()</b>&nbsp;and&nbsp;<b data-stringify-type="bold">StdIn.readChar()</b>&nbsp;which will operate on the file as if it was standard input.&nbsp;</li><li data-stringify-indent="0" data-stringify-border="0">Also notice that there are only 128 ASCII values. This means that you can keep track of the number of occurrences of each character in an array of size 128. You can use a&nbsp;<b data-stringify-type="bold">char</b>&nbsp;as an array index, and it will automatically convert to the corresponding ASCII&nbsp;<b data-stringify-type="bold">int&nbsp;</b>value. You can convert an ASCII&nbsp;<b data-stringify-type="bold">int&nbsp;</b>value “num” back into its corresponding&nbsp;<b data-stringify-type="bold">char&nbsp;</b>with&nbsp;<b data-stringify-type="bold">(char) num</b>.</li><li data-stringify-indent="0" data-stringify-border="0">The Huffman Coding algorithm <span style="text-decoration: underline">does not work</span> when there is only 1 distinct character.&nbsp;<b data-stringify-type="bold">For this specific case</b>, you must add a different character with&nbsp;<b data-stringify-type="bold">probOcc</b>&nbsp;0 to your&nbsp;<b data-stringify-type="bold">ArrayList</b>, so you can build a valid tree and encode properly later. For this assignment, simply add the character with ASCII value one more than the distinct character. If you are already at ASCII value 127, wrap around to ASCII 0.&nbsp;<b data-stringify-type="bold">DO NOT&nbsp;</b>add more than one of these, and also&nbsp;<b data-stringify-type="bold">DO NOT</b>&nbsp;add any characters with frequency 0 in any normal input case.&nbsp;</li><li data-stringify-indent="0" data-stringify-border="0">Because the&nbsp;<b data-stringify-type="bold">CharFreq</b>&nbsp;object has been implemented to compare based on&nbsp;<b data-stringify-type="bold">probOcc</b>&nbsp;primarily, you can simply use&nbsp;<b data-stringify-type="bold">Collections.sort(list)</b>&nbsp;before returning your final&nbsp;<b data-stringify-type="bold">ArrayList</b>. You do not need to implement your own sorting method.</li><li data-stringify-indent="0" data-stringify-border="0">Below is an example of running the driver to help test this method.</li></ul></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c0f76f4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c0f76f4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-cd09b69 elementor-column elementor-col-100 elementor-top-column" data-id="cd09b69" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1814f97 elementor-widget elementor-widget-image" data-id="1814f97" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="385" src="./Data Structures_files/Screen-Shot-2022-03-04-at-4.01.08-PM-1024x385.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.08-PM-1024x385.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.08-PM-300x113.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.08-PM-768x289.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.08-PM.png 1240w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-dad13be elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="dad13be" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2b25139 elementor-column elementor-col-100 elementor-top-column" data-id="2b25139" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9aed0e5 elementor-widget elementor-widget-text-editor" data-id="9aed0e5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ol start="2"><li><span style="color: #0000ff"><b>makeTree</b></span><ul><li class="c1 li-bullet-0"><span class="c2">Implement this method to use <strong>sortedCharFreqList</strong> and store the root of a valid Huffman Coding tree in <strong>huffmanRoot</strong>.</span></li><li style="font-weight: 400"><span style="font-weight: 400">You will be using the </span><b>TreeNode</b><span style="font-weight: 400"> class to represent one node of your Huffman Coding tree. It contains a </span><b>CharFreq</b><span style="font-weight: 400"> object as its data, and references to the left and right.</span></li><li style="font-weight: 400"><span style="font-weight: 400">You will be using the provided </span><b>Queue</b><span style="font-weight: 400"> class to code the Huffman Coding process. You must use the Huffman Coding algorithm outlined above.&nbsp;</span></li><li><b>TreeNode<span style="font-weight: 400">s which do not have any children represent encodings for characters. These nodes of your Huffman Coding tree must contain both a “character” and a “probOcc” in their </span>CharFreq<span style="font-weight: 400"> object.&nbsp;</span></b></li><li>TreeNode<span style="font-weight: 400">s which have at least one child do not represent encodings for characters. These nodes of your Huffman Coding tree must contain a </span>null<span style="font-weight: 400"> “character”, and their “probOcc” must be the sum of their children. The root </span>TreeNode<span style="font-weight: 400"> will have a “probOcc” of 1.0.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Below is an example of running the driver to help test this method.</span></li></ul></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0345245 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0345245" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2c99e55 elementor-column elementor-col-100 elementor-top-column" data-id="2c99e55" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5aff542 elementor-widget elementor-widget-image" data-id="5aff542" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="559" src="./Data Structures_files/Screen-Shot-2022-03-04-at-4.01.17-PM-1024x559.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.17-PM-1024x559.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.17-PM-300x164.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.17-PM-768x419.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.17-PM.png 1238w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-f1d8814 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f1d8814" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-868d0d6 elementor-column elementor-col-100 elementor-top-column" data-id="868d0d6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-edb59c7 elementor-widget elementor-widget-text-editor" data-id="edb59c7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ol start="3"><li><span style="color: #0000ff"><b>makeEncodings</b></span><ul><li style="font-weight: 400"><span style="font-weight: 400">Implement this method to use <strong>huffmanRoot</strong>&nbsp;and&nbsp;store a <span class="c0">String </span>array of size 128 containing a String of 1’s and 0’s for every character in encodings.</span><span style="font-weight: 400">&nbsp;</span><b>Character</b><span style="font-weight: 400">s not present in the Huffman Coding tree will have their spots in the array left </span><b>null</b><span style="font-weight: 400">.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Remember that going to the left child of your Huffman Coding tree represents adding a ‘0’ to your encoding for a character, and going to the right child represents adding a ‘1’. The encoding for a character is simply given by the path to get to that node from the root.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Remember that only </span><b>TreeNode</b><span style="font-weight: 400">s with no children contain a character, and only the paths to these </span><b>TreeNode</b><span style="font-weight: 400">s will receive an encoding.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">You can convert a </span><b>Character</b><span style="font-weight: 400"> object to its </span><b>int</b><span style="font-weight: 400"> ASCII code by casting it with </span><b>(int)</b><span style="font-weight: 400">.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Below is an example of running the driver to help test this method.</span></li></ul></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ab652e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ab652e7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-cb5d6e1 elementor-column elementor-col-100 elementor-top-column" data-id="cb5d6e1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-48735ca elementor-widget elementor-widget-image" data-id="48735ca" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="330" src="./Data Structures_files/Screen-Shot-2022-03-04-at-4.01.27-PM-1024x330.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.27-PM-1024x330.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.27-PM-300x97.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.27-PM-768x247.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.27-PM.png 1230w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8b65c33 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8b65c33" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-9de4bbe elementor-column elementor-col-100 elementor-top-column" data-id="9de4bbe" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-76cc9d5 elementor-widget elementor-widget-text-editor" data-id="76cc9d5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ol start="4"><li><span style="color: #0000ff"><b>encode</b></span><ul><li class="c1 li-bullet-0">Implement this method to use<span class="c0">&nbsp;</span><span class="c2"><strong>encodings</strong>, an input file containing some text we want to encode, and an output file we want to encode into. It will write the compressed encoding of the input file into the output file.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Notice that your provided code begins by setting the file with </span><b>StdIn. </b><span style="font-weight: 400">You can now use methods like </span><b>StdIn.hasNextChar()</b><span style="font-weight: 400"> and </span><b>StdIn.readChar()</b><span style="font-weight: 400"> which will operate on the file as if it was standard input.</span></li><li style="font-weight: 400"><span style="font-weight: 400">You are to create a </span><b>String</b><span style="font-weight: 400"> of ones and zeros which represents your encoding of the input text file using your encodings array. The last line of this method </span><b>must</b><span style="font-weight: 400"> use the </span><b>writeBitString</b><span style="font-weight: 400"> method to write this </span><b>String</b><span style="font-weight: 400"> to the file in bits. </span><b>DO NOT</b><span style="font-weight: 400"> try to write to the file manually.</span></li><li style="font-weight: 400"><span style="font-weight: 400">If the file was successfully compressed, your output file will have a significantly smaller file size than the original text file. Feel free to open your file explorer and check!</span></li><li style="font-weight: 400"><span style="font-weight: 400">Below is an example of running the driver to help test this method.</span></li></ul></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-fda47ca elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="fda47ca" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-cf54555 elementor-column elementor-col-66 elementor-top-column" data-id="cf54555" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1dd5e03 elementor-widget elementor-widget-image" data-id="1dd5e03" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="384" src="./Data Structures_files/Screen-Shot-2022-03-04-at-4.01.39-PM-1024x384.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.39-PM-1024x384.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.39-PM-300x112.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.39-PM-768x288.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.39-PM.png 1238w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-a6e171d elementor-column elementor-col-33 elementor-top-column" data-id="a6e171d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f079890 elementor-widget elementor-widget-text-editor" data-id="f079890" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="font-weight: 400"><span style="color: #800000"><strong>Check out the encoded file in your file explorer</strong></span>. It will be significantly <span style="text-decoration: underline"><strong>smaller</strong></span> than the original!</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-62bc863 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="62bc863" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-0f6e901 elementor-column elementor-col-100 elementor-top-column" data-id="0f6e901" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9171763 elementor-widget elementor-widget-text-editor" data-id="9171763" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><ol start="5"><li><span style="color: #0000ff"><b>decode</b></span><ul><li class="c1 li-bullet-0"><span class="c2">Implement this method to take in your encoded file and use <strong>huffmanRoot</strong>, and print out the decoding. If done correctly, the decoding will be the same as the contents of the text file used for encoding.</span></li><li>Notice that your provided code begins by setting the output file with StdOut. You can now use methods like <strong>StdOut.println()</strong> and <strong>StdOut.print()</strong> which will operate on the decodings file as if it was standard output.</li><li style="font-weight: 400"><span style="font-weight: 400">You </span><b>must</b><span style="font-weight: 400"> start your method using the provided </span><b>readBitString</b><span style="font-weight: 400"> method in order to get the string of ones and zeros from the encoded file. </span><b>DO NOT</b><span style="font-weight: 400"> try to read the encoded file manually.</span></li><li style="font-weight: 400"><span style="font-weight: 400">You must then use your tree and the procedure outlined above to decode the bit string into characters, according to the tree’s encoding scheme.&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400">Below is an example of running the driver to help test this method.</span></li></ul></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-98c8d0c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="98c8d0c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-37d72de elementor-column elementor-col-66 elementor-top-column" data-id="37d72de" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-66d3d2a elementor-widget elementor-widget-image" data-id="66d3d2a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="1024" height="482" src="./Data Structures_files/Screen-Shot-2022-03-04-at-4.01.48-PM-1024x482.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.48-PM-1024x482.png 1024w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.48-PM-300x141.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.48-PM-768x362.png 768w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/03/Screen-Shot-2022-03-04-at-4.01.48-PM.png 1236w" sizes="(max-width: 1024px) 100vw, 1024px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-ab1d391 elementor-column elementor-col-33 elementor-top-column" data-id="ab1d391" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6c55056 elementor-absolute elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="6c55056" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="font-weight: 400">The decoded output will be an exact copy of your input file.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c75ad14 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c75ad14" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-385f422 elementor-column elementor-col-100 elementor-top-column" data-id="385f422" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-134ac0f elementor-widget elementor-widget-text-editor" data-id="134ac0f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>VSCode Extensions</h3><p>You can install VSCode extension packs for Java. Take a look at <a href="https://code.visualstudio.com/docs/java/java-tutorial">this tutorial</a>. We suggest:</p><ul><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Extension Pack for Java</a></li><li><a href="https://code.visualstudio.com/docs/java/java-project">Project Manager for Java</a></li><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug">Debugger for Java</a></li></ul><h3>Importing VSCode Project</h3><ol><li>Download the zip file from <a href="https://autolab.cs.rutgers.edu/">Autolab Attachments</a>.</li><li>Unzip the file by double clicking it.</li><li>Open VSCode<ul><li>Import the folder to a workspace through&nbsp;<strong>File</strong> &gt; <b>Open Folder</b></li></ul></li></ol><h3>Executing and Debugging</h3><ul><li>You can run your program through VSCode or you can use the Terminal to compile and execute. We suggest running through VSCode because it will give you the option to debug.</li><li><a href="https://code.visualstudio.com/docs/java/java-debugging">How to debug your code</a></li><li>If you choose the Terminal, from Huffman directory/folder:<ul><li>to compile: &nbsp;<strong>javac -d bin src/huffman/*.java</strong></li><li>to execute: <strong>java -cp bin huffman.Driver</strong></li></ul></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d1b173c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d1b173c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-0cc9ebf elementor-column elementor-col-100 elementor-top-column" data-id="0cc9ebf" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bf2241f elementor-widget elementor-widget-text-editor" data-id="bf2241f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Before submission</h3><p><strong>Collaboration policy.</strong> Read our collaboration policy <a href="https://ds.cs.rutgers.edu/#academic-integrity">here</a>.</p><p><strong>Submitting the assignment.&nbsp;</strong>Submit <em>HuffmanCoding.java</em>&nbsp;separately via the web submission system called Autolab. To do this, click the <em>Assignments</em> link from the course website; click the <em>Submit</em> link for that assignment.</p><h3>Getting help</h3><p>If anything is unclear, don’t hesitate to drop by office hours or post a question on Piazza.</p><ul><li>Find instructors and head TAs office hours&nbsp;<a href="https://ds.cs.rutgers.edu/staff/"><em>here</em></a>&nbsp;&nbsp;</li><li>Find tutors office hours on Canvas -&gt; Tutoring -&gt; RU CATS</li><li>In addition to office hours we have the <a href="https://resources.cs.rutgers.edu/docs/rooms-equipment/cave/">CAVE</a> (Collaborative Academic Versatile Environment), a community space staffed with lab assistants which are undergraduate students further along the CS major to answer questions.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c7da9b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c7da9b3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e01ccb9 elementor-column elementor-col-100 elementor-top-column" data-id="e01ccb9" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e758aa7 elementor-widget elementor-widget-text-editor" data-id="e758aa7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Problem by Ishaan Ivaturi</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</article>
+
+                </div>
+            </main>
+            <footer>
+                                <div class="sas-info">
+                    <div class="sas-container">
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Connect with Rutgers</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/">Rutgers Home</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/news-center/rutgers-today">Rutgers Today</a></li>
+                                <li class="sas-item"><a class="sas-link" href="https://my.rutgers.edu/portal">myRutgers</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://scheduling.rutgers.edu/calendar.shtml">Academic Calendar</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://ruevents.rutgers.edu/events/">Calendar of Events</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/news-a-events">SAS Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Explore SAS</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/departments-a-degree-granting-programs">Departments &amp; Degree-Granting Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/other-instructional-programs">Other Instructional Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasundergrad.rutgers.edu/index.php/academics/requirements/list-of-majors-and-minors">Majors &amp; Minors</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/for-faculty/795-research-programs-centers-and-institutes">Research Programs, Centers, &amp; Institutes</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasip.rutgers.edu/">International Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://lifesci.rutgers.edu/">Division of Life Sciences</a></li>
+                            </ul>
+                        </div>
+                            
+                            <div class="sas-links-section">                    <h2 class="sas-links-title">Explore CS</h2>                    <ul class="sas-ul sas-links-list">                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/about/employment">We are Hiring!</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/research/computer-and-network-systems-list">Research</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/news">News</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">Events</a></li><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">                        </a><li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events"></a><a class="sas-link" href="https://resources.cs.rutgers.edu/">Resources</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/search">Search CS</a></li>                    </ul>                </div>            
+            
+            
+                    
+                    </div>
+                </div>
+
+                                <nav class="sas-bot-links" aria-label="Secondary Navigation">
+                    <div class="sas-container">
+                            
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    
+            </ul>
+        
+                    </div>
+                </nav>
+
+                                <div role="contentinfo" class="sas-copyright">
+                    <div class="sas-container">
+                        <a class="sas-link sas-to-top" href="https://ds.cs.rutgers.edu/assignment-huffman-coding/#">Back to Top</a>
+                        <p class="sas-copyright-p">
+                          Copyright 2020, Rutgers, The State University of New Jersey. All rights reserved.<br>
+                          Rutgers is an equal access/equal opportunity
+                          institution. Individuals with disabilities are
+                          encouraged to direct suggestions, comments, or
+                          complaints concerning any accessibility issues
+                          with Rutgers web sites to: <a class="sas-link" href="mailto:accessibility@rutgers.edu">accessibility@rutgers.edu</a> or complete the <a class="sas-link" href="https://oit.rutgers.edu/accessibility/barrierform">Report Accessibility Barrier or Provide Feedback Form</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+        <div aria-hidden="true">
+                <link rel="stylesheet" id="academicons-css" href="./Data Structures_files/academicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Data Structures_files/font-awesome.min(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./Data Structures_files/js"></script>
+<script type="text/javascript" src="./Data Structures_files/override.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/owl.carousel.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/slider.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/hoverIntent.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/maxmegamenu.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/public.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/frontend-modules.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery.sticky.min.js.download"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","nonce":"dd8272ac9e","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/dialog.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/waypoints.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/swiper.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/share-link.min.js.download"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","downloadImage":"Download image"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.8","urls":{"assets":"https:\/\/wordpress.cs.rutgers.edu\/ds-cs-rutgers-edu\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":2202,"title":"Assignment%20Huffman%20Coding%20%E2%80%93%20Data%20Structures","excerpt":"","featuredImage":false}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js(1).download"></script>
+
+        </div><span id="elementor-device-mode" class="elementor-screen-only"></span>
+    
+
+</body></html>

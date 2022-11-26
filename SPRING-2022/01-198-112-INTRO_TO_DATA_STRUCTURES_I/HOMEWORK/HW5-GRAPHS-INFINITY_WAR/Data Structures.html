@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://ds.cs.rutgers.edu/assignment-infinitywar/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Data Structures</title>
+        <link rel="stylesheet" href="./Data Structures_files/style.css">
+   <link rel="dns-prefetch" href="https://maps.googleapis.com/">
+<link rel="dns-prefetch" href="https://wordpress.cs.rutgers.edu/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ds.cs.rutgers.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.12"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Data Structures_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="theme-style-css" href="./Data Structures_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-style-override-css" href="./Data Structures_files/override.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Data Structures_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Data Structures_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-fontawesome-css" href="./Data Structures_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-genericons-css" href="./Data Structures_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Data Structures_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Data Structures_files/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Data Structures_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./Data Structures_files/frontend.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-5-all-css" href="./Data Structures_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="./Data Structures_files/v4-shims.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="./Data Structures_files/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-3092-css" href="./Data Structures_files/post-3092.css" type="text/css" media="all">
+<link rel="stylesheet" id="authorizer-public-css-css" href="./Data Structures_files/authorizer-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Data Structures_files/css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var OnePress_Plus = {"ajax_url":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","browser_warning":" Your browser does not support the video tag. I suggest you upgrade your browser."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/v4-shims.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var auth = {"wpLoginUrl":"https:\/\/ds.cs.rutgers.edu\/wp-login.php?redirect_to=%2Fassignment-infinitywar%2F","publicWarning":"","anonymousNotice":"Notice: You are browsing this site anonymously, and only have access to a portion of its content.","logIn":"Log In"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/authorizer-public.js.download"></script>
+<link rel="https://api.w.org/" href="https://ds.cs.rutgers.edu/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ds.cs.rutgers.edu/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ds.cs.rutgers.edu/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.4.12">
+<link rel="canonical" href="https://ds.cs.rutgers.edu/assignment-infinitywar/">
+<link rel="shortlink" href="https://ds.cs.rutgers.edu/?p=3092">
+<link rel="alternate" type="application/json+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-infinitywar%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-infinitywar%2F&amp;format=xml">
+<script src="./Data Structures_files/saved_resource" type="text/javascript"></script>
+<!-- teachPress -->
+<script type="text/javascript" src="./Data Structures_files/frontend.js.download"></script>
+<link type="text/css" href="./Data Structures_files/teachpress_front.css" rel="stylesheet">
+<!-- END teachPress -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="32x32">
+<link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="192x192">
+<link rel="apple-touch-icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<meta name="msapplication-TileImage" content="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<style type="text/css">/** Mega Menu CSS: fs **/</style>
+
+    <script type="text/javascript" charset="UTF-8" src="./Data Structures_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Data Structures_files/util.js.download"></script></head>
+    <body data-elementor-device-mode="desktop">
+                <a class="sas-skip-to-content sas-link" href="https://ds.cs.rutgers.edu/assignment-infinitywar/#sas-content">Skip to Main Content</a>
+        <input type="checkbox" class="sas-sidenav-toggle" id="sas-sidenav-toggle">
+        <label for="sas-sidenav-toggle" class="sas-sidenav-label" role="button" aria-label="Toggle Navigation Sidebar">
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+        </label>
+        <nav class="sas-sidenav" aria-label="Primary Navigation">
+                
+            <ul class="sas-ul sas-links-tree">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li id="menu-item-291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="sas-page">
+                        <div class="sas-top-links">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://www.rutgers.edu/">Rutgers Home</a>
+                </li>
+                
+    <li id="menu-item-1267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1267 sas-item"><a href="http://sas.rutgers.edu/" class="sas-link">SAS</a></li>
+<li id="menu-item-1268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1268 sas-item"><a href="http://cs.rutgers.edu/" class="sas-link">CS</a></li>
+
+            </ul>
+        
+                    <div class="sas-search">
+                            
+    <form role="search" method="get" action="https://ds.cs.rutgers.edu/">
+        <input class="sas-search-text" type="text" value="" name="s" placeholder="Search ..." aria-label="Search Query">
+    </form>
+
+                    </div>
+                </div>
+            </div>
+
+                        <header>
+                <div class="sas-banner">
+                    <div class="sas-container">
+                        <div role="img" aria-label="School of Arts and Sciences Logo">
+                            <a href="https://sas.rutgers.edu/" aria-label="School of Arts and Sciences">
+                            <img class="sas-logo sas-logo-big" src="./Data Structures_files/red_banner.png" alt="School of Arts and Sciences Logo">
+                            <img class="sas-logo sas-logo-small" src="./Data Structures_files/sas_red_header_MOBILE.png" alt="School of Arts and Sciences Logo">
+                            </a>
+                        </div>
+                        <h1 class="sas-title">
+                            <a class="sas-link" href="https://ds.cs.rutgers.edu/" aria-label="">Data Structures</a>
+                        </h1>
+                        <h2 class="sas-tagline">
+                           Computer Science Department                        </h2>
+                    </div>
+                </div>
+            </header>
+
+                        <nav class="sas-nav" aria-label="Primary Navigation">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+                </div>
+            </nav>
+
+            <main class="sas-content" id="sas-content">
+                <div class="sas-container">
+                        
+    <article class="sas-post">		<div data-elementor-type="wp-post" data-elementor-id="3092" class="elementor elementor-3092" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-80a7e1b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="80a7e1b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-cc85108 elementor-column elementor-col-100 elementor-top-column" data-id="cc85108" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-45d9c17 elementor-widget elementor-widget-text-editor" data-id="45d9c17" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>Infinity War – 100 course points</h2><p><span style="font-weight: 400">The purpose of this assignment is to practice your understanding of graphs and the adjacency matrix graph storage.</span></p><p><span style="color: #800000"><strong>This assignment WILL TAKE A SUBSTANTIAL AMOUNT OF TIME TO COMPLETE. </strong></span></p><p><span style="color: #800000">Start your assignment early!</span>&nbsp;<strong>You need time to understand the assignment</strong> and to answer the many questions that will arise as you read the description and the code provided.</p><p>Refer to our Programming <a href="https://ds.cs.rutgers.edu/assignment-faq/">Assignments FAQ</a> for instructions on how to install VSCode, how to use the command line and how to submit your assignments.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-b09e7cf elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="b09e7cf" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-2b33c42 elementor-column elementor-col-100 elementor-top-column" data-id="2b33c42" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1a1aa37 elementor-widget elementor-widget-text-editor" data-id="1a1aa37" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>Overview</h2><p>We do not expect that you have seen the movie in order to complete this assignment. This description will give you enough background information for you to understand how to complete each task.&nbsp;</p><p>In the MCU (Marvel Cinematic Universe), right after the Big Bang occurred there were 6 singularities contained within Infinity Stones that were spread across the infant universe.&nbsp;</p><p>These stones include:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-27ff6c2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="27ff6c2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f925b2d elementor-column elementor-col-100 elementor-top-column" data-id="f925b2d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e619dac elementor-widget elementor-widget-image" data-id="e619dac" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="717" height="226" src="./Data Structures_files/Screen-Shot-2022-11-16-at-8.06.53-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.06.53-PM.png 717w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.06.53-PM-300x95.png 300w" sizes="(max-width: 717px) 100vw, 717px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-465d028 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="465d028" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-8d2fe74 elementor-column elementor-col-100 elementor-top-column" data-id="8d2fe74" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-095115e elementor-widget elementor-widget-image" data-id="095115e" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="724" height="143" src="./Data Structures_files/Screen-Shot-2022-11-16-at-8.07.04-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.07.04-PM.png 724w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.07.04-PM-300x59.png 300w" sizes="(max-width: 724px) 100vw, 724px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6f40e21 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6f40e21" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3574b93 elementor-column elementor-col-50 elementor-top-column" data-id="3574b93" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-56aa1ed elementor-widget elementor-widget-text-editor" data-id="56aa1ed" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="text-decoration: underline"><strong>Backstory of Thanos</strong></span></p><p>Before the events of <i>Avengers: Infinity War</i>, a titan named Thanos witnessed the death of his home planet due to overpopulation. Reeling from his experience, Thanos made it his life mission to exterminate half of all life in the universe to delay overpopulation on other worlds like his. Thanos determined that using the 6 Infinity Stones which he could hold in his Infinity Gauntlet, a simple snap of his fingers would painlessly eliminate 50% of all life, and he can finally rest in peace victorious.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-acfb6ab elementor-column elementor-col-50 elementor-top-column" data-id="acfb6ab" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ca02107 elementor-widget elementor-widget-image" data-id="ca02107" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="595" height="400" src="./Data Structures_files/Screen-Shot-2022-11-16-at-8.07.14-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.07.14-PM.png 595w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.07.14-PM-300x202.png 300w" sizes="(max-width: 595px) 100vw, 595px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-07fb17e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="07fb17e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-1bca74d elementor-column elementor-col-100 elementor-top-column" data-id="1bca74d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-8d51180 elementor-widget elementor-widget-text-editor" data-id="8d51180" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><span style="text-decoration: underline">Background Information and Characters</span></strong></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ee181de elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ee181de" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a61d791 elementor-column elementor-col-100 elementor-top-column" data-id="a61d791" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-347259c elementor-widget elementor-widget-image" data-id="347259c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="426" height="1024" src="./Data Structures_files/Screen-Shot-2022-11-16-at-8.14.03-PM-426x1024.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.14.03-PM-426x1024.png 426w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.14.03-PM-125x300.png 125w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-16-at-8.14.03-PM.png 469w" sizes="(max-width: 426px) 100vw, 426px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2cdcd5e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2cdcd5e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-be0afb8 elementor-column elementor-col-100 elementor-top-column" data-id="be0afb8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9743206 elementor-widget elementor-widget-text-editor" data-id="9743206" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><b>The Infinity War</b></p><p>If you are interested in the film’s story the following videos will contextualize it for you.</p><p><span style="font-weight: 400">TRAILER:</span><span style="font-weight: 400">&nbsp;</span><a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8"><span style="font-weight: 400" data-rich-links="{">Marvel Studios’ Avengers: Infinity War Official Trailer</span></a></p><p>The film begins with Thanos destroying Thor’s homeworld (Asgard) after acquiring the Power and Space Stones.</p><ol><li><a href="https://www.youtube.com/watch?v=X3xJXz7Q8e0&amp;list=PLHVdiAvOKTn6IANTDON3fkI5wKvhPD63h"><span style="font-weight: 400" data-rich-links="{">Avengers: Infinity War (2018) – “Attack On The Statesman” | Movie Clip</span></a></li><li><a href="https://www.youtube.com/watch?v=stLwXX7R83U&amp;list=PLHVdiAvOKTn6IANTDON3fkI5wKvhPD63h&amp;index=2"><span style="font-weight: 400" data-rich-links="{">Thanos Kills Loki Loki Death Scene Avengers Infinity War 2018Lifeline HD</span></a></li></ol><p>A defeated Hulk is sent to NYC to warn Dr. Strange and Iron Man about the impending arrival of Thanos and his army (the Black Order) to retrieve the Time Stone.</p><p>His ship arrives soon and a battle ensues as Iron Man, Spiderman, and Dr. Strange battles Ebony Maw and Cull Obsidian (two of Thanos’ “children”).</p><ul><li><a href="https://www.youtube.com/watch?v=rd7A14ZsdOg"><span style="font-weight: 400" data-rich-links="{">AVENGERS INFINITY WAR – Battle in New York – IRON MAN vs BLACK ORDER Movie Clip HD</span></a></li></ul><p>After Cull Obsidian dies, Dr. Strange is captured onto Maw’s ship, and Iron Man and Spiderman latch onto it as it departs Earth. Iron Man blows a hole in the ship and Maw is shot into space.</p><ul><li><a href="https://www.youtube.com/watch?v=9r-ZdN4klts"><span style="font-weight: 400" data-rich-links="{">Avengers Infinity War Iron Man And Spider Man Saves Doctor Strange</span></a></li></ul><p>Meanwhile, the Guardians of the Galaxy (hereby referred to as “Guardians”) rescue Thor and the group splits, where Thor, Rocket, and Groot (a tree-human hybrid) go to Nidavellir to forge Thor’s Stormbreaker, a weapon capable of destroying Thanos.</p><ul><li><a href="https://www.youtube.com/watch?v=qtjquZhqKSg"><span style="font-weight: 400" data-rich-links="{">The Guardians of the Galaxy respond to a distress call and rescue Thor. Avengers: Infinity War 2018</span></a></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0954a99 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0954a99" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-55b8a0b elementor-column elementor-col-100 elementor-top-column" data-id="55b8a0b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7c04421 elementor-widget elementor-widget-text-editor" data-id="7c04421" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #ff0000">Implementation Notes</span></h3>
+The structure of this assignment is quite different from the previous assignments.
+<ul class="c1 lst-kix_gg9ur9iosqz-0">
+ 	<li><span style="color: #008000"><strong>DO NOT</strong></span> use static variables on your code.</li>
+ 	<li class="c0 li-bullet-0"><span class="c3">In each given Java class, you will read from a given set of input files (passed in as command line arguments), and write to a given output file (passed in as a command line argument).</span></li>
+ 	<li class="c0 li-bullet-0"><strong><span class="c6">DO NOT </span></strong><span class="c3">change the names of any of the given Java files, or the project structure itself (do not change directory names or create new directories).</span></li>
+ 	<li class="c0 li-bullet-0"><strong><span class="c6">DO NOT</span></strong><span class="c3">&nbsp;remove the package statement from any of the given input files.</span></li>
+ 	<li class="c0 li-bullet-0"><strong><span class="c6">DO NOT</span></strong><span class="c3">&nbsp;use System.exit() in your code.</span></li>
+ 	<li class="c0 li-bullet-0">Unlike any previous assignment, <strong><span class="c6">YOU MAY</span></strong>&nbsp;(and should) create your own classes in the <span class="c2">src/avengers</span>&nbsp;folder. <strong><span class="c6">YOU MAY</span></strong>&nbsp;import “java.util.*”, but <strong><span class="c6">DO NOT</span></strong><span class="c3"><span class="c3">&nbsp;import anything else. Make sure any new classes have a package statement:&nbsp;</span></span><code>package avengers;</code></li>
+ 	<li>The classes that you create <strong>MAY NOT</strong> have spaces in their names.</li>
+ 	<li class="c0 li-bullet-0">In order to grade a problem, we run the corresponding Java class and verify the output file. This means you have <span class="c6">full freedom </span><span class="c3">in your project structure, as long as our provided classes output the correct answer to the correct output file. Take this opportunity to practice your project design skills, and write clean code that avoids redundancy.</span></li>
+ 	<li><strong>DO NOT</strong> remove the package statement from the provided classes.</li>
+</ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6fb0193 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6fb0193" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e2d5be6 elementor-column elementor-col-100 elementor-top-column" data-id="e2d5be6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-57f580c elementor-widget elementor-widget-text-editor" data-id="57f580c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3 class="c5"><span class="c8 c6">Using StdIn and StdOut</span></h3><ul class="c1 lst-kix_iykq4wpn3pi8-0 start"><li class="c0 li-bullet-0"><span class="c3">Use <strong>StdIn</strong>.setFile(fileName) to set the current input file you want to read from.</span></li><li class="c0 li-bullet-0"><span class="c3">You can now use methods like <strong>StdIn</strong>.readInt(), <strong>StdIn</strong>.readString() and <strong>StdIn</strong>.readLine() to operate on the input file as if it was standard input.</span></li><li class="c4 li-bullet-0"><span class="c3">The methods <strong>StdIn</strong>.readInt() and <strong>StdIn</strong>.readString() actually leave the newline character unread, so if you use <strong>StdIn</strong>.readLine() after one of these methods, it will read this character rather than the next line. If you want to read the next line with <strong>StdIn</strong>.readLine(), you will need to call <strong>StdIn</strong>.readLine() once to read the newline character and then again to read the next line. <strong>StdIn</strong>.readInt() and <strong>StdIn</strong>.readString() ignore spaces and newlines by default.</span></li><li class="c0 li-bullet-0"><span class="c3">Use <strong>StdOut</strong>.setFile(fileName) to set the current output file you want to write to. It creates the file if it doesn’t already exist.</span></li><li class="c0 li-bullet-0"><span class="c3">You can now use methods like <strong>StdOut</strong>.print() and <strong>StdOut</strong>.println() to operate on the output file as if it was standard output.</span></li><li class="c0 li-bullet-0"><span class="c3">Autolab <span style="text-decoration: underline"><strong>ignores</strong></span> empty lines and extra spaces the your output files may have.</span></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-10134a4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="10134a4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3873bb1 elementor-column elementor-col-100 elementor-top-column" data-id="3873bb1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6b913cc elementor-widget elementor-widget-text-editor" data-id="6b913cc" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3 class="c5"><span class="c8 c6">Overview of Files</span></h3><ol class="c1 lst-kix_iykq4wpn3pi8-0 start"><li class="c0 li-bullet-0"><strong><em>ForgeStormBreaker.java</em></strong><br><ul class="c1 lst-kix_iykq4wpn3pi8-0 start"><li class="c0 li-bullet-0">Print to the output file the sum of the 2D array from the&nbsp;input file.</li></ul></li><li><strong><em>LocateTitan.java</em></strong><br><ol class="c1 lst-kix_iykq4wpn3pi8-0 start"><li>Create the adjacency matrix using the input file.&nbsp;Each vertex represents a generator.</li><li>Divide each value in the&nbsp;adjacency matrix (so matrix[I][j]) with the functionality values of<br>vertex i and vertex j (meaning functionalities[i] and<br>functionalities([j])</li><li>Use Dilkstra’s algorithm to find the&nbsp;minimum cost from <strong>vertex 0</strong> and the <strong>last vertex</strong>.</li><li>Print the minimum cost to the&nbsp;output file.</li></ol></li><li><em><strong>MindStoneNeighborNeurons.java</strong></em><ol class="c1 lst-kix_iykq4wpn3pi8-0 start"><li>Create a graph representation from the input file. Each vertex represents a nerve and each edge&nbsp;represents a synapse. All the vertices have a varying out-degree EXCEPT&nbsp;the <strong>Mind Stone vertex which has out-degree O</strong>.</li><li>Find the Mind Stone&nbsp;vertex, and identify the vertices that neighbor (have an edge) the Mind Stone vertex.</li><li>Print Mind Stone vertex neighbors&nbsp;to the output file.</li></ol></li><li><em><strong>UseTimeStone.java</strong></em><ol class="c1 lst-kix_iykq4wpn3pi8-0 start"><li>Create the adjacency matrix using the input&nbsp;file. Each vertex is an event, each path with connecting vertices is a<br>timeline. Each vertex has an EU value.</li><li>Determine the TOTAL&nbsp;number of timelines.</li><li>Determine the number of timelines where <em>sum_of_EU_of_all_vertices_in_the_timeline &gt;= threshold EU</em>.</li><li>Print the&nbsp;number from step (3) to the output file.</li></ol></li><li><em><strong>PredictThanosSnap.java</strong></em><ol class="c1 lst-kix_iykq4wpn3pi8-0 start"><li>Create the adjacency matrix using the input file. Each vertex represents a person, and each edge&nbsp;represents a connection.</li><li>Use the StdRandom.uniform()&nbsp;function and the given pseudocode to determine which vertices to&nbsp;delete.</li><li>Delete the vertices (this can be done directly on the&nbsp;adjacency matrix).</li><li>Determine if the resulting graph is&nbsp;connected. A graph is connected with there is a path from each vertex to every other vertex.&nbsp;</li><li>Print <strong>true</strong> to the output file if the graph is connected, <strong>false</strong> otherwise.</li></ol></li></ol></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c06732a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c06732a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e049f17 elementor-column elementor-col-100 elementor-top-column" data-id="e049f17" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-73eea53 elementor-widget elementor-widget-text-editor" data-id="73eea53" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3 class="c5"><span class="c8 c6">Tasks</span></h3></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8541dcf elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8541dcf" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-6d1d1aa elementor-column elementor-col-50 elementor-top-column" data-id="6d1d1aa" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-52c28af elementor-widget elementor-widget-text-editor" data-id="52c28af" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #ff0000">1. ForgeStormBreaker</span></h3>
+To forge the Stormbreaker, Thor has to endure the power of a Neutron Star near Nidavellir.&nbsp; The star’s plasma rushes through the opening that Thor is inside, as depicted in the image to the right.</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-519873c elementor-column elementor-col-50 elementor-top-column" data-id="519873c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e2dac60 elementor-widget elementor-widget-image" data-id="e2dac60" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="380" height="217" src="./Data Structures_files/Screen-Shot-2022-11-18-at-2.57.31-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-2.57.31-PM.png 380w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-2.57.31-PM-300x171.png 300w" sizes="(max-width: 380px) 100vw, 380px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-b796b61 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="b796b61" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-67476f5 elementor-column elementor-col-50 elementor-top-column" data-id="67476f5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6807190 elementor-widget elementor-widget-text-editor" data-id="6807190" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>In physics, <i>flux</i> is defined as the amount of fluid (or field strength) flowing through an area.</p><p>In the image to the right, the box with the matrix of numbers shows the <i>flux intensity</i> of the sun’s plasma through the opening that Thor is inside. Taking the sum of all the numbers reveals the total flux of the plasma through the opening.&nbsp;</p><p>Thus,<b> the flux would be (3 + 4 + 5 + 1 + 2) + (12 – 1 + 7 + 2 + 8) + (11 – 6 + 3 + 5 + 2) = 58.&nbsp;</b></p><p><b>Task</b><b>:&nbsp; </b>given a 2D array where the values are the flux intensity data of the Neutron Star, calculate the total flux that Thor has to endure. Write this number into the output file.&nbsp;<br style="font-weight: 400"><br style="font-weight: 400"></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-c0d6ac8 elementor-column elementor-col-50 elementor-top-column" data-id="c0d6ac8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-cbb24d2 elementor-widget elementor-widget-image" data-id="cbb24d2" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="547" height="400" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.23.43-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.23.43-PM.png 547w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.23.43-PM-300x219.png 300w" sizes="(max-width: 547px) 100vw, 547px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7d31261 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7d31261" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-190d542 elementor-column elementor-col-50 elementor-top-column" data-id="190d542" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3a79506 elementor-widget elementor-widget-image" data-id="3a79506" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="391" height="263" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.24.00-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.24.00-PM.png 391w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.24.00-PM-300x202.png 300w" sizes="(max-width: 391px) 100vw, 391px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-2e808a2 elementor-column elementor-col-50 elementor-top-column" data-id="2e808a2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-49cb738 elementor-widget elementor-widget-text-editor" data-id="49cb738" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Some preconditions:</p><ul><li>The numbers in the 2D array are guaranteed to be integers.</li></ul><ul><li>The dimensions of the 2D array may not be the same.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c1c8d1f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c1c8d1f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-df49ba6 elementor-column elementor-col-100 elementor-top-column" data-id="df49ba6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-15a3249 elementor-widget elementor-widget-text-editor" data-id="15a3249" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>On Earth, Vision (who has the Mind Stone contained in his head) is protected by the Scarlet Witch (Wanda Maximoff) against more of Thanos’ forces as they try to acquire the Mind Stone. They are joined by Captain America (Steve Rogers), Falcon, and Black Widow (Natasha Romanoff).&nbsp;</p><ul><li><a href="https://www.youtube.com/watch?v=7b7fBshO630"><span style="font-weight: 400" data-rich-links="{">Scarlet Witch &amp; Vision vs The Black Order | The Avengers: Infinity War</span></a></li></ul><p>Meanwhile, the Guardians who did not go to Nidavellir (basically Peter Quill, Gamora, Drax, and Mantis) head to Knowhere to prevent Thanos from acquiring the Reality Stone. However, this fails as Thanos has already gained the Reality Stone and uses it to trick the Guardians into an illusion, and captures Gamora (Thanos’ daughter) since she knows the location of the Soul Stone.&nbsp;<span style="font-weight: 400">&nbsp;</span></p><ol><li><a href="https://www.youtube.com/watch?v=z-IWeiD9sJI"><span style="font-weight: 400" data-rich-links="{">GOTG Arrives at Knowhere – Thanos Tortures Collector Scene – Avengers: Infinity War Movie Clip HD</span></a></li><li><a href="https://www.youtube.com/watch?v=-uKtIo3RrFs&amp;t=169s"><span style="font-weight: 400" data-rich-links="{">Avengers: Infinity War | Knowhere Scene | Thanos: “I like you.”</span></a></li></ol><p>Thanos tortures his daughter Nebula until Gamora reveals that the Soul Stone is in Vormir. Afterwards, Thanos and Gamora depart there while Nebula begs the Guardians to meet her on Titan, Thanos’ homeworld.&nbsp;</p><ul><li><a href="https://www.youtube.com/watch?v=2YyrTlraNUM"><span style="font-weight: 400" data-rich-links="{">Thanos Tortures Nebula Scene – Avengers Infinity War (2018) Movie Clip HD</span></a></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2b34175 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2b34175" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-29bf8a4 elementor-column elementor-col-100 elementor-top-column" data-id="29bf8a4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-92daece elementor-widget elementor-widget-text-editor" data-id="92daece" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #ff0000">2. LocateTitan</span></h3><p>After hijacking the Q-ship from Earth, Dr. Strange, Iron Man, and Spider Man decide to go to Titan. In the MCU, interstellar travel happens via wormholes (Einstein-Rosen Bridges).</p><ul><li><a href="https://www.youtube.com/watch?v=BWJ_P9gml_Y">AVENGERS INFINITY WAR “Avengers Vs Guardians of the Galaxy”</a></li></ul><p>Suppose that the route from Earth to Titan can be represented by a Weighted Undirected Graph where the vertices are <i>wormhole generators</i> and the edges are the <i>wormholes </i>themselves. A wormhole is created by two wormhole generators, so the wormhole would be a “path” between these generators.</p><p><strong>Some important points:</strong></p><ul><li>There is <i>no</i> direct wormhole that can extend from Earth to Titan, so going from Earth to Titan requires intermediate “stops” at different wormhole generators.</li><li>For instance, a hypothetical path could be from a generator on Earth to a generator on Planet X, and from the generator on Planet X to a generator on Titan.</li><li>Each edge (Wormhole) would have an associated weight, which is the energy cost of creating the wormhole that the particular edge represents.</li><li>Each vertex (Wormhole Generator) would also have a weight, and this number (a <i>double</i> data type) represents how functional that generator is. Due to Thanos’ conquest so far across the universe, not all of the wormhole generators would be 100% functional.</li><li>The Wormhole Generators would be identified by cardinal numbers (vertex 1 would be generator 1, vertex 2 would be generator 2, etc).</li></ul><p><strong>SUPPOSE there are<i> n</i> vertices IN THE GRAPH. ASSUME THAT GENERATOR #0 (vertex 0, the source) IS EARTH AND GENERATOR #(n-1) (vertex n-1, the destination) IS TITAN.</strong></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6e4ff4a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6e4ff4a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-b2a950c elementor-column elementor-col-50 elementor-top-column" data-id="b2a950c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-89755ad elementor-widget elementor-widget-text-editor" data-id="89755ad" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><b>Your input is made of 2 portions:</b></p><p>&nbsp;</p><ul><li>The generator number and the associated functionality.</li><li>An adjacency matrix displaying the energy cost of traveling from one generator to another.</li></ul><p>&nbsp;</p><p>&nbsp;</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-327de66 elementor-column elementor-col-50 elementor-top-column" data-id="327de66" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-81d756c elementor-widget elementor-widget-image" data-id="81d756c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="574" height="320" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.22.05-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.22.05-PM.png 574w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.22.05-PM-300x167.png 300w" sizes="(max-width: 574px) 100vw, 574px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8e2a18b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8e2a18b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-fe1d099 elementor-column elementor-col-50 elementor-top-column" data-id="fe1d099" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-39304f2 elementor-widget elementor-widget-text-editor" data-id="39304f2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix">The corresponding graph looks like this.
+<ul>
+ 	<li>The functionality of each generator is the number in black that is next to each vertex. For instance, the functionality of Generator #1 is 0.3</li>
+
+ 	<li>The energy cost between Generators i and j (in this image, that would be the number inside the <i>square </i>on each edge) would be the value at the i’th row and j’th column in the adjacency matrix.</li>
+
+ 	<li>For instance, the edge between Generator #0 and Generator #2 has the number 4 boxed. Thus, the energy cost between Generator #0 and Generator #2 w0uld be 4.</li>
+</ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-13596d8 elementor-column elementor-col-50 elementor-top-column" data-id="13596d8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-d322349 elementor-widget elementor-widget-image" data-id="d322349" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="447" height="217" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.31.52-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.31.52-PM.png 447w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.31.52-PM-300x146.png 300w" sizes="(max-width: 447px) 100vw, 447px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0273881 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0273881" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-03e3a37 elementor-column elementor-col-100 elementor-top-column" data-id="03e3a37" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f981b46 elementor-widget elementor-widget-text-editor" data-id="f981b46" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Right now, the adjacency matrix only shows the energy cost of each edge. However, we also need to factor in how each generator is <i>not</i> fully functional. Thus, if the <i>total cost</i> acknowledges the energy cost of each wormhole <i>and</i> the functionalities of the generators creating the wormhole, then the <i>less </i>functional the generators are, the <i>higher</i> the total cost of creating and using the wormhole would be.</p><p>Thus, if we want the adjacency matrix to hold the <i>total cost</i> of each wormhole, we can DIVIDE the energy cost by the functionality of BOTH generators that the wormhole connects.</p><p>Hence, once you read the input in and create your adjacency matrix, change EVERY edge weight (energy cost) by DIVIDING it by the functionality of BOTH vertices (generators) that the edge points to. Then, typecast this number to an integer (this is done to avoid precision errors).</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-aab4ca4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="aab4ca4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-7e211c8 elementor-column elementor-col-50 elementor-top-column" data-id="7e211c8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f4e1886 elementor-widget elementor-widget-text-editor" data-id="f4e1886" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>For instance, the edge from Generator #1 (row 1) to Generator #4 (column 4) has an energy cost of 7.</p><ul><li>Divide this by the functionality values of Generator #1 (which is 0.3) and Generator #4 (which is 0.9). As such, you would change the 4 to a 7/(0.3*0.9) = 25.925.</li><li>Next, typecast this to an int, so (int) (25.925.) = 25.</li><li>Thus, the value at row 3 and column 4 of the matrix would <i>now</i> be 25.</li><li>This means the <i>total cost</i> between Generator #1 and Generator #4 is 25.</li><li>Do this for every edge!</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-679c5b6 elementor-column elementor-col-50 elementor-top-column" data-id="679c5b6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3c1fb77 elementor-widget elementor-widget-image" data-id="3c1fb77" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="558" height="469" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.34.59-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.34.59-PM.png 558w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.34.59-PM-300x252.png 300w" sizes="(max-width: 558px) 100vw, 558px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-13d5e1a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="13d5e1a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a497040 elementor-column elementor-col-100 elementor-top-column" data-id="a497040" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9522595 elementor-widget elementor-widget-text-editor" data-id="9522595" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Then, using your <i>new </i>graph, calculate the minimum cost from Earth (Generator #0) and Titan (the final Generator; this would be Generator #5 since there are 6 Generators so the last Generator index is 6-1 = 5) in the example above.</p><p>Use <span style="text-decoration: underline">Dijkstra’s Algorithm</span> to find the path of minimum cost between Earth and Titan. Write this number into your output file!</p><p>Here is a good reference video for Dijkstra’s Algorithm:</p><ul><li><strong><a href="https://www.youtube.com/watch?v=Sj5Z-jaE2x0">Dijkstra algorithm | Single source shortest path algorithm</a></strong></li></ul><p><strong>Pseudocode for Dijkstra’s Algorithm:</strong></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-eccb8f4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="eccb8f4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-d2eaca8 elementor-column elementor-col-100 elementor-top-column" data-id="d2eaca8" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-69d9224 elementor-widget elementor-widget-image" data-id="69d9224" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="958" height="605" src="./Data Structures_files/Screen-Shot-2022-11-21-at-1.36.25-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-21-at-1.36.25-PM.png 958w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-21-at-1.36.25-PM-300x189.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-21-at-1.36.25-PM-768x485.png 768w" sizes="(max-width: 958px) 100vw, 958px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3075077 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3075077" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-bcab4a0 elementor-column elementor-col-50 elementor-top-column" data-id="bcab4a0" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-cc58f44 elementor-widget elementor-widget-text-editor" data-id="cc58f44" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><b>Task</b><b>: </b>using the Adjacency Matrix of <i>n</i> vertices and starting from Earth (<strong>vertex 0</strong>), modify the edge weights using the functionality values of the vertices that each edge connects, and then determine the minimum cost to reach Titan (vertex n-1) from Earth (vertex 0). Write this number into the output file.</p><p><b>Some preconditions:</b></p><ul><li>The generator functionality values are guaranteed to be <i>between </i>0 and 1.</li><li>The energy costs are guaranteed to be positive integers.</li><li>The graph is guaranteed to be undirected.</li><li>The graph is guaranteed to be connected.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-e408889 elementor-column elementor-col-50 elementor-top-column" data-id="e408889" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-61a7a49 elementor-widget elementor-widget-image" data-id="61a7a49" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="581" height="397" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.49.17-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.49.17-PM.png 581w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.49.17-PM-300x205.png 300w" sizes="(max-width: 581px) 100vw, 581px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-f069a3f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f069a3f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e3ae897 elementor-column elementor-col-100 elementor-top-column" data-id="e3ae897" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1af0d41 elementor-widget elementor-widget-text-editor" data-id="1af0d41" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Iron Man, Dr. Strange, and Spiderman arrive at Titan but are ambushed by the Guardians who think they are part of the Black Order. After some tension, they plan to work together to kill Thanos.</p><p>Meanwhile, to protect Vision, the Avengers on Earth head to Wakanda, a country in East Africa which has the technology to remove the Mind Stone in Vision’s head <i>without</i> killing him in the process.</p><ul><li><a href="https://www.youtube.com/watch?v=iwkxsrAjGdM"><span style="font-weight: 400" data-rich-links="{">Arriving on Wakanda Scene – Avengers: Infinity War (2018) Movie Clip HD [1080p 50FPS]</span></a></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-5bc5220 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5bc5220" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e3511fc elementor-column elementor-col-100 elementor-top-column" data-id="e3511fc" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-8053518 elementor-widget elementor-widget-text-editor" data-id="8053518" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #ff0000">3. MindStoneNeighborNeurons</span></h3>
+A Wakandan named Shuri attempts to figure out how to remove the Mind Stone from Vision’s head.
+<ul>
+ 	<li><a href="https://www.youtube.com/watch?v=qTV5kpM8Fvs"><b><span data-rich-links="{">I’m Sure You Did Your Best – Shuri Helps Vision Scene – Avengers Infinity War Movie Clip HD</span></b></a></li>
+</ul>
+Extracting the Mind Stone from Vision without killing him requires the detection of a specific set of neurons that CONNECT to the Mind Stone. Given a Directed Graph that contains vertices (neurons) and edges (synapses), the MindStoneNeighborNeurons method returns a list of neurons that connect to the Mind Stone.
+
+In the brain, cranial nerves usually have dendrites and an axon. A synapse occurs <i>between</i> a dendrite and an axon.&nbsp; The dendrites <i>receive</i> information from other nerves, and the axon <i>transmits</i> information to other nerves. As such, information always flows <i>from</i> dendrites of a nerve, and then <i>into</i> the axon of that nerve. That is why the graph is directed!</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7b93fa2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7b93fa2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a1eeffe elementor-column elementor-col-100 elementor-top-column" data-id="a1eeffe" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3447e36 elementor-widget elementor-widget-image" data-id="3447e36" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="385" height="166" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.54.24-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.54.24-PM.png 385w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.54.24-PM-300x129.png 300w" sizes="(max-width: 385px) 100vw, 385px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7808998 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7808998" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-071445f elementor-column elementor-col-100 elementor-top-column" data-id="071445f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9b1190f elementor-widget elementor-widget-text-editor" data-id="9b1190f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>For this task, you can assume that the neurons have multiple dendrites and <i>only </i>one axon. You can also assume that a nerve’s axon <i>always</i> connects to ONLY 1 dendrite of another nerve (or it connects to the Mind Stone).&nbsp;</p><p>Also, the Mind Stone does not have any axons, <i>but</i> it does receive information from other nerves. As such, the Mind Stone always has an out-degree of 0. Use this to your advantage!</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-5b83063 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5b83063" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-6fa57f5 elementor-column elementor-col-50 elementor-top-column" data-id="6fa57f5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1e29183 elementor-widget elementor-widget-text-editor" data-id="1e29183" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Your input file will be a Set of Edges representation of Vision’s neural network.</p><ul><li>The first number <i>n</i> is the number of vertices (neurons). In the below example, <i>n = 17</i>.</li><li>The next <i>n</i> lines are the names of the neurons. These are Strings. In the below example, the Strings are a, b, c, d, etc.</li><li>The next line is the number <i>m</i> of edges (synapses). In the below example, <i>m = 16</i>.</li><li>The next <i>m</i> lines are the synapses. Each line contains two Strings, so the synapse is between the neurons represented by the first and second String. In the below example, these synapses would be a d, b d, c d, etc.</li></ul><p><b>Preconditions:</b></p><ul><li>The names of the nerves may not be single letters or characters (instead, they may be strings).</li></ul><ul><li>The input is guaranteed to be a set of edges representation of a neural network (each nerve has 1 axon, every axon connects to only 1 dendrite of another nerve, and the Mind Stone has no outgoing axons). As such, the graph is guaranteed to be connected.</li></ul><p>The input file to the right represents the following graph (a neural network). NOTE that in this example, vertex x represents the Mind Stone.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-e0fe865 elementor-column elementor-col-50 elementor-top-column" data-id="e0fe865" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9f75d85 elementor-widget elementor-widget-image" data-id="9f75d85" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="45" height="708" src="./Data Structures_files/Screen-Shot-2022-11-18-at-3.59.55-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.59.55-PM.png 45w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-3.59.55-PM-19x300.png 19w" sizes="(max-width: 45px) 100vw, 45px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-f3b7faf elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f3b7faf" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5eeae3d elementor-column elementor-col-100 elementor-top-column" data-id="5eeae3d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ef9a8c2 elementor-widget elementor-widget-image" data-id="ef9a8c2" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="491" height="372" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.48.06-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.48.06-PM.png 491w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.48.06-PM-300x227.png 300w" sizes="(max-width: 491px) 100vw, 491px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-33189fd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="33189fd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-c8a72f6 elementor-column elementor-col-50 elementor-top-column" data-id="c8a72f6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-83fbcfb elementor-widget elementor-widget-text-editor" data-id="83fbcfb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>The neurons connecting to the Mind Stone are d, e, i, and l. Print these into the output file, and EACH neuron in a <i>new line</i>! It is also fine if there is a new line after the <i>last </i>printed neuron also. As such, the corresponding output file looks like this:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-f375ae5 elementor-column elementor-col-50 elementor-top-column" data-id="f375ae5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-12f9aac elementor-widget elementor-widget-image" data-id="12f9aac" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="42" height="84" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.48.13-PM.png" class="attachment-large size-large" alt="">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0949138 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0949138" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4cccb18 elementor-column elementor-col-100 elementor-top-column" data-id="4cccb18" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-02e790e elementor-widget elementor-widget-text-editor" data-id="02e790e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Preconditions:</p><ul><li>The names of the nerves may not be single letters or characters (instead, they may be strings).</li><li>The input is guaranteed to be a set of edges representation of a neural network (each nerve has 1 axon, every axon connects to only 1 dendrite of another nerve, and the Mind Stone has no outgoing axons). As such, the graph is guaranteed to be connected.</li></ul><p><b>Task</b><b>: </b>given a Set of Edges representing Vision’s Neural Network, identify all of the vertices that connect to the Mind Stone. List the names of these neurons in the output file.</p><p>On Titan, the Guardians plan out with Iron Man and Spiderman regarding an action scheme to stop Thanos. Meanwhile, using his Time Stone, Dr. Strange tries to predict the possible future outcomes, discovering that out of around 14 million, they win only one.</p><h3>&nbsp;</h3><h3><span style="color: #ff0000">4. Challenge – UseTimeStone (25 points extra credit)</span></h3><p>Dr. Strange uses his Time Stone to view possible alternate realities.</p><ul><li><a href="https://www.youtube.com/watch?v=ZCPN9SfdH7c"><b><span data-rich-links="{">Avengers: Infinity War (2018) – “14,000,605” | Movie Clip HD</span></b></a></li></ul><p>When Dr. Strange calculates all the possible futures, the network of events that can potentially occur can be represented by a Directed Graph. The value that Dr. Strange obtained would basically be the number of possible paths through this graph – in other words, the number of possible timelines. Think of each timeline as a “path” through the graph where each vertex represents an event that could potentially occur.</p><p>For instance, starting from Event 0 in the graph below, there are 6 possible timelines that could occur.</p><p>These timelines are 0, 0-1, 0-1-4, 0-1-2, 0-1-2-3, and 0-3.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ce14a04 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ce14a04" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-96bcd3d elementor-column elementor-col-100 elementor-top-column" data-id="96bcd3d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b2fd241 elementor-widget elementor-widget-image" data-id="b2fd241" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="547" height="295" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.41.07-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.41.07-PM.png 547w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.41.07-PM-300x162.png 300w" sizes="(max-width: 547px) 100vw, 547px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-926c2dd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="926c2dd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-ce44594 elementor-column elementor-col-100 elementor-top-column" data-id="ce44594" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0f67afa elementor-widget elementor-widget-text-editor" data-id="0f67afa" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>First determine the number of possible timelines in the graph, starting from the first event (event 0, in the above example). Print this value into the output file.</p><p>Each “event” also has an expected utility (EU) which is a number that shows how “desirable” the event is. The EU of a timeline would be the SUM of the EUs of all the events in that timeline (meaning all the vertices in the path).</p><p>In <i>Avengers: Infinity War</i>, Dr. Strange only sees 1 timeline where the Avengers win against Thanos. We want to determine the number of timelines starting from event 0 where the EU of the timeline is <i>at least</i> the EU of the Avengers winning! The EU of the Avengers winning is given as the threshold EU.</p><p>As such, given an input threshold EU value, next determine the number of timelines starting from event 0 where the total EU is GREATER than OR equal to the threshold. Print this value into the output file in a NEW line!</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6c080fc elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6c080fc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-86ce336 elementor-column elementor-col-50 elementor-top-column" data-id="86ce336" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-053b876 elementor-widget elementor-widget-image" data-id="053b876" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="577" height="426" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.41.36-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.41.36-PM.png 577w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.41.36-PM-300x221.png 300w" sizes="(max-width: 577px) 100vw, 577px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-ad7eb6d elementor-column elementor-col-50 elementor-top-column" data-id="ad7eb6d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-82ce027 elementor-widget elementor-widget-image" data-id="82ce027" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="579" height="308" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.41.43-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.41.43-PM.png 579w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.41.43-PM-300x160.png 300w" sizes="(max-width: 579px) 100vw, 579px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-202b957 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="202b957" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-ca15e03 elementor-column elementor-col-100 elementor-top-column" data-id="ca15e03" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3c2e678 elementor-widget elementor-widget-text-editor" data-id="3c2e678" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Again, the timelines start from event 0. As such, the possible timelines and corresponding EU values are listed below.</p><p>The possible timelines are:</p><ul><li>0 (EU = 2)</li><li>0-1 (EU =2-1 =&nbsp; 1)</li><li>0-1-2 (EU = 2-1+3 = 4)</li><li>0-1-3 (EU = 5)</li><li>0-1-3-5 (EU = 7)</li><li>0-1-3-5-6 (EU = 11)</li><li>0-1-3-5-7 (EU = 4)</li><li>0-4 (EU = -4)</li><li>0-4-3 (EU = 0)</li><li>0-4-3-5 (EU = 2)</li><li>0-4–3-5-6 (EU = 6)</li><li>0-4-3-5-7 (EU = -1)</li></ul><p>Here, there are 12 possible timelines, and there are 4 timelines with an EU higher than or equal to&nbsp; the threshold of 5 (in the input file). Thus, you would print “12” and “4” in separate lines in the output file.</p><p>Thus, the output file for the above example looks like this:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-644780c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="644780c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e7355bd elementor-column elementor-col-50 elementor-top-column" data-id="e7355bd" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-14c54a2 elementor-widget elementor-widget-image" data-id="14c54a2" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="48" height="48" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.47.55-PM.png" class="attachment-large size-large" alt="">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-0b8479f elementor-column elementor-col-50 elementor-top-column" data-id="0b8479f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-07db810 elementor-widget elementor-widget-text-editor" data-id="07db810" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix">Some preconditions:
+
+&nbsp;
+<ul>
+ 	<li>The EU values are guaranteed to be integers.</li>
+
+ 	<li>The graph is guaranteed to be connected.</li>
+</ul>
+
+
+<b>Task</b><b>: </b>given a starting event and an Adjacency Matrix representing a graph of all possible events once Thanos arrives on Titan, determine the total possible number of timelines that could occur AND the number of timelines with a total EU at least the threshold value. Write this number into the output file.</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-abe0db0 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="abe0db0" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-9d193c9 elementor-column elementor-col-100 elementor-top-column" data-id="9d193c9" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-72aff71 elementor-widget elementor-widget-text-editor" data-id="72aff71" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>On Vormir, Thanos sacrifices Gamora’s soul for the Soul Stone by throwing her off a cliff.</p><ol><li><a href="https://www.youtube.com/watch?v=-699mZ1yc3g"><span style="font-weight: 400" data-rich-links="{">Thanos Sacrifices Gamora Scene | Avengers: Infinity War (2018) Marvel Movie Clip</span></a></li><li><a href="https://www.youtube.com/watch?v=t3-L7-tAQMM&amp;t=97s"><span style="font-weight: 400" data-rich-links="{">Gamora’s Death Scene – Avengers Infinity War (2018) Movie Clip HD [1080p 50FPS]</span></a></li></ol><p>Thanos arrives on Titan and after an intense showdown, Dr. Strange gives up the Time Stone to Thanos who was about to kill Iron Man using the 4 Infinity Stones he already had in his gauntlet.</p><ul><li><a href="https://www.youtube.com/watch?v=pfpdGvgK7sg"><span style="font-weight: 400" data-rich-links="{">Avengers infinity war | battle of titans HD 4k</span></a></li></ul><p>The Wakandans hold a fierce battle against the Black Order at Wakanda.</p><ul><li><a href="https://www.youtube.com/watch?v=g5_w5XrC7Ts&amp;t=8s"><span style="font-weight: 400" data-rich-links="{">Avengers: Infinity War (2018) – “Battle Of Wakanda” | Movie Clip HD</span></a></li></ul><p>Eventually, Thor, Rocket, and Groot arrive in Wakanda to assist in defeating the Black Order.</p><ul><li><a href="https://www.youtube.com/watch?v=Ip6YwpLcIjI"><span style="font-weight: 400" data-rich-links="{">Thor Arrives at the Battle of Wakanda in Avengers: Infinity War (2018)</span></a></li></ul><p>Finally, Thanos shows up in Wakanda to take the Mind Stone. Using his Infinity Stones, Thanos easily blocks and incapacitates many of the characters fighting him there including Captain America, Black Panther, and Bruce Banner.</p><p>Using all of her power, Wanda destroys the Mind Stone (reluctantly killing Vision in the process) before Thanos reaches her. However, using the Time Stone, Thanos reversed time until Vision was still alive, and then grabs the Mind Stone in Vision’s head and kills him.</p><h3>&nbsp;</h3><h3><span style="color: #ff0000">5. PredictThanosSnap</span></h3><p>A final attack by Thor has him dig his Strombreaker through Thanos’ chest. However, Thanos snaps his fingers and teleports away, causing half of all life to disintegrate shortly afterward.</p><ul><li><a href="https://www.youtube.com/watch?v=zWhEgdh0X9c&amp;t=118s"><b><span data-rich-links="{">Avengers: Infinity War (2018) – “Snap Of Disintegration”| Movie Clip HD</span></b></a></li></ul><p>Thanos’ snap would have had an immeasurable impact on planets such as Earth. Eliminating half of the population without notice would lead to unprecedented accidents, crashes, power outages, and loss of governmental control.</p><p>In the PredictThanosSnap method, we work with a social network (an Adjacency Matrix) where each vertex represents a person. We want to find out if half of the people (vertices) are removed, are the remaining people still able to contact each other? In other words, if half of the vertices are removed, is the graph still connected?</p><p>Because Thanos’ snap was impartial and unbiased, we use a random() function to determine which vertices to eliminate. In essence, each person has a 50% probability of disappearing, and you will use a seed so that the randomization yields the same results in Autolab as well as your program.</p><p>Then, return a boolean (true or false) which indicates if the graph is still connected after the removal.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7b34ae7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7b34ae7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f7bf853 elementor-column elementor-col-50 elementor-top-column" data-id="f7bf853" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-8fe13dd elementor-widget elementor-widget-image" data-id="8fe13dd" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="323" height="271" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.59.06-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.06-PM.png 323w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.06-PM-300x252.png 300w" sizes="(max-width: 323px) 100vw, 323px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-bc46dcd elementor-column elementor-col-50 elementor-top-column" data-id="bc46dcd" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-64e3761 elementor-widget elementor-widget-image" data-id="64e3761" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="330" height="273" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.59.13-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.13-PM.png 330w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.13-PM-300x248.png 300w" sizes="(max-width: 330px) 100vw, 330px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-90ea59a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="90ea59a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-bf8c51c elementor-column elementor-col-100 elementor-top-column" data-id="bf8c51c" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-58100fd elementor-widget elementor-widget-text-editor" data-id="58100fd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>The social network in the example (after the snap) is <i>not</i> connected since person 6 has <i>no</i> way of contacting person&nbsp; 1 and person&nbsp; 3 (since person 4 disappears).</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-fdff586 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="fdff586" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e007897 elementor-column elementor-col-50 elementor-top-column" data-id="e007897" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-eb3c769 elementor-widget elementor-widget-image" data-id="eb3c769" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="486" height="270" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.59.26-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.26-PM.png 486w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.26-PM-300x167.png 300w" sizes="(max-width: 486px) 100vw, 486px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-57ce1a2 elementor-column elementor-col-50 elementor-top-column" data-id="57ce1a2" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6c0cb0f elementor-widget elementor-widget-image" data-id="6c0cb0f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="437" height="282" src="./Data Structures_files/Screen-Shot-2022-11-18-at-4.59.33-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.33-PM.png 437w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-4.59.33-PM-300x194.png 300w" sizes="(max-width: 437px) 100vw, 437px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-fb9b5bc elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="fb9b5bc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3724b07 elementor-column elementor-col-50 elementor-top-column" data-id="3724b07" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6d1f372 elementor-widget elementor-widget-text-editor" data-id="6d1f372" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>After reading in the seed, use <i>StdRandom.setSeed(seed)</i> to prepare the seed to use in StdRandom.</p><p>Then, call <i>StdRandom.uniform()</i> for each vertex (make sure to go IN ORDER from vertex 0 to the last vertex). If <i>StdRandom.uniform() </i>is less than OR equal to 0.5, then delete the vertex.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-e4d8aa7 elementor-column elementor-col-50 elementor-top-column" data-id="e4d8aa7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-456bac3 elementor-widget elementor-widget-image" data-id="456bac3" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="564" height="168" src="./Data Structures_files/Screen-Shot-2022-11-18-at-5.05.50-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-5.05.50-PM.png 564w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-5.05.50-PM-300x89.png 300w" sizes="(max-width: 564px) 100vw, 564px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-b03bf2c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="b03bf2c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-b3a246f elementor-column elementor-col-100 elementor-top-column" data-id="b3a246f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-235c6b0 elementor-widget elementor-widget-text-editor" data-id="235c6b0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>In theory, the seed ensures that Autolab generates the same random numbers as you when calling StdRandom.uniform().&nbsp; The StdRandom class uses the seed to perform the uniform() method. In the pseudocode, the 0.5 is chosen since each person has a 50% chance of disappearing.&nbsp;</p><p>Also, the choice of deleting when the random number is less than or equal to 0.5 is an arbitrary decision, but you must follow it to ensure consistency between your results and Autolab’s results. The same applies for the reason behind iterating from vertex 0 to the last vertex and not in any other order.</p><p>Here is more information regarding seeds if you are interested: <a href="https://stats.stackexchange.com/questions/354373/what-exactly-is-a-seed-in-a-random-number-generator">Seeds Stack Overflow</a>.</p><p>The specific seed value causes vertices 1, 2, 4, and 6 to be removed. As such, the corresponding graph looks like this:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7af15bd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7af15bd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5fca06a elementor-column elementor-col-100 elementor-top-column" data-id="5fca06a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4ac7518 elementor-widget elementor-widget-image" data-id="4ac7518" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="304" height="261" src="./Data Structures_files/Screen-Shot-2022-11-18-at-5.08.17-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-5.08.17-PM.png 304w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-5.08.17-PM-300x258.png 300w" sizes="(max-width: 304px) 100vw, 304px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-3fb6031 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3fb6031" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4941c08 elementor-column elementor-col-100 elementor-top-column" data-id="4941c08" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f8b27db elementor-widget elementor-widget-text-editor" data-id="f8b27db" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>This graph is not connected. As such, the output would thus be false.&nbsp;</p><p>The output file would then look like this:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8746f7b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8746f7b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e7df0d1 elementor-column elementor-col-50 elementor-top-column" data-id="e7df0d1" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-2a8ca9d elementor-widget elementor-widget-image" data-id="2a8ca9d" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="84" height="23" src="./Data Structures_files/Screen-Shot-2022-11-18-at-5.08.24-PM.png" class="attachment-large size-large" alt="">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-dfcdeeb elementor-column elementor-col-50 elementor-top-column" data-id="dfcdeeb" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-cb74b59 elementor-widget elementor-widget-text-editor" data-id="cb74b59" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Preconditions:</p><ul><li>The graph is guaranteed to be undirected.</li><li>The <i>input</i> graph is guaranteed to be connected.</li></ul><p><b>Task</b><b>:</b> Given an adjacency matrix, use a random() function to remove half of the vertices and write into the output file a boolean (true or false) indicating if the graph is still connected.</p><p><br style="font-weight: 400"><br style="font-weight: 400"></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-9e86bd9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9e86bd9" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-65cc505 elementor-column elementor-col-100 elementor-top-column" data-id="65cc505" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-fba02d2 elementor-widget elementor-widget-text-editor" data-id="fba02d2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>After a long day of grief, anguish, and diligence, Thanos sits in the Garden and watches the sun rise on a <i>seemingly</i> grateful universe, and smiles.&nbsp;</p><ul><li><a href="https://www.youtube.com/watch?v=-mDIttOOFgc&amp;t=55s"><span style="font-weight: 400" data-rich-links="{&quot;fple-t&quot;:&quot;Avengers: Infinity War - A Poignant Ending (Thanos Wins)&quot;,&quot;fple-u&quot;:&quot;https://www.youtube.com/watch?v=-mDIttOOFgc&amp;t=55s&quot;,&quot;fple-mt&quot;:null,&quot;type&quot;:&quot;first-party-link&quot;}">Avengers: Infinity War – A Poignant Ending (Thanos Wins)</span></a></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7c719fd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7c719fd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-916f2bb elementor-column elementor-col-50 elementor-top-column" data-id="916f2bb" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7483a32 elementor-widget elementor-widget-image" data-id="7483a32" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="321" height="229" src="./Data Structures_files/Screen-Shot-2022-11-18-at-5.13.18-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-5.13.18-PM.png 321w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-5.13.18-PM-300x214.png 300w" sizes="(max-width: 321px) 100vw, 321px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-8f39328 elementor-column elementor-col-50 elementor-top-column" data-id="8f39328" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3d499b1 elementor-widget elementor-widget-text-editor" data-id="3d499b1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="text-decoration: underline"><strong>The end</strong></span>.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-89e69b1 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="89e69b1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-736799b elementor-column elementor-col-100 elementor-top-column" data-id="736799b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-548061c elementor-widget elementor-widget-text-editor" data-id="548061c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3 class="c5"><span class="c8 c6">Helpful Java Classes</span></h3><p class="c5"><span class="c3">The following are some data structures which are automatically imported with “<strong>java.util.*</strong>” that can help make your code cleaner and more efficient. You are free to not use any of these, and you are also free to use any other class under “java.util.*” as you see fit. I will not be covering every single method for these data structures, just some useful ones for this assignment. You can find more information about how to use these classes online.</span></p><ul class="c1 lst-kix_f92w11ejpinp-0 start"><li class="c0 li-bullet-0"><span class="c3"><strong>ArrayList</strong> is an ordered array-like structure with no size limit, as it automatically resizes</span></li></ul><ul><li style="list-style-type: none"><ul><li>You can initialize an empty ArrayList named “name” which holds objects of type “Type” with <span class="c2">ArrayList name = new ArrayList();</span></li><li>For example, an ArrayList of integers named “arrList” is initialized with <span class="c2">ArrayList arrList = new ArrayList&lt;&gt;();</span></li><li>You can add a new element of type “Type” to the end of your ArrayList in average case O(1) time with <span class="c2">name.add(newElement);</span></li><li>You can get the element at some index of your ArrayList in O(1) time with <span class="c2">name.get(index);</span></li><li>You can set some index to some new element in O(1) time with <span class="c2">name.set(index, newElement);</span></li><li>You can check if the ArrayList contains some element (returns a boolean) in O(n) time with <span class="c2">name.contains(element)</span></li></ul></li></ul><ul class="c1 lst-kix_f92w11ejpinp-0"><li class="c0 li-bullet-0"><span class="c3"><strong>HashMap</strong> is an unordered data structure which stores and retrieves key value pairs</span></li></ul><ul><li style="list-style-type: none"><ul class="c1 lst-kix_f92w11ejpinp-1 start"><li class="c4 li-bullet-0">You can initialize an empty HashMap named “name” that maps objects of type “Key” to objects of type “Value” with <span class="c2">HashMap&lt;Key, Value&gt; name = new HashMap&lt;&gt;();</span></li><li class="c4 li-bullet-0">For example, a HashMap named “map” which maps strings to integers is initialized with <span class="c2">HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();</span></li><li class="c4 li-bullet-0">You can add a new key value pair, or update an existing key with a new value in average case O(1) time with <span class="c2">name.put(key, value);</span></li><li class="c4 li-bullet-0">You can check if the HashMap contains some key in average case O(1) time (returns a boolean) with <span class="c2">name.containsKey(key)</span></li><li class="c4 li-bullet-0">You can check the value of some key in the HashMap in average case O(1) time with <span class="c2">name</span><span class="c2">.get(key)</span></li><li class="c4 li-bullet-0">You can iterate over all the keys in the HashMap with <span class="c2">for (Key key : name.keySet())</span><span class="c3">&nbsp;where Key is the type of keys in the HashMap.</span></li></ul></li></ul><ul class="c1 lst-kix_f92w11ejpinp-0"><li class="c0 li-bullet-0"><span class="c3"><strong>HashSet</strong> is an unordered data structure which only stores keys</span></li></ul><ul><li style="list-style-type: none"><ul class="c1 lst-kix_f92w11ejpinp-1 start"><li class="c4 li-bullet-0">You can initialize an empty HashSet named “name” that stores objects of type “Key” with <span class="c2 c15">HashSet name = new HashSet&lt;&gt;();</span></li><li class="c4 li-bullet-0">For example, a HashSet named “set” which stores strings is initialized with <span class="c2">HashSet set = new HashSet&lt;&gt;();</span></li><li class="c4 li-bullet-0">You can add a new key to the hash set in average case O(1) time with <span class="c2">name.add(key)</span></li><li class="c4 li-bullet-0">You can check if a key exists in the hash set in average case O(1) time (returns a boolean) with <span class="c2">name.contains(key)</span></li><li class="c4 li-bullet-0">You can remove a key in average case O(1) time with <span class="c2">name.remove(key)</span></li><li class="c4 li-bullet-0">You can iterate over all the keys in the HashSet with <span class="c2">for (Key key : name)</span>&nbsp;where Key is the type of keys in the HashSet.</li></ul></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c75ad14 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c75ad14" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-385f422 elementor-column elementor-col-100 elementor-top-column" data-id="385f422" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-134ac0f elementor-widget elementor-widget-text-editor" data-id="134ac0f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>VSCode Extensions</h3><p>You can install VSCode extension packs for Java. Take a look at <a href="https://code.visualstudio.com/docs/java/java-tutorial">this tutorial</a>. We suggest:</p><ul><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Extension Pack for Java</a></li><li><a href="https://code.visualstudio.com/docs/java/java-project">Project Manager for Java</a></li><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug">Debugger for Java</a></li></ul><h3><span style="color: #ff0000">Importing VSCode Project</span></h3><ol><li>Download the zip file from <a href="https://autolab.cs.rutgers.edu/">Autolab Attachments</a>.</li><li>Unzip the file by double clicking it.</li><li>Open VSCode<ul><li>Import the folder <strong>InfinityWar</strong> to a workspace through&nbsp;<strong>File</strong> &gt; <b>Open Folder</b></li></ul></li></ol><h3>Executing and Debugging</h3><ul><li>You can run your program through VSCode or you can use the Terminal to compile and execute. We suggest running through VSCode because it will give you the option to debug.</li><li><a href="https://code.visualstudio.com/docs/java/java-debugging">How to debug your code</a></li><li>If you choose the Terminal, from InfinityWar directory/folder:<ul><li>to compile: &nbsp;<strong>javac -d bin src/avengers/*.java</strong></li><li>to execute ForgeStormBreaker: <strong>java -cp bin&nbsp;<strong>avengers.ForgeStormBreaker forgestormbreaker.in forgestormbreaker.out</strong></strong></li></ul></li></ul><h3><span style="color: #ff0000"><span style="color: #000000">Zipping the directory for submission</span> (READ THIS before submiting)</span></h3><ul><li>Be careful when zipping the directory for submission.</li><li><span style="text-decoration: underline">Autolab is expecting the exact directory organization we provided to you</span>.</li><li>Autolab is expecting the zip file to be named <strong>infinitywar.zip</strong></li><li>All files that you have written <span style="text-decoration: underline"><strong>MUST</strong></span> be in the&nbsp;<strong>InfinityWar/src/avengers</strong> directory.</li></ul><p>To zip the&nbsp;<strong>InfinityWar</strong>&nbsp;directory navigate to the parent directory:</p><ul><li>zip -r&nbsp;<strong>infinitywar.zip</strong>&nbsp;InfinityWar</li></ul><p>Inspect the zip by listing the files in zip without uncompressing it:</p><ul><li>unzip -l infinitywar.zip</li></ul><p>Your zip file must have the following structure:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-483ba48 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="483ba48" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-7de6582 elementor-column elementor-col-100 elementor-top-column" data-id="7de6582" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-f66daca elementor-widget elementor-widget-image" data-id="f66daca" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="605" height="605" src="./Data Structures_files/Screen-Shot-2022-11-18-at-6.49.17-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-6.49.17-PM.png 605w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-6.49.17-PM-300x300.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/11/Screen-Shot-2022-11-18-at-6.49.17-PM-150x150.png 150w" sizes="(max-width: 605px) 100vw, 605px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d1b173c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d1b173c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-0cc9ebf elementor-column elementor-col-100 elementor-top-column" data-id="0cc9ebf" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bf2241f elementor-widget elementor-widget-text-editor" data-id="bf2241f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Before submission</h3><p><strong>Collaboration policy.</strong> Read our collaboration policy <a href="https://ds.cs.rutgers.edu/#academic-integrity">here</a>.</p><p><strong>Submitting the assignment.</strong></p><p>You will have to submit a zip file. See previous section on how to zip the directory.</p><p>Submit <em>infinitywar<span style="font-weight: 400">.zip</span></em>&nbsp;separately via the web submission system called Autolab. To do this, click the <em>Assignments</em> link from the course website; click the <em>Submit</em> link for that assignment.</p><h3>Getting help</h3><p>If anything is unclear, don’t hesitate to drop by office hours or post a question on Piazza.</p><ul><li>Find instructors and head TAs office hours&nbsp;<a href="https://ds.cs.rutgers.edu/staff/"><em>here</em></a>&nbsp;&nbsp;</li><li>Find tutors office hours on Canvas -&gt; Tutoring -&gt; RU CATS</li><li>In addition to office hours we have the <a href="https://resources.cs.rutgers.edu/docs/rooms-equipment/cave/">CAVE</a> (Collaborative Academic Versatile Environment), a community space staffed with lab assistants which are undergraduate students further along the CS major to answer questions.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c7da9b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c7da9b3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e01ccb9 elementor-column elementor-col-100 elementor-top-column" data-id="e01ccb9" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e758aa7 elementor-widget elementor-widget-text-editor" data-id="e758aa7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Problem by Yashas Ravi</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</article>
+
+                </div>
+            </main>
+            <footer>
+                                <div class="sas-info">
+                    <div class="sas-container">
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Connect with Rutgers</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/">Rutgers Home</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/news-center/rutgers-today">Rutgers Today</a></li>
+                                <li class="sas-item"><a class="sas-link" href="https://my.rutgers.edu/portal">myRutgers</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://scheduling.rutgers.edu/calendar.shtml">Academic Calendar</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://ruevents.rutgers.edu/events/">Calendar of Events</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/news-a-events">SAS Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Explore SAS</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/departments-a-degree-granting-programs">Departments &amp; Degree-Granting Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/other-instructional-programs">Other Instructional Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasundergrad.rutgers.edu/index.php/academics/requirements/list-of-majors-and-minors">Majors &amp; Minors</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/for-faculty/795-research-programs-centers-and-institutes">Research Programs, Centers, &amp; Institutes</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasip.rutgers.edu/">International Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://lifesci.rutgers.edu/">Division of Life Sciences</a></li>
+                            </ul>
+                        </div>
+                            
+                            <div class="sas-links-section">                    <h2 class="sas-links-title">Explore CS</h2>                    <ul class="sas-ul sas-links-list">                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/about/employment">We are Hiring!</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/research/computer-and-network-systems-list">Research</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/news">News</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">Events</a></li><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">                        </a><li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events"></a><a class="sas-link" href="https://resources.cs.rutgers.edu/">Resources</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/search">Search CS</a></li>                    </ul>                </div>            
+            
+            
+                    
+                    </div>
+                </div>
+
+                                <nav class="sas-bot-links" aria-label="Secondary Navigation">
+                    <div class="sas-container">
+                            
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    
+            </ul>
+        
+                    </div>
+                </nav>
+
+                                <div role="contentinfo" class="sas-copyright">
+                    <div class="sas-container">
+                        <a class="sas-link sas-to-top" href="https://ds.cs.rutgers.edu/assignment-infinitywar/#">Back to Top</a>
+                        <p class="sas-copyright-p">
+                          Copyright 2020, Rutgers, The State University of New Jersey. All rights reserved.<br>
+                          Rutgers is an equal access/equal opportunity
+                          institution. Individuals with disabilities are
+                          encouraged to direct suggestions, comments, or
+                          complaints concerning any accessibility issues
+                          with Rutgers web sites to: <a class="sas-link" href="mailto:accessibility@rutgers.edu">accessibility@rutgers.edu</a> or complete the <a class="sas-link" href="https://oit.rutgers.edu/accessibility/barrierform">Report Accessibility Barrier or Provide Feedback Form</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+        <div aria-hidden="true">
+                <link rel="stylesheet" id="academicons-css" href="./Data Structures_files/academicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Data Structures_files/font-awesome.min(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./Data Structures_files/js"></script>
+<script type="text/javascript" src="./Data Structures_files/override.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/owl.carousel.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/slider.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/hoverIntent.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/maxmegamenu.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/public.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/frontend-modules.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery.sticky.min.js.download"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","nonce":"dd8272ac9e","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/dialog.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/waypoints.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/swiper.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/share-link.min.js.download"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","downloadImage":"Download image"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.8","urls":{"assets":"https:\/\/wordpress.cs.rutgers.edu\/ds-cs-rutgers-edu\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":3092,"title":"Assignment%20InfinityWar%20%E2%80%93%20Data%20Structures","excerpt":"","featuredImage":false}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js(1).download"></script>
+
+        </div><span id="elementor-device-mode" class="elementor-screen-only"></span>
+    
+
+</body></html>

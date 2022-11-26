@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://ds.cs.rutgers.edu/assignment-ru-kindergarten/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Data Structures</title>
+        <link rel="stylesheet" href="./Data Structures_files/style.css">
+   <link rel="dns-prefetch" href="https://maps.googleapis.com/">
+<link rel="dns-prefetch" href="https://wordpress.cs.rutgers.edu/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ds.cs.rutgers.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.12"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Data Structures_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="theme-style-css" href="./Data Structures_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-style-override-css" href="./Data Structures_files/override.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Data Structures_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Data Structures_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-fontawesome-css" href="./Data Structures_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="megamenu-genericons-css" href="./Data Structures_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Data Structures_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Data Structures_files/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Data Structures_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./Data Structures_files/frontend.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-5-all-css" href="./Data Structures_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="./Data Structures_files/v4-shims.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="./Data Structures_files/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-2983-css" href="./Data Structures_files/post-2983.css" type="text/css" media="all">
+<link rel="stylesheet" id="authorizer-public-css-css" href="./Data Structures_files/authorizer-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Data Structures_files/css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var OnePress_Plus = {"ajax_url":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","browser_warning":" Your browser does not support the video tag. I suggest you upgrade your browser."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/v4-shims.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var auth = {"wpLoginUrl":"https:\/\/ds.cs.rutgers.edu\/wp-login.php?redirect_to=%2Fassignment-ru-kindergarten%2F","publicWarning":"","anonymousNotice":"Notice: You are browsing this site anonymously, and only have access to a portion of its content.","logIn":"Log In"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/authorizer-public.js.download"></script>
+<link rel="https://api.w.org/" href="https://ds.cs.rutgers.edu/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ds.cs.rutgers.edu/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ds.cs.rutgers.edu/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.4.12">
+<link rel="canonical" href="https://ds.cs.rutgers.edu/assignment-ru-kindergarten/">
+<link rel="shortlink" href="https://ds.cs.rutgers.edu/?p=2983">
+<link rel="alternate" type="application/json+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-ru-kindergarten%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://ds.cs.rutgers.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fds.cs.rutgers.edu%2Fassignment-ru-kindergarten%2F&amp;format=xml">
+<script src="./Data Structures_files/saved_resource" type="text/javascript"></script>
+<!-- teachPress -->
+<script type="text/javascript" src="./Data Structures_files/frontend.js.download"></script>
+<link type="text/css" href="./Data Structures_files/teachpress_front.css" rel="stylesheet">
+<!-- END teachPress -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="32x32">
+<link rel="icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif" sizes="192x192">
+<link rel="apple-touch-icon" href="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<meta name="msapplication-TileImage" content="https://wordpress.cs.rutgers.edu/ds-cs-rutgers-edu/wp-content/uploads/sites/82/2018/10/favicons_shield.gif">
+<style type="text/css">/** Mega Menu CSS: fs **/</style>
+
+    <script type="text/javascript" charset="UTF-8" src="./Data Structures_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./Data Structures_files/util.js.download"></script></head>
+    <body data-elementor-device-mode="desktop">
+                <a class="sas-skip-to-content sas-link" href="https://ds.cs.rutgers.edu/assignment-ru-kindergarten/#sas-content">Skip to Main Content</a>
+        <input type="checkbox" class="sas-sidenav-toggle" id="sas-sidenav-toggle">
+        <label for="sas-sidenav-toggle" class="sas-sidenav-label" role="button" aria-label="Toggle Navigation Sidebar">
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+            <div class="sas-bar"></div>
+        </label>
+        <nav class="sas-sidenav" aria-label="Primary Navigation">
+                
+            <ul class="sas-ul sas-links-tree">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li id="menu-item-291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+        </nav>
+
+        <div class="sas-page">
+                        <div class="sas-top-links">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://www.rutgers.edu/">Rutgers Home</a>
+                </li>
+                
+    <li id="menu-item-1267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1267 sas-item"><a href="http://sas.rutgers.edu/" class="sas-link">SAS</a></li>
+<li id="menu-item-1268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1268 sas-item"><a href="http://cs.rutgers.edu/" class="sas-link">CS</a></li>
+
+            </ul>
+        
+                    <div class="sas-search">
+                            
+    <form role="search" method="get" action="https://ds.cs.rutgers.edu/">
+        <input class="sas-search-text" type="text" value="" name="s" placeholder="Search ..." aria-label="Search Query">
+    </form>
+
+                    </div>
+                </div>
+            </div>
+
+                        <header>
+                <div class="sas-banner">
+                    <div class="sas-container">
+                        <div role="img" aria-label="School of Arts and Sciences Logo">
+                            <a href="https://sas.rutgers.edu/" aria-label="School of Arts and Sciences">
+                            <img class="sas-logo sas-logo-big" src="./Data Structures_files/red_banner.png" alt="School of Arts and Sciences Logo">
+                            <img class="sas-logo sas-logo-small" src="./Data Structures_files/sas_red_header_MOBILE.png" alt="School of Arts and Sciences Logo">
+                            </a>
+                        </div>
+                        <h1 class="sas-title">
+                            <a class="sas-link" href="https://ds.cs.rutgers.edu/" aria-label="">Data Structures</a>
+                        </h1>
+                        <h2 class="sas-tagline">
+                           Computer Science Department                        </h2>
+                    </div>
+                </div>
+            </header>
+
+                        <nav class="sas-nav" aria-label="Primary Navigation">
+                <div class="sas-container">
+                        
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-178 sas-item"><a href="https://ds.cs.rutgers.edu/" class="sas-link">Syllabus</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198 sas-item"><a href="https://ds.cs.rutgers.edu/lectures/" class="sas-link">Lectures</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291 sas-item"><a href="https://ds.cs.rutgers.edu/assignments/" class="sas-link">Assignments</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371 sas-item"><a href="https://ds.cs.rutgers.edu/exams/" class="sas-link">Exams</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 sas-item"><a href="https://ds.cs.rutgers.edu/staff/" class="sas-link">Staff</a></li>
+
+            </ul>
+        
+                </div>
+            </nav>
+
+            <main class="sas-content" id="sas-content">
+                <div class="sas-container">
+                        
+    <article class="sas-post">		<div data-elementor-type="wp-post" data-elementor-id="2983" class="elementor elementor-2983" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-80a7e1b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="80a7e1b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-9d7b61e elementor-column elementor-col-100 elementor-top-column" data-id="9d7b61e" data-element_type="column">
+			<div class="elementor-column-wrap">
+					<div class="elementor-widget-wrap">
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-8fa4efd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="8fa4efd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-8029377 elementor-column elementor-col-100 elementor-top-column" data-id="8029377" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-dfa1af3 elementor-widget elementor-widget-text-editor" data-id="dfa1af3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>RU Kindergarten – 100 course points</h3><p><span style="font-weight: 400">The purpose of this assignment is to practice your understanding of &nbsp;linked list structures.</span></p><p><span style="color: #800000"><strong>This assignment will take longer to complete than the first assignment</strong></span>.</p><p><span style="color: #800000"><strong><span style="color: #000000">Start your assignment early!</span> </strong></span>You need time to understand the assignment and to answer the many questions that will arise as you read the description and the code provided.</p><p>Refer to our Programming <a href="https://ds.cs.rutgers.edu/assignment-faq/">Assignments FAQ</a> for instructions on how to install VSCode, how to use the command line and how to submit your assignments.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-2be9c76 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2be9c76" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-80f825d elementor-column elementor-col-100 elementor-top-column" data-id="80f825d" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-1a1aa37 elementor-widget elementor-widget-text-editor" data-id="1a1aa37" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Overview</h3><p>In this assignment you will simulate activities in a kindergarten classroom.</p><p>You will simulate the students on a line, the students on their seats, and the students playing <a href="https://en.wikipedia.org/wiki/Musical_chairs">musical chairs</a>.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-631438e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="631438e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-27fdee7 elementor-column elementor-col-33 elementor-top-column" data-id="27fdee7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-46def9a elementor-widget elementor-widget-image" data-id="46def9a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="642" height="434" src="./Data Structures_files/Screen-Shot-2022-09-26-at-12.53.02-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.53.02-PM.png 642w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.53.02-PM-300x203.png 300w" sizes="(max-width: 642px) 100vw, 642px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-3f917f4 elementor-column elementor-col-33 elementor-top-column" data-id="3f917f4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-90d3bcf elementor-widget elementor-widget-image" data-id="90d3bcf" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="986" height="593" src="./Data Structures_files/Screen-Shot-2022-09-26-at-12.57.27-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.57.27-PM.png 986w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.57.27-PM-300x180.png 300w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.57.27-PM-768x462.png 768w" sizes="(max-width: 986px) 100vw, 986px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-cc089a0 elementor-column elementor-col-33 elementor-top-column" data-id="cc089a0" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bf334ad elementor-widget elementor-widget-image" data-id="bf334ad" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="723" height="451" src="./Data Structures_files/Screen-Shot-2022-09-26-at-12.56.12-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.56.12-PM.png 723w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-12.56.12-PM-300x187.png 300w" sizes="(max-width: 723px) 100vw, 723px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ef4a092 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ef4a092" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-5421d1e elementor-column elementor-col-100 elementor-top-column" data-id="5421d1e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-6128703 elementor-widget elementor-widget-text-editor" data-id="6128703" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Implementation</h3><h3><b>Overview of files provided</b></h3><ul><li><strong>Student</strong> class which holds a student’s information.</li><li><strong>SNode</strong> class represents the node object to be used in the linked structures. It contains a reference to a Student object and a reference to the next node in the list.</li><li><b>Classroom class&nbsp;</b><span style="font-weight: 400">holds all of the methods to be written and that will be tested when running the game. Edit the empty methods with you solution, but<strong> DO NOT edit the provided ones or the methods signatures of any method</strong>. This is the file you submit.&nbsp;</span></li><li><strong>Driver</strong> class, which is used to test your methods interactively. The classroom state will be printed after every method is used. Feel free to edit this file, as it is provided only to help you test your code.&nbsp;<span style="font-weight: 400">It is not submitted and it is not used to grade your code.</span></li><li><strong>StdRandom</strong> class contains the <em>StdRandom.uniform(n)</em> method that you will use in the method that plays the musical chairs game.</li><li style="font-weight: 400"><span style="font-weight: 600">StdIn </span><span style="font-weight: 400">and </span><span style="font-weight: 600">StdOut</span><span style="font-weight: 400">, which are used by the driver. </span><b>Do not edit these classes.</b><span style="font-weight: 400">.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Multiple text files. Feel free to edit them or even make new ones to help test your code. They are not submitted.</span><ul><li>Files containing student information.</li><li>Files containing seat availability in the classroom.</li></ul></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-5365e11 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5365e11" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-619725f elementor-column elementor-col-100 elementor-top-column" data-id="619725f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-10d1bca elementor-widget elementor-widget-text-editor" data-id="10d1bca" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Classroom.java</h3>
+<ul>
+ 	<li>DO NOT add new import statements.</li>
+ 	<li>DO NOT change any of the method’s signatures.</li>
+ 	<li>You are encouraged to write helper methods as you see fit. Just make sure that they are private.</li>
+</ul>
+The class contains:
+<ul>
+ 	<li style="font-weight: 400"><span style="font-weight: 400"><strong>studentInLine</strong> which refers to the first student in the singly linked list</span></li>
+ 	<li><strong>musicalChairs</strong> which&nbsp;refers to the LAST student in the circularly linked list when the game is being played</li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400"><strong>seatingAvailability</strong> which is a 2D boolean array that shows which seats are available for students to seat at</span></li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400"><strong>studentsSitting</strong> which is a 2D Student array that contains the students when they are sitting</span></li>
+ 	<li>NOTE: seatingAvailability and studentsSitting are parallel arrays meaning that seatingAvailability[i][j] also refers to the same seat in studentsSitting[i][j]</li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">provided methods that are used by the driver and empty methods you are expected to write your code in</span></li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">the printClassroom() function can be used to show the state of the classroom (eg. the states of students in line, seating, and musical chairs) at any time in your code</span></li>
+</ul>
+<b>Methods to be implemented by you:</b>
+<h3><b><span style="color: #993300">1. makeClassroom</span></b></h3>
+<span class="c4 c6"><span class="c4 c6">This method&nbsp;</span></span>simulates students coming into the classroom and standing in line.
+
+You have been provided some input files to test this method (info1.in, info2.in, info3.in, info4.in). The format is as follows:
+<ul>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">One line containing an integer representing the number of students in the file (one per line)</span></li>
+ 	<li style="font-weight: 400"><span style="font-weight: 400">Several lines (one for student) containing students first name, last name, and height, space separated</span></li>
+</ul>
+Use the <strong>StdIn</strong> library to read from a file:<code>
+</code>
+<ul>
+ 	<li><strong><code>StdIn.setFile(filename)</code></strong> opens a file to be read</li>
+ 	<li><strong><code>StdIn.readInt()</code></strong> reads the next integer value from the opened file (weather the value is in the current line or in the next line)</li>
+ 	<li><code><strong>StdIn.readString()</strong></code> read the next String value from the opened file</li>
+</ul>
+This method creates students listed on the input file and inserts students in <span style="text-decoration: underline">ALPHABETICAL ORDER</span> into the singularly linked list <strong>studentsInLine</strong>. <strike>Students with the same last name will be inserted in order of insertion</strike>. Use the <em>compareNameTo</em> method provided in the Student class to compare two Students name alphabetically.
+
+This is the expected output for info1.in</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-bb6850d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="bb6850d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-36ccac4 elementor-column elementor-col-100 elementor-top-column" data-id="36ccac4" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5e61adf elementor-widget elementor-widget-image" data-id="5e61adf" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="647" height="419" src="./Data Structures_files/Screen-Shot-2022-09-26-at-1.55.16-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-1.55.16-PM.png 647w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-1.55.16-PM-300x194.png 300w" sizes="(max-width: 647px) 100vw, 647px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-7ea2ee4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7ea2ee4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f210da6 elementor-column elementor-col-100 elementor-top-column" data-id="f210da6" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bd2f18a elementor-widget elementor-widget-text-editor" data-id="bd2f18a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #800000"><b>2. setupSeats</b></span></h3><p>This method creates the classroom seating availability.</p><p>Reads the seating availability from the input file (seating1.in, seating2.in). The input file format is as follows:</p><ul><li>The first line contains an integer representing the number of rows in the classroom, say r</li><li>The second line contains an integer representing the number of columns in the classroom, say c</li><li><div>Number of r lines, each containing c true or false values (true denotes an available seat, false denotes that there is no seat at that position in the classroom)</div></li></ul><p>Use the <strong>StdIn</strong> library to read from a file:<code><br></code></p><ul><li><strong><code>StdIn.setFile(filename)</code></strong> opens a file to be read</li><li><strong><code>StdIn.readInt()</code></strong> reads the next integer value from the opened file (weather the value is in the current line or in the next line)</li><li><code><strong>StdIn.readBoolean()</strong></code> read the next boolean value from the opened file (weather the value is in the current line or in the next line)</li></ul><div><div>This method creates and populates the <strong>seatingAvailability</strong> array, it&nbsp;also creates the <strong>studentsSitting</strong> array with the same number of&nbsp;rows and columns as the seatingAvailability array</div><div>&nbsp;</div><div>This method does not seat students on the seats.</div></div><p>This is the expected output for info1.in and seating1.in:</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-221f654 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="221f654" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-129f1df elementor-column elementor-col-100 elementor-top-column" data-id="129f1df" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-a302771 elementor-widget elementor-widget-image" data-id="a302771" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="711" height="588" src="./Data Structures_files/Screen-Shot-2022-09-26-at-2.05.23-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.05.23-PM.png 711w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.05.23-PM-300x248.png 300w" sizes="(max-width: 711px) 100vw, 711px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-6165afe elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6165afe" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-a93793f elementor-column elementor-col-100 elementor-top-column" data-id="a93793f" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3627070 elementor-widget elementor-widget-text-editor" data-id="3627070" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>3. seatStudents</b></span></h3><div><div>This method simulates students taking their seats in the Kindergarten classroom. Assume that the students are currently in <strong>studentsInLine</strong>&nbsp;and that there are enough available seats to seat all student in line.</div></div><ul><li>Students will be seated starting at the first row, first seat (studentsSitting[0][0] if available). Once the first row is filled, continues into the next row.</li><li>It uses the seatingAvailability array to determine if a seat is open. A student can sit at seat studentsSitting[i][j] only if seatingAvailability[i][j] is true (seat available).&nbsp;</li><li>First seat any remaining students from the <strong>musicalChairs</strong>. There will be at most one student, the game’s winner.</li><li>Then seat the first student in <strong>studentsInLine</strong> and moves on to the second, third and so on.</li></ul><p>NOTE: a student is only in one place (musical chairs, seating chairs, or in line) at a time.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-44acaa7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="44acaa7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-3d2d9cb elementor-column elementor-col-100 elementor-top-column" data-id="3d2d9cb" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-b73d5ef elementor-widget elementor-widget-image" data-id="b73d5ef" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="715" height="405" src="./Data Structures_files/Screen-Shot-2022-09-26-at-2.19.46-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.19.46-PM.png 715w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.19.46-PM-300x170.png 300w" sizes="(max-width: 715px) 100vw, 715px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-9e52fde elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9e52fde" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-849f495 elementor-column elementor-col-100 elementor-top-column" data-id="849f495" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-4f7f329 elementor-widget elementor-widget-text-editor" data-id="4f7f329" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>4. insertMusicalChairs</b></span></h3><p><span style="font-weight: 400">This method represents students preparing to start musical chairs! Assume that the students are in <strong>studentsSitting</strong>.</span></p><ul><li style="font-weight: 400"><span style="font-weight: 400">Imagine this as a circle of chairs.</span></li><li style="font-weight: 400"><span style="font-weight: 400">This method will take students from the </span><b>studentsSitting </b><span style="font-weight: 400">array and add them to the </span><b>musicalChairs </b><span style="font-weight: 400">circular linked list.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Students are to be inserted at the end of the linked list by traversing row-wise, then column-wise in the studentsSitting array.</span></li><li style="font-weight: 400"><span style="font-weight: 400">REMEMBER</span><span style="font-weight: 400">: the pointer to a circular linked list points to the LAST item in the list, and that item points to the front.</span></li></ul><p><span style="font-weight: 400">This is the expected output using info1.in and seating1.in:</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-f7086fd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f7086fd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-7f69617 elementor-column elementor-col-100 elementor-top-column" data-id="7f69617" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-9bc2ec7 elementor-widget elementor-widget-image" data-id="9bc2ec7" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="713" height="432" src="./Data Structures_files/Screen-Shot-2022-09-26-at-2.30.17-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.30.17-PM.png 713w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.30.17-PM-300x182.png 300w" sizes="(max-width: 713px) 100vw, 713px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-be20249 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="be20249" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-7f0c099 elementor-column elementor-col-100 elementor-top-column" data-id="7f0c099" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-3ec0d3e elementor-widget elementor-widget-text-editor" data-id="3ec0d3e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>5. playMusicalChairs</b></span></h3><p><span style="font-weight: 400">This method simulates students playing musical chairs! Assume the students are in <strong>musicalChairs</strong>.</span></p><ul><li style="font-weight: 400"><span style="font-weight: 400">This method “eliminates” a student from the game until a final player is left</span></li><li style="font-weight: 400"><span style="font-weight: 400">Each player that is “eliminated” is then placed back in studentsInLine&nbsp;</span></li><li style="font-weight: 400"><span style="font-weight: 400"><strong>Complete insertMusicalChairs before starting this method</strong></span></li><li style="font-weight: 400"><span style="font-weight: 400">Use&nbsp;<em>StdRandom.uniform(x)</em>, where x is the number of students in line, to get a number <em><strong>n</strong></em> between 0 (inclusive) and <em>x (</em>exclusive). The student at position <strong><em>n</em></strong> is to be eliminated from musicalChairs.</span><ul><li>Notice that the driver is setting a seed for the random number generator. The seed value is 2022.</li></ul></li><li style="font-weight: 400"><span style="font-weight: 400">Eliminated students are placed in studentsInLine IN HEIGHT ORDER (shortest to tallest). If students have the same height, add them in order of insertion, after.</span></li><li style="font-weight: 400"><span style="font-weight: 400">One student will remain in musicalChairs, this is the winner! </span><b>The winner doesn’t leave the musical chairs to enter the line.</b></li><li style="font-weight: 400"><span style="font-weight: 400">Finally, seatStudents() should be called to place students in their seats.</span><ul><li style="font-weight: 400"><span style="font-weight: 400">the winner IS TO BE seated in the first available seat, </span></li><li style="font-weight: 400"><span style="font-weight: 400">then students from </span><b>studentsInLine</b><span style="font-weight: 400"> will be seated in height order, because the students in this linked list ARE ALREADY in ascending height order (see playMusicalChairs method).</span></li></ul></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ae4b896 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ae4b896" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-96a2e7e elementor-column elementor-col-100 elementor-top-column" data-id="96a2e7e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7f54f2c elementor-widget elementor-widget-image" data-id="7f54f2c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="713" height="528" src="./Data Structures_files/Screen-Shot-2022-09-26-at-2.39.08-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.39.08-PM.png 713w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.39.08-PM-300x222.png 300w" sizes="(max-width: 713px) 100vw, 713px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-02afeda elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="02afeda" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-49be7ec elementor-column elementor-col-100 elementor-top-column" data-id="49be7ec" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0594200 elementor-widget elementor-widget-text-editor" data-id="0594200" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>6. addLateStudent</b></span></h3><p><span style="font-weight: 400">This method simulates a student arriving late to school. Assume the students could be anywhere in the classroom.</span></p><ul><li style="font-weight: 400"><span style="font-weight: 400">This method’s input is a string of the student’s first name, a string of the student’s last name, and an integer of the student’s height.</span></li><li style="font-weight: 400"><span style="font-weight: 400">Wherever the students are, this method will add this student to the group:</span><ul><li style="font-weight: 400"><span style="font-weight: 400">If students are in line or at musical chairs, insert this student as the last node of the linked list</span></li><li style="font-weight: 400"><span style="font-weight: 400">If students are sitting, insert this student at the first available seat in the <strong>studentsSitting</strong> 2D array</span></li></ul></li><li><span style="font-weight: 400">Assume the late student is not the first to arrive.</span></li></ul><p><span style="font-weight: 400">Here is an example output using info1.in and running makeClassroom and addLateStudent for John Smith with height 64:</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-e41bce8 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e41bce8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-16c8a9e elementor-column elementor-col-100 elementor-top-column" data-id="16c8a9e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7c095fc elementor-widget elementor-widget-image" data-id="7c095fc" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="597" height="529" src="./Data Structures_files/Screen-Shot-2022-09-26-at-2.58.27-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.58.27-PM.png 597w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-2.58.27-PM-300x266.png 300w" sizes="(max-width: 597px) 100vw, 597px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-26a97c2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="26a97c2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-097b558 elementor-column elementor-col-100 elementor-top-column" data-id="097b558" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-0819367 elementor-widget elementor-widget-text-editor" data-id="0819367" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3><span style="color: #993300"><b>7. deleteLeavingStudent</b></span></h3><p><span style="font-weight: 400">This method simulates a student leaving school early. Assume the students could be anywhere in the classroom.</span></p><ul><li style="font-weight: 400"><span style="font-weight: 400">This method’s input is a string of the student’s first name and a string of the student’s last name. </span><b>This is case-INsensitive!&nbsp;</b></li><li style="font-weight: 400"><span style="font-weight: 400">Wherever the students are, this method will delete this student from the group.</span><ul><li style="font-weight: 400"><span style="font-weight: 400">If students are in line or at musical chairs, delete this student’s node from that linked list.</span></li><li style="font-weight: 400"><span style="font-weight: 400">If students are sitting, make this student’s seat in <strong>studentsSitting</strong> null.&nbsp;</span></li></ul></li></ul><p><span style="font-weight: 400">Here is an example of deleting “Natalia Dyer” from studentsInLine in info1.in.</span></p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-ef3fbef elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ef3fbef" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f1486a5 elementor-column elementor-col-100 elementor-top-column" data-id="f1486a5" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-012ebd1 elementor-widget elementor-widget-image" data-id="012ebd1" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="656" height="318" src="./Data Structures_files/Screen-Shot-2022-09-26-at-3.01.18-PM.png" class="attachment-large size-large" alt="" srcset="https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-3.01.18-PM.png 656w, https://ds.cs.rutgers.edu/wp-content/uploads/sites/82/2022/09/Screen-Shot-2022-09-26-at-3.01.18-PM-300x145.png 300w" sizes="(max-width: 656px) 100vw, 656px">											</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-0954a99 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="0954a99" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-55b8a0b elementor-column elementor-col-100 elementor-top-column" data-id="55b8a0b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-7c04421 elementor-widget elementor-widget-text-editor" data-id="7c04421" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Implementation Notes</h3><ul><li>YOU MAY only update the methods with the WRITE YOUR CODE HERE line.&nbsp;</li><li>DO NOT add any instance variables to the&nbsp;Classroom class.</li><li>DO NOT add any public methods to the Classroom class.</li><li>YOU MAY add private methods to the Classroom class.&nbsp;</li><li><span style="color: #ff0000"><strong>DO NOT</strong></span> use System.exit()</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c75ad14 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c75ad14" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-385f422 elementor-column elementor-col-100 elementor-top-column" data-id="385f422" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-134ac0f elementor-widget elementor-widget-text-editor" data-id="134ac0f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>VSCode Extensions</h3><p>You can install VSCode extension packs for Java. Take a look at <a href="https://code.visualstudio.com/docs/java/java-tutorial">this tutorial</a>. We suggest:</p><ul><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Extension Pack for Java</a></li><li><a href="https://code.visualstudio.com/docs/java/java-project">Project Manager for Java</a></li><li><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug">Debugger for Java</a></li></ul><h3>Importing VSCode Project</h3><ol><li>Download RUKindergarten.zip from <a href="https://autolab.cs.rutgers.edu/">Autolab Attachments</a>.</li><li>Unzip the file by double clicking.</li><li>Open VSCode<ul><li>Import the folder to a workspace through&nbsp;<strong>File</strong> &gt; <b>Open</b></li></ul></li></ol><h3>Executing and Debugging</h3><ul><li>You can run your program through VSCode or you can use the Terminal to compile and execute. We suggest running through VSCode because it will give you the option to debug.</li><li><a href="https://code.visualstudio.com/docs/java/java-debugging">How to debug your code</a></li><li>If you choose the Terminal:<ul><li>first navigate to <strong>RUKindergarten</strong> directory/folder<ul><li>to compile: &nbsp;<strong>javac -d bin src/kindergarten/*.java</strong></li><li>to execute: <strong>java -cp bin kindergarten.Driver</strong></li></ul></li></ul></li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d1b173c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d1b173c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-0cc9ebf elementor-column elementor-col-100 elementor-top-column" data-id="0cc9ebf" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-bf2241f elementor-widget elementor-widget-text-editor" data-id="bf2241f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h3>Before submission</h3><p><strong>Collaboration policy.</strong> Read our collaboration policy <a href="https://ds.cs.rutgers.edu/#academic-integrity">here</a>.</p><p><strong>Submitting the assignment.&nbsp;</strong>Submit <em>Classroom.java</em>&nbsp;separately via the web submission system called Autolab. To do this, click the <em>Assignments</em> link from the course website; click the <em>Submit</em> link for that assignment.</p><h3>Getting help</h3><p>If anything is unclear, don’t hesitate to drop by office hours or post a question on Piazza.</p><ul><li>Find instructors and head TAs&nbsp;office hours&nbsp;<a href="https://ds.cs.rutgers.edu/staff/"><em>here</em></a>&nbsp;&nbsp;</li><li>Find tutors office hours on Canvas -&gt; Tutoring -&gt; RU CATS</li><li>In addition to office hours we have the <a href="https://resources.cs.rutgers.edu/docs/rooms-equipment/cave/">CAVE</a> (Collaborative Academic Versatile Environment), a community space staffed with lab assistants which are undergraduate students further along the CS major to answer questions.</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-c7da9b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c7da9b3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e01ccb9 elementor-column elementor-col-100 elementor-top-column" data-id="e01ccb9" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e758aa7 elementor-widget elementor-widget-text-editor" data-id="e758aa7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Problem by Ethan Chou, Maksims Kurjanovics Kravcenko, and Kal Pandit</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</article>
+
+                </div>
+            </main>
+            <footer>
+                                <div class="sas-info">
+                    <div class="sas-container">
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Connect with Rutgers</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/">Rutgers Home</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://www.rutgers.edu/news-center/rutgers-today">Rutgers Today</a></li>
+                                <li class="sas-item"><a class="sas-link" href="https://my.rutgers.edu/portal">myRutgers</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://scheduling.rutgers.edu/calendar.shtml">Academic Calendar</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://ruevents.rutgers.edu/events/">Calendar of Events</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/news-a-events">SAS Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="sas-links-section">
+                            <h2 class="sas-links-title">Explore SAS</h2>
+                            <ul class="sas-ul sas-links-list">
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/departments-a-degree-granting-programs">Departments &amp; Degree-Granting Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/academics/other-instructional-programs">Other Instructional Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasundergrad.rutgers.edu/index.php/academics/requirements/list-of-majors-and-minors">Majors &amp; Minors</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sas.rutgers.edu/for-faculty/795-research-programs-centers-and-institutes">Research Programs, Centers, &amp; Institutes</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://sasip.rutgers.edu/">International Programs</a></li>
+                                <li class="sas-item"><a class="sas-link" href="http://lifesci.rutgers.edu/">Division of Life Sciences</a></li>
+                            </ul>
+                        </div>
+                            
+                            <div class="sas-links-section">                    <h2 class="sas-links-title">Explore CS</h2>                    <ul class="sas-ul sas-links-list">                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/about/employment">We are Hiring!</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/research/computer-and-network-systems-list">Research</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/news">News</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">Events</a></li><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events">                        </a><li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/news-events/cs-events"></a><a class="sas-link" href="https://resources.cs.rutgers.edu/">Resources</a></li>                        <li class="sas-item"><a class="sas-link" href="https://www.cs.rutgers.edu/search">Search CS</a></li>                    </ul>                </div>            
+            
+            
+                    
+                    </div>
+                </div>
+
+                                <nav class="sas-bot-links" aria-label="Secondary Navigation">
+                    <div class="sas-container">
+                            
+            <ul class="sas-ul sas-links-strip">
+                <li class="sas-item">
+                    <a class="sas-link" href="https://ds.cs.rutgers.edu/">Home</a>
+                </li>
+                
+    
+            </ul>
+        
+                    </div>
+                </nav>
+
+                                <div role="contentinfo" class="sas-copyright">
+                    <div class="sas-container">
+                        <a class="sas-link sas-to-top" href="https://ds.cs.rutgers.edu/assignment-ru-kindergarten/#">Back to Top</a>
+                        <p class="sas-copyright-p">
+                          Copyright 2020, Rutgers, The State University of New Jersey. All rights reserved.<br>
+                          Rutgers is an equal access/equal opportunity
+                          institution. Individuals with disabilities are
+                          encouraged to direct suggestions, comments, or
+                          complaints concerning any accessibility issues
+                          with Rutgers web sites to: <a class="sas-link" href="mailto:accessibility@rutgers.edu">accessibility@rutgers.edu</a> or complete the <a class="sas-link" href="https://oit.rutgers.edu/accessibility/barrierform">Report Accessibility Barrier or Provide Feedback Form</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+        <div aria-hidden="true">
+                <link rel="stylesheet" id="academicons-css" href="./Data Structures_files/academicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Data Structures_files/font-awesome.min(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./Data Structures_files/js"></script>
+<script type="text/javascript" src="./Data Structures_files/override.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/owl.carousel.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/slider.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/hoverIntent.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Structures_files/maxmegamenu.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/public.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/frontend-modules.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/jquery.sticky.min.js.download"></script>
+<script type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/ds.cs.rutgers.edu\/wp-admin\/admin-ajax.php","nonce":"dd8272ac9e","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/dialog.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/waypoints.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/swiper.min.js.download"></script>
+<script type="text/javascript" src="./Data Structures_files/share-link.min.js.download"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","downloadImage":"Download image"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.8","urls":{"assets":"https:\/\/wordpress.cs.rutgers.edu\/ds-cs-rutgers-edu\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":2983,"title":"Assignment%20RU%20Kindergarten%20%E2%80%93%20Data%20Structures","excerpt":"","featuredImage":false}};
+</script>
+<script type="text/javascript" src="./Data Structures_files/frontend.min.js(1).download"></script>
+
+        </div><span id="elementor-device-mode" class="elementor-screen-only"></span>
+    
+
+</body></html>
