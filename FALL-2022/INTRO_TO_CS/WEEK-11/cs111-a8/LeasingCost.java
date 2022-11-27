@@ -214,11 +214,11 @@ public class LeasingCost {
             int months = v.getLease().getLeaseLength();
             double usage = v.getFuel().getUsage();
             double mileageAllowance = v.getLease().getMileageAllowance();
-            double co2PerUnit = 8.887;
+            double co2PerUnit = Fuel.CO2EMITTED_GASCOMBUSTION;
             double fuelPrice = gasPrice;
             double charger = 0.0;
-            if (v.getFuel().getType() == 2){
-                co2PerUnit = 0.453;
+            if (v.getFuel().getType() == Fuel.ELECTRIC){
+                co2PerUnit = Fuel.CO2EMITTED_ELECTRICITYCOMBUSTION;
                 fuelPrice = electricityPrice;
                 charger = v.getFuel().getCharger();
            }
@@ -229,7 +229,7 @@ public class LeasingCost {
             double monthlyCost = v.getLease().getMonthlyCost();
             double leaseCost = computeLeaseCost(due, months, monthlyCost);
             
-            v.setTotalCost(monthlyCost + leaseCost + v.getFuelCost() + charger);
+            v.setTotalCost(leaseCost + v.getFuelCost() + charger);
             
         }
     	}
