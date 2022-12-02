@@ -2,7 +2,7 @@
  *  Monty Hall Problem
  * test which strategy is more likely to succed over n round
  * 
- * Strategy 1: changeing when door is opened
+ * Strategy 1: changing when door is opened
  * 
  * or
  * 

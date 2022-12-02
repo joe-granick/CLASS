@@ -30,7 +30,9 @@ public class Fade
 					Color c2 = target.get(col, row);
 					Color c = blend(c1, c2, alpha);
 					pic.set(col, row, c);
-				}			
+					
+				}	
+				
 			}
 			pic.show();
 		}
