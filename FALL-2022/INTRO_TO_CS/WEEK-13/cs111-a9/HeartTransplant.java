@@ -36,6 +36,7 @@ public class HeartTransplant {
     public Patient[] getPatients() {
 
         // WRITE YOUR CODE HERE
+        return patients;
      } 
 
     /*
@@ -43,6 +44,7 @@ public class HeartTransplant {
      */
     public SurvivabilityByAge getSurvivabilityByAge() {
         // WRITE YOUR CODE HERE
+       return survivabilityByAge; 
     }
 
     /*
@@ -50,6 +52,7 @@ public class HeartTransplant {
      */
     public SurvivabilityByCause getSurvivabilityByCause() {
         // WRITE YOUR CODE HERE
+        return survivabilityByCause;
     }
 
     /*
@@ -64,6 +67,7 @@ public class HeartTransplant {
      */
     public void readPatients (int numberOfLines) {
         // WRITE YOUR CODE HERE
+        Patient[] patients = new Patient[numberOfLines];
     }
 
     /*
@@ -78,6 +82,7 @@ public class HeartTransplant {
      */
     public void readSurvivabilityByAge (int numberOfLines) {
         // WRITE YOUR CODE HERE
+        
     }
 
     /*
