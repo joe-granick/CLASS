@@ -104,11 +104,11 @@ public class HeartTransplant {
     public void readSurvivabilityByCause (int numberOfLines) {
         // WRITE YOUR CODE HERE
    SurvivabilityByCause survivabilityByCause = new SurvivabilityByCause()
-   int age = StdIn.readInt();
+   int cause = StdIn.readInt();
    int years = StdIn.readInt();
    double rate = StdIn.readDouble();
                                                         
-   survivabilityByCause.addData(age, years, rate);    }
+   survivabilityByCause.addData(cause, years, rate);    }
     
     /*
      * Returns a Patient array containing the patients, 
