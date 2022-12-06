@@ -82,7 +82,13 @@ public class HeartTransplant {
      */
     public void readSurvivabilityByAge (int numberOfLines) {
         // WRITE YOUR CODE HERE
-        
+        SurvivabilityByAge survivabilityByAge = new SurvivabilityByAge();
+        int age = StdIn.readInt();
+        int years = StdIn.readInt();
+        double rate = StdIn.readDouble();
+
+        survivabilityByAge.addData(age, years, rate);
+
     }
 
     /*
@@ -97,7 +103,12 @@ public class HeartTransplant {
      */
     public void readSurvivabilityByCause (int numberOfLines) {
         // WRITE YOUR CODE HERE
-    }
+   SurvivabilityByCause survivabilityByCause = new SurvivabilityByCause()
+   int age = StdIn.readInt();
+   int years = StdIn.readInt();
+   double rate = StdIn.readDouble();
+                                                        
+   survivabilityByCause.addData(age, years, rate);    }
     
     /*
      * Returns a Patient array containing the patients, 
