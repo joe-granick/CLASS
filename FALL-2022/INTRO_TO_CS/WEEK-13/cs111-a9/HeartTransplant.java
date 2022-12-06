@@ -25,6 +25,9 @@ public class HeartTransplant {
     public HeartTransplant() {
 
         // WRITE YOUR CODE HERE
+        this.patients = null;
+        this.survivabilityByAge = null;
+        this.survivabilityByCause = null;
     }
 
     /*
