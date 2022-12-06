@@ -23,8 +23,8 @@ public class  Patient {
     public static final int HEALTH_EXCELLENT           = 7;
     
     // Urgency Code
-    public static final int URGENCY_EXTREME            = 8;
-    public static final int URGENCY_MODERATE           = 9;
+    public static final int URGENCY_MODERATE           = 8;
+    public static final int URGENCY_EXTREME            = 9;
 
     // Ethnicity Code
     public static final int ETHNICITY_AFRICAN_AMERICAN = 10;

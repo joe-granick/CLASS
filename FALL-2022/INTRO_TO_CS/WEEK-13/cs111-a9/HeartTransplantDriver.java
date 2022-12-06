@@ -27,7 +27,7 @@ public class HeartTransplantDriver {
         numberOfLines = StdIn.readInt();
         ht.readSurvivabilityByCause(numberOfLines);
         StdOut.println(ht.getSurvivabilityByCause().getDataSize() + " survivability rates by cause lines read from file.\n");
-
+ 
         // Prints all patients.
         StdOut.println("ALL patients: ");
         for (Patient p : ht.getPatients()) {   
@@ -48,7 +48,7 @@ public class HeartTransplantDriver {
         // Prints all patients with age above 18.
         StdOut.println("Patients above age 18: "); 
         Patient patientsByAge[] = ht.getPatientsWithAgeAbove(18);
-        for (Patient p : patientsByAge ) {   
+        for (Patient p : patientsByAge) {   
             StdOut.println(p.toString() );
         }
         StdOut.println();
@@ -63,6 +63,7 @@ public class HeartTransplantDriver {
 
         // Prints 4 patients with the highest likelihood of survival post transplant.
         StdOut.println("TOP 4 PATIENTS with highest potential for survivability: ");
+        //ht.getPatientForTransplant();
         for( int i = 0; i < 4; i++) {
             StdOut.println( ht.getPatientForTransplant().toString() );
         }
