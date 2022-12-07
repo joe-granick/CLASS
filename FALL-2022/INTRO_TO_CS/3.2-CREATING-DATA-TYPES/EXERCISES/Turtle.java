@@ -52,20 +52,20 @@ public class Turtle
     	}
 	public static void main(String args[]){
 	
-
-
-		StdDraw.enableDoubleBuffering();
+		int n = Integer.parseInt(args[0]); 	
+		double angle = 360.0/n;
         	double x0 = 0.5;
         	double y0 = 0.0;
-        	double a0 = 60.0;
-        	double step = Math.sqrt(3)/2;
-        	Turtle turtle = new Turtle(x0, y0, a0);
-        	turtle.goForward(step);
-        	turtle.turnLeft(120.0);
-        	turtle.goForward(step);
-        	turtle.turnLeft(120.0);
-        	turtle.goForward(step);
-        	turtle.turnLeft(120.0);
-        	turtle.show();
+        	double step = Math.sqrt(n)/2;
+        	
+		Turtle turtle = new Turtle(x0, y0, angle/2);
+		turtle.setXscale(-5.0, 5.0);
+		turtle.setYscale(-5.0, 5.0);
+		for(int i = 0; i < n; i++){
+			turtle.goForward(step);
+        		turtle.turnLeft(angle);
+        		turtle.show();
+
+		}
 	}
 }
